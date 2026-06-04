@@ -124,10 +124,9 @@ class MicroBusinessIdeaSeeder extends Seeder
         return match ($lokasi) {
             'online' => ['online'],
             'rumah' => ['rumahan'],
-            'jalan' => ['pasar_komersial', 'perkotaan'],
-            'kios' => ['pasar_komersial'],
-            // "Fleksibel" (atau tidak dikenal) -> null agar dianggap tidak membatasi lokasi.
-            default => null,
+            'jalan', 'kios' => ['offline'],
+            // "Fleksibel" (atau tidak dikenal) -> hybrid karena dapat berjalan online dan offline.
+            default => ['hybrid'],
         };
     }
 

@@ -14,6 +14,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
-        $response->assertRedirect(route('rekomendasi.form'));
+        $response->assertOk();
+        $response->assertSee('Login Pengguna');
     }
 }

@@ -4,18 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\MicroBusinessIdea;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class MicroBusinessRecommendationController extends Controller
 {
     public const LOCATIONS = [
-        'perkotaan' => 'Perkotaan (Urban)',
-        'pedesaan' => 'Pedesaan (Rural)',
-        'pesisir' => 'Pesisir',
-        'pegunungan' => 'Pegunungan/Dataran Tinggi',
-        'kampus_kos' => 'Area Kampus/Kos',
-        'pasar_komersial' => 'Pasar/Komersial',
-        'rumahan' => 'Rumahan (Home-based)',
-        'online' => 'Online (Tanpa lokasi spesifik)',
+        'online' => 'Online',
+        'offline' => 'Offline',
+        'rumahan' => 'Rumahan',
+        'hybrid' => 'Hybrid (Online + Offline)',
     ];
 
     public function form()
@@ -39,7 +36,7 @@ class MicroBusinessRecommendationController extends Controller
             'free_time_hours' => ['required', 'integer', 'min:0', 'max:168'],
         ], [
             'capital.required' => 'Modal wajib diisi.',
-            'location.required' => 'Lokasi wajib dipilih.',
+            'location.required' => 'Kategori wajib dipilih.',
             'free_time_hours.required' => 'Waktu luang wajib diisi.',
         ]);
 
@@ -47,7 +44,7 @@ class MicroBusinessRecommendationController extends Controller
         $location = (string) $validated['location'];
         $freeTimeHours = (int) $validated['free_time_hours'];
 
-        // Bobot scoring (bisa diubah sesuai kebutuhan penelitian)
+        // Bobot kriteria untuk Weighted Product Method.
         $weights = [
             'capital' => 0.45,
             'time' => 0.35,
@@ -63,9 +60,11 @@ class MicroBusinessRecommendationController extends Controller
             $timeFit = $this->rangeFit($freeTimeHours, (int) $idea->free_time_min_hours, $idea->free_time_max_hours === null ? null : (int) $idea->free_time_max_hours);
             $locationFit = $this->locationFit($location, $idea->suitable_locations);
 
-            $score = ($weights['capital'] * $capitalFit)
-                + ($weights['time'] * $timeFit)
-                + ($weights['location'] * $locationFit);
+            $score = $this->weightedProductScore([
+                'capital' => $capitalFit,
+                'time' => $timeFit,
+                'location' => $locationFit,
+            ], $weights);
 
             return [
                 'idea' => $idea,
@@ -87,6 +86,32 @@ class MicroBusinessRecommendationController extends Controller
             ],
             'recommendations' => $scored->take(10),
         ]);
+    }
+
+    public function show(MicroBusinessIdea $businessIdea): View
+    {
+        abort_unless($businessIdea->is_active, 404);
+
+        return view('rekomendasi.detail', [
+            'idea' => $businessIdea,
+            'locations' => self::LOCATIONS,
+        ]);
+    }
+
+    /**
+     * Weighted Product Method: S_i = product(x_ij ^ w_j).
+     * Nilai kriteria memakai skala 0..1, lalu dikonversi menjadi persen pada output.
+     */
+    private function weightedProductScore(array $criteria, array $weights): float
+    {
+        $score = 1.0;
+
+        foreach ($weights as $criterion => $weight) {
+            $value = (float) ($criteria[$criterion] ?? 0.0);
+            $score *= pow(max(0.01, min(1.0, $value)), (float) $weight);
+        }
+
+        return max(0.0, min(1.0, $score));
     }
 
     /**
@@ -111,15 +136,31 @@ class MicroBusinessRecommendationController extends Controller
 
     private function locationFit(string $location, ?array $suitableLocations): float
     {
+        $location = $this->normalizeCategory($location);
         $suitableLocations = $suitableLocations ?? [];
-        $suitableLocations = array_values(array_filter(array_map('strval', $suitableLocations)));
+        $suitableLocations = array_values(array_filter(array_map(
+            fn ($value) => $this->normalizeCategory((string) $value),
+            $suitableLocations
+        )));
 
         if (count($suitableLocations) === 0) {
-            // Jika ide tidak membatasi lokasi, cocok sedang (sensitif lokasi tapi tetap memungkinkan).
+            // Jika ide tidak membatasi kategori, cocok sedang tapi tetap memungkinkan.
             return 0.6;
         }
 
         return in_array($location, $suitableLocations, true) ? 1.0 : 0.0;
     }
-}
 
+    private function normalizeCategory(string $category): string
+    {
+        return match ($category) {
+            'perkotaan',
+            'pedesaan',
+            'pesisir',
+            'pegunungan',
+            'kampus_kos',
+            'pasar_komersial' => 'offline',
+            default => $category,
+        };
+    }
+}

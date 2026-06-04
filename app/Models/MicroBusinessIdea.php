@@ -26,5 +26,9 @@ class MicroBusinessIdea extends Model
         'suitable_locations' => 'array',
         'is_active' => 'boolean',
     ];
-}
 
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+}

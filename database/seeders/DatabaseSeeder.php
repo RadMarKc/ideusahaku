@@ -20,9 +20,10 @@ class DatabaseSeeder extends Seeder
 
         // Idempotent: aman dijalankan berulang (tidak error UNIQUE users.email).
         User::updateOrCreate(
-            ['email' => 'test@example.com'],
+            ['username' => 'admin'],
             [
-                'name' => 'Test User',
+                'name' => 'Administrator',
+                'email' => 'admin@example.com',
                 'password' => Hash::make('password'),
                 'email_verified_at' => now(),
             ]
