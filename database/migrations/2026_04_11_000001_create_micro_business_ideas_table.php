@@ -17,6 +17,7 @@ return new class extends Migration
             // Modal (IDR)
             $table->unsignedBigInteger('capital_min')->default(0);
             $table->unsignedBigInteger('capital_max')->nullable();
+            $table->unsignedBigInteger('capital_estimate')->default(0);
 
             // Waktu luang (jam per minggu)
             $table->unsignedTinyInteger('free_time_min_hours')->default(0);
@@ -24,12 +25,15 @@ return new class extends Migration
 
             // Lokasi (kategori), disimpan sebagai array kode lokasi
             $table->json('suitable_locations')->nullable();
+            $table->string('location_label')->nullable();
+            $table->string('time_label')->nullable();
 
             $table->boolean('is_active')->default(true);
             $table->timestamps();
 
             $table->index(['is_active']);
         });
+
     }
 
     public function down(): void
@@ -37,4 +41,3 @@ return new class extends Migration
         Schema::dropIfExists('micro_business_ideas');
     }
 };
-

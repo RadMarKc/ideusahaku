@@ -2,27 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BusinessMasterOption;
+use App\Models\Criterion;
 use App\Models\MicroBusinessIdea;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 class MicroBusinessRecommendationController extends Controller
 {
-    public const LOCATIONS = [
-        'online' => 'Online',
-        'offline' => 'Offline',
-        'rumahan' => 'Rumahan',
-        'hybrid' => 'Hybrid (Online + Offline)',
-    ];
-
     public function form()
     {
+        [$locations, $times] = $this->masterOptions();
+        $criteria = $this->activeCriteria();
+
         return view('rekomendasi.form', [
-            'locations' => self::LOCATIONS,
+            'locations' => $locations,
+            'times' => $times,
+            'criteria' => $criteria,
             'input' => [
                 'capital' => old('capital'),
                 'location' => old('location'),
-                'free_time_hours' => old('free_time_hours'),
+                'time' => old('time'),
             ],
             'recommendations' => null,
         ]);
@@ -30,60 +32,86 @@ class MicroBusinessRecommendationController extends Controller
 
     public function recommend(Request $request)
     {
+        [$locations, $times] = $this->masterOptions();
+        $criteria = $this->activeCriteria();
+
         $validated = $request->validate([
             'capital' => ['required', 'integer', 'min:0'],
-            'location' => ['required', 'string', 'in:' . implode(',', array_keys(self::LOCATIONS))],
-            'free_time_hours' => ['required', 'integer', 'min:0', 'max:168'],
+            'location' => ['required', 'string', Rule::in($locations->keys()->all())],
+            'time' => ['required', 'string', Rule::in($times->keys()->all())],
         ], [
             'capital.required' => 'Modal wajib diisi.',
             'location.required' => 'Kategori wajib dipilih.',
-            'free_time_hours.required' => 'Waktu luang wajib diisi.',
+            'time.required' => 'Waktu wajib dipilih.',
         ]);
 
         $capital = (int) $validated['capital'];
         $location = (string) $validated['location'];
-        $freeTimeHours = (int) $validated['free_time_hours'];
+        $time = (string) $validated['time'];
+        $selectedLocation = $locations->get($location);
+        $selectedTime = $times->get($time);
+        $selectedLocationLabel = (string) ($selectedLocation?->label ?? $location);
+        $selectedTimeLabel = (string) ($selectedTime?->label ?? $time);
 
-        // Bobot kriteria untuk Weighted Product Method.
-        $weights = [
-            'capital' => 0.45,
-            'time' => 0.35,
-            'location' => 0.20,
-        ];
+        $weights = $criteria->mapWithKeys(fn (Criterion $criterion) => [
+            $criterion->code => (float) $criterion->weight,
+        ])->all();
+
+        $weightTotal = array_sum($weights);
+
+        if ($weightTotal > 0) {
+            $weights = array_map(
+                fn (float $weight): float => $weight / $weightTotal,
+                $weights
+            );
+        }
 
         $ideas = MicroBusinessIdea::query()
+            ->with('scores.criterion')
             ->where('is_active', true)
             ->get();
 
-        $scored = $ideas->map(function (MicroBusinessIdea $idea) use ($capital, $location, $freeTimeHours, $weights) {
-            $capitalFit = $this->rangeFit($capital, (int) $idea->capital_min, $idea->capital_max === null ? null : (int) $idea->capital_max);
-            $timeFit = $this->rangeFit($freeTimeHours, (int) $idea->free_time_min_hours, $idea->free_time_max_hours === null ? null : (int) $idea->free_time_max_hours);
-            $locationFit = $this->locationFit($location, $idea->suitable_locations);
+        $maxScores = [
+            'modal' => max(1, (int) $ideas->max(fn (MicroBusinessIdea $idea) => $idea->capital_score)),
+            'lokasi' => max(1, (int) $ideas->max(fn (MicroBusinessIdea $idea) => $idea->location_score)),
+            'waktu' => max(1, (int) $ideas->max(fn (MicroBusinessIdea $idea) => $idea->time_score)),
+        ];
 
-            $score = $this->weightedProductScore([
-                'capital' => $capitalFit,
-                'time' => $timeFit,
-                'location' => $locationFit,
-            ], $weights);
+        $scored = $ideas->map(function (MicroBusinessIdea $idea) use ($capital, $selectedLocationLabel, $selectedTimeLabel, $weights, $maxScores) {
+            $capitalValue = $this->capitalScore($idea, $capital);
+            $locationValue = $this->labelScore($idea->location_score, (string) $idea->location_label, $selectedLocationLabel);
+            $timeValue = $this->labelScore($idea->time_score, (string) $idea->time_label, $selectedTimeLabel);
+
+            $criteria = [
+                'modal' => $capitalValue / $maxScores['modal'],
+                'lokasi' => $locationValue / $maxScores['lokasi'],
+                'waktu' => $timeValue / $maxScores['waktu'],
+            ];
+
+            $score = $this->weightedProductScore($criteria, $weights);
 
             return [
                 'idea' => $idea,
                 'score' => round($score * 100, 2),
                 'breakdown' => [
-                    'capital_fit' => round($capitalFit * 100, 2),
-                    'time_fit' => round($timeFit * 100, 2),
-                    'location_fit' => round($locationFit * 100, 2),
+                    'modal' => round($criteria['modal'] * 100, 2),
+                    'lokasi' => round($criteria['lokasi'] * 100, 2),
+                    'waktu' => round($criteria['waktu'] * 100, 2),
                 ],
             ];
-        })->sortByDesc('score')->values();
+        })->sortByDesc('score')->sortByDesc(fn ($row) => $row['idea']->total_score)->values();
 
         return view('rekomendasi.form', [
-            'locations' => self::LOCATIONS,
+            'locations' => $locations,
+            'times' => $times,
+            'criteria' => $criteria,
             'input' => [
                 'capital' => $capital,
                 'location' => $location,
-                'free_time_hours' => $freeTimeHours,
+                'time' => $time,
             ],
+            'selectedLocation' => $selectedLocation,
+            'selectedTime' => $selectedTime,
             'recommendations' => $scored->take(10),
         ]);
     }
@@ -91,10 +119,14 @@ class MicroBusinessRecommendationController extends Controller
     public function show(MicroBusinessIdea $businessIdea): View
     {
         abort_unless($businessIdea->is_active, 404);
+        $businessIdea->loadMissing('scores.criterion');
+
+        [$locations] = $this->masterOptions();
 
         return view('rekomendasi.detail', [
             'idea' => $businessIdea,
-            'locations' => self::LOCATIONS,
+            'locations' => $locations,
+            'criteria' => $this->activeCriteria(),
         ]);
     }
 
@@ -114,53 +146,69 @@ class MicroBusinessRecommendationController extends Controller
         return max(0.0, min(1.0, $score));
     }
 
-    /**
-     * Kecocokan nilai terhadap rentang min..max.
-     * - Jika di dalam rentang: 1.0
-     * - Jika di luar: turun proporsional terhadap jarak dari batas.
-     */
-    private function rangeFit(int $value, int $min, ?int $max): float
+    private function capitalScore(MicroBusinessIdea $idea, int $capital): float
     {
-        if ($value < $min) {
-            $denom = max($min, 1);
-            return max(0.0, 1.0 - (($min - $value) / $denom));
+        $score = max(1, (int) $idea->capital_score);
+        $minimum = max(0, (int) $idea->capital_min);
+
+        if ($minimum > 0 && $capital < $minimum) {
+            return max(1.0, $score * ($capital / $minimum));
         }
 
-        if ($max !== null && $value > $max) {
-            $denom = max($max, 1);
-            return max(0.0, 1.0 - (($value - $max) / $denom));
+        return (float) $score;
+    }
+
+    private function labelScore(int $score, string $ideaLabel, string $selectedLabel): float
+    {
+        $score = max(1, $score);
+
+        if ($this->sameLabel($ideaLabel, $selectedLabel) || $this->isFlexible($ideaLabel) || $this->isFlexible($selectedLabel)) {
+            return (float) $score;
         }
 
         return 1.0;
     }
 
-    private function locationFit(string $location, ?array $suitableLocations): float
+    private function sameLabel(string $left, string $right): bool
     {
-        $location = $this->normalizeCategory($location);
-        $suitableLocations = $suitableLocations ?? [];
-        $suitableLocations = array_values(array_filter(array_map(
-            fn ($value) => $this->normalizeCategory((string) $value),
-            $suitableLocations
-        )));
-
-        if (count($suitableLocations) === 0) {
-            // Jika ide tidak membatasi kategori, cocok sedang tapi tetap memungkinkan.
-            return 0.6;
-        }
-
-        return in_array($location, $suitableLocations, true) ? 1.0 : 0.0;
+        return mb_strtolower(trim($left)) === mb_strtolower(trim($right));
     }
 
-    private function normalizeCategory(string $category): string
+    private function isFlexible(string $label): bool
     {
-        return match ($category) {
-            'perkotaan',
-            'pedesaan',
-            'pesisir',
-            'pegunungan',
-            'kampus_kos',
-            'pasar_komersial' => 'offline',
-            default => $category,
-        };
+        return in_array(mb_strtolower(trim($label)), ['fleksibel', 'hybrid'], true);
+    }
+
+    /**
+     * @return array{0:Collection<string,BusinessMasterOption>,1:Collection<string,BusinessMasterOption>}
+     */
+    private function masterOptions(): array
+    {
+        $locations = BusinessMasterOption::query()
+            ->active()
+            ->ofType(BusinessMasterOption::TYPE_LOCATION)
+            ->orderBy('sort_order')
+            ->get()
+            ->keyBy('code');
+
+        $times = BusinessMasterOption::query()
+            ->active()
+            ->ofType(BusinessMasterOption::TYPE_TIME)
+            ->orderBy('sort_order')
+            ->get()
+            ->keyBy('code');
+
+        return [$locations, $times];
+    }
+
+    /**
+     * @return Collection<int,Criterion>
+     */
+    private function activeCriteria(): Collection
+    {
+        return Criterion::query()
+            ->where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
     }
 }

@@ -37,8 +37,8 @@ class AdminBusinessIdeaTest extends TestCase
     public function test_admin_can_import_csv_business_ideas(): void
     {
         $csv = implode("\n", [
-            'namausaha,modal,skormodal,kategori,waktu,deskripsi',
-            'Laundry Kiloan,1000000,3,offline,sedang,Layanan laundry rumahan.',
+            'id,namausaha,modal,modal_min,lokasi,waktu,skormodal,skorlokasi,skorwaktu,total_skor',
+            '1,Reseller Baju,500000,250000,Online,Fleksibel,4,4,4,12',
         ]);
 
         $file = UploadedFile::fake()->createWithContent('usaha.csv', $csv);
@@ -50,8 +50,15 @@ class AdminBusinessIdeaTest extends TestCase
             ->assertRedirect(route('admin.business-ideas.index'));
 
         $this->assertDatabaseHas('micro_business_ideas', [
-            'slug' => 'laundry-kiloan',
-            'description' => 'Layanan laundry rumahan.',
+            'slug' => 'reseller-baju',
+            'capital_estimate' => 500000,
+            'capital_min' => 250000,
+            'location_label' => 'Online',
+            'time_label' => 'Fleksibel',
+            'capital_score' => 4,
+            'location_score' => 4,
+            'time_score' => 4,
+            'total_score' => 12,
             'is_active' => true,
         ]);
     }
@@ -72,6 +79,15 @@ class AdminBusinessIdeaTest extends TestCase
 
         $this->actingAs(User::factory()->create())
             ->put(route('admin.business-ideas.update', $idea), [
+                'name' => 'Katering Harian',
+                'capital_estimate' => 500000,
+                'capital_min' => 500000,
+                'location_label' => 'Rumah',
+                'time_label' => 'Tinggi',
+                'capital_score' => 3,
+                'location_score' => 2,
+                'time_score' => 3,
+                'total_score' => 8,
                 'description' => 'Cocok untuk ibu rumah tangga dengan jaringan pelanggan sekitar.',
             ])
             ->assertRedirect(route('admin.business-ideas.index', ['page' => 1]));
@@ -80,6 +96,36 @@ class AdminBusinessIdeaTest extends TestCase
             'slug' => 'katering-harian',
             'description' => 'Cocok untuk ibu rumah tangga dengan jaringan pelanggan sekitar.',
             'is_active' => false,
+        ]);
+    }
+
+    public function test_admin_can_delete_business_idea(): void
+    {
+        $idea = MicroBusinessIdea::query()->create([
+            'name' => 'Pulsa & Token',
+            'slug' => 'pulsa-token',
+            'description' => null,
+            'capital_min' => 650000,
+            'capital_estimate' => 1000000,
+            'capital_max' => null,
+            'free_time_min_hours' => 2,
+            'free_time_max_hours' => 6,
+            'suitable_locations' => ['hybrid'],
+            'location_label' => 'Fleksibel',
+            'time_label' => 'Rendah',
+            'capital_score' => 3,
+            'location_score' => 3,
+            'time_score' => 1,
+            'total_score' => 7,
+            'is_active' => true,
+        ]);
+
+        $this->actingAs(User::factory()->create())
+            ->delete(route('admin.business-ideas.destroy', $idea))
+            ->assertRedirect(route('admin.business-ideas.index', ['page' => 1]));
+
+        $this->assertDatabaseMissing('micro_business_ideas', [
+            'id' => $idea->id,
         ]);
     }
 }

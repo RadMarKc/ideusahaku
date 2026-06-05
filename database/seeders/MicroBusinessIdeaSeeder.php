@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\BusinessMasterOption;
+use App\Models\Criterion;
 use App\Models\MicroBusinessIdea;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
@@ -11,6 +13,7 @@ class MicroBusinessIdeaSeeder extends Seeder
 {
     public function run(): void
     {
+        $criteria = $this->seedCriteria();
         $ideas = $this->loadIdeasFromCsv(
             database_path('seeders/data/micro_business_ideas.csv')
         );
@@ -21,7 +24,10 @@ class MicroBusinessIdeaSeeder extends Seeder
             $slug = Str::slug($idea['name']);
             $seededSlugs[] = $slug;
 
-            MicroBusinessIdea::updateOrCreate(
+            $scores = $idea['scores'];
+            unset($idea['scores']);
+
+            $businessIdea = MicroBusinessIdea::updateOrCreate(
                 ['slug' => $slug],
                 [
                     ...$idea,
@@ -29,6 +35,8 @@ class MicroBusinessIdeaSeeder extends Seeder
                     'is_active' => true,
                 ]
             );
+
+            $this->syncScores($businessIdea, $criteria, $scores);
         }
 
         // Menjaga dataset konsisten dengan CSV: ide di luar CSV dinonaktifkan.
@@ -36,6 +44,48 @@ class MicroBusinessIdeaSeeder extends Seeder
             MicroBusinessIdea::query()
                 ->whereNotIn('slug', $seededSlugs)
                 ->update(['is_active' => false]);
+        }
+    }
+
+    /**
+     * @return array<string,Criterion>
+     */
+    private function seedCriteria(): array
+    {
+        $criteria = [
+            'modal' => ['name' => 'Modal', 'weight' => 0.45, 'type' => 'cost', 'sort_order' => 1],
+            'lokasi' => ['name' => 'Lokasi', 'weight' => 0.30, 'type' => 'benefit', 'sort_order' => 2],
+            'waktu' => ['name' => 'Waktu', 'weight' => 0.25, 'type' => 'benefit', 'sort_order' => 3],
+        ];
+
+        return collect($criteria)
+            ->mapWithKeys(fn (array $criterion, string $code) => [
+                $code => Criterion::updateOrCreate(
+                    ['code' => $code],
+                    [
+                        ...$criterion,
+                        'is_active' => true,
+                    ]
+                ),
+            ])
+            ->all();
+    }
+
+    /**
+     * @param array<string,Criterion> $criteria
+     * @param array<string,int> $scores
+     */
+    private function syncScores(MicroBusinessIdea $idea, array $criteria, array $scores): void
+    {
+        foreach ($scores as $code => $score) {
+            if (! isset($criteria[$code])) {
+                continue;
+            }
+
+            $idea->scores()->updateOrCreate(
+                ['criterion_id' => $criteria[$code]->id],
+                ['score' => $score]
+            );
         }
     }
 
@@ -97,8 +147,14 @@ class MicroBusinessIdeaSeeder extends Seeder
                 ? (int) preg_replace('/[^\d]/', '', $modalMinRaw)
                 : $this->estimateModalMinFromScore($modalEstimate, (string) ($assoc['skormodal'] ?? ''));
 
-            $lokasiRaw = trim((string) ($assoc['lokasi'] ?? ''));
+            $lokasiRaw = trim((string) ($assoc['kategori_usaha'] ?? $assoc['lokasi'] ?? $assoc['kategori'] ?? ''));
             $waktuRaw = trim((string) ($assoc['waktu'] ?? ''));
+            $capitalScore = $this->scoreToInt((string) ($assoc['skormodal'] ?? ''));
+            $locationScore = $this->scoreToInt((string) ($assoc['skorlokasi'] ?? ''));
+            $timeScore = $this->scoreToInt((string) ($assoc['skorwaktu'] ?? ''));
+            $capitalScore = $capitalScore > 0 ? $capitalScore : $this->scoreFromModal($modalEstimate);
+            $locationScore = $locationScore > 0 ? $locationScore : $this->scoreFromLocation($lokasiRaw);
+            $timeScore = $timeScore > 0 ? $timeScore : $this->scoreFromTime($waktuRaw);
 
             [$freeTimeMin, $freeTimeMax] = $this->mapWaktuToRange($waktuRaw);
             $suitableLocations = $this->mapLokasiToCodes($lokasiRaw);
@@ -107,10 +163,18 @@ class MicroBusinessIdeaSeeder extends Seeder
                 'name' => $name,
                 'description' => $this->buildDescription($modalMin, $modalEstimate, $lokasiRaw, $waktuRaw),
                 'capital_min' => max(0, $modalMin),
+                'capital_estimate' => $modalEstimate,
                 'capital_max' => null,
                 'free_time_min_hours' => $freeTimeMin,
                 'free_time_max_hours' => $freeTimeMax,
                 'suitable_locations' => $suitableLocations,
+                'location_label' => $lokasiRaw,
+                'time_label' => $waktuRaw,
+                'scores' => [
+                    'modal' => $capitalScore,
+                    'lokasi' => $locationScore,
+                    'waktu' => $timeScore,
+                ],
             ];
         }
 
@@ -127,6 +191,59 @@ class MicroBusinessIdeaSeeder extends Seeder
             'jalan', 'kios' => ['offline'],
             // "Fleksibel" (atau tidak dikenal) -> hybrid karena dapat berjalan online dan offline.
             default => ['hybrid'],
+        };
+    }
+
+    private function scoreToInt(string $value): int
+    {
+        return max(0, min(255, (int) preg_replace('/[^\d]/', '', $value)));
+    }
+
+    private function scoreFromModal(int $modalEstimate): int
+    {
+        $score = $this->masterScoreFromRange(BusinessMasterOption::TYPE_CAPITAL, $modalEstimate);
+
+        if ($score !== null) {
+            return $score;
+        }
+
+        return match (true) {
+            $modalEstimate <= 500_000 => 4,
+            $modalEstimate <= 1_500_000 => 3,
+            $modalEstimate <= 3_000_000 => 2,
+            default => 1,
+        };
+    }
+
+    private function scoreFromLocation(string $location): int
+    {
+        $score = $this->masterScore(BusinessMasterOption::TYPE_LOCATION, $location);
+
+        if ($score !== null) {
+            return $score;
+        }
+
+        return match (Str::lower(trim($location))) {
+            'online', 'fleksibel', 'hybrid' => 4,
+            'rumah', 'rumahan' => 2,
+            default => 3,
+        };
+    }
+
+    private function scoreFromTime(string $time): int
+    {
+        $score = $this->masterScore(BusinessMasterOption::TYPE_TIME, $time);
+
+        if ($score !== null) {
+            return $score;
+        }
+
+        return match (Str::lower(trim($time))) {
+            'fleksibel' => 4,
+            'rendah' => 1,
+            'sedang' => 2,
+            'tinggi' => 3,
+            default => 2,
         };
     }
 
@@ -165,6 +282,42 @@ class MicroBusinessIdeaSeeder extends Seeder
         $min = (int) (round($min / 50_000) * 50_000);
 
         return min($min, $modalEstimate);
+    }
+
+    private function masterScore(string $type, string $label): ?int
+    {
+        $normalized = Str::lower(trim($label));
+
+        if ($normalized === '') {
+            return null;
+        }
+
+        $option = BusinessMasterOption::query()
+            ->active()
+            ->ofType($type)
+            ->whereRaw('LOWER(label) = ?', [$normalized])
+            ->first();
+
+        return $option?->score;
+    }
+
+    private function masterScoreFromRange(string $type, int $value): ?int
+    {
+        $option = BusinessMasterOption::query()
+            ->active()
+            ->ofType($type)
+            ->where(function ($query) use ($value) {
+                $query->whereNull('value_min')
+                    ->orWhere('value_min', '<=', $value);
+            })
+            ->where(function ($query) use ($value) {
+                $query->whereNull('value_max')
+                    ->orWhere('value_max', '>=', $value);
+            })
+            ->orderBy('sort_order')
+            ->first();
+
+        return $option?->score;
     }
 
     private function buildDescription(int $modalMin, int $modalEstimate, string $lokasi, string $waktu): string

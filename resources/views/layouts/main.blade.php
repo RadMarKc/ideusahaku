@@ -126,6 +126,15 @@
             padding: .9rem;
         }
 
+        .sidebar-section-label {
+            color: rgba(255, 255, 255, .55);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            padding: .15rem .25rem;
+            text-transform: uppercase;
+        }
+
         .sidebar-toggle {
             border-color: rgba(255, 255, 255, .22);
             color: #fff;
@@ -294,6 +303,22 @@
                     <span class="sidebar-icon"><i class="bi bi-graph-up-arrow"></i></span>
                     <span class="sidebar-text">Rekomendasi</span>
                 </a>
+                <div class="mt-2 mb-1 d-flex align-items-center gap-2 sidebar-section-label">
+                    <i class="bi bi-folder2-open"></i>
+                    <span>Master</span>
+                </div>
+                <a class="sidebar-link {{ request()->routeIs('admin.master.capitals.*') ? 'active' : '' }}" href="{{ route('admin.master.capitals.index') }}" title="Modal Usaha">
+                    <span class="sidebar-icon"><i class="bi bi-cash-coin"></i></span>
+                    <span class="sidebar-text">Modal Usaha</span>
+                </a>
+                <a class="sidebar-link {{ request()->routeIs('admin.master.categories.*') ? 'active' : '' }}" href="{{ route('admin.master.categories.index') }}" title="Kategori Usaha">
+                    <span class="sidebar-icon"><i class="bi bi-tags"></i></span>
+                    <span class="sidebar-text">Kategori Usaha</span>
+                </a>
+                <a class="sidebar-link {{ request()->routeIs('admin.master.times.*') ? 'active' : '' }}" href="{{ route('admin.master.times.index') }}" title="Waktu Luang">
+                    <span class="sidebar-icon"><i class="bi bi-clock"></i></span>
+                    <span class="sidebar-text">Waktu Luang</span>
+                </a>
                 <a class="sidebar-link {{ request()->routeIs('admin.business-ideas.*') ? 'active' : '' }}" href="{{ route('admin.business-ideas.index') }}" title="Data Usaha">
                     <span class="sidebar-icon"><i class="bi bi-database-check"></i></span>
                     <span class="sidebar-text">Data Usaha</span>
@@ -331,7 +356,9 @@
                 </div>
                 <div class="d-flex gap-2 mt-3">
                     <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('rekomendasi.form') }}">Rekomendasi</a>
-                    <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.business-ideas.index') }}">Data Usaha</a>
+                    <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.master.capitals.index') }}">Modal</a>
+                    <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.master.categories.index') }}">Kategori</a>
+                    <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.business-ideas.index') }}">Data</a>
                 </div>
             </div>
 

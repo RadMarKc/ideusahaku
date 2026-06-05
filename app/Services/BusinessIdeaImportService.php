@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Models\BusinessMasterOption;
+use App\Models\Criterion;
 use App\Models\MicroBusinessIdea;
 use Illuminate\Support\Str;
 use RuntimeException;
@@ -15,6 +17,7 @@ class BusinessIdeaImportService
     public function import(string $path, ?string $extension = null, bool $deactivateMissing = true): array
     {
         $rows = $this->rowsFromFile($path, $extension);
+        $criteria = $this->seedCriteria();
         $seededSlugs = [];
         $imported = 0;
 
@@ -27,14 +30,15 @@ class BusinessIdeaImportService
 
             $slug = Str::slug($idea['name']);
             $seededSlugs[] = $slug;
-            $capitalEstimate = (int) ($idea['capital_estimate'] ?? 0);
-            unset($idea['capital_estimate']);
+            $capitalEstimate = (int) $idea['capital_estimate'];
+            $scores = $idea['scores'];
+            unset($idea['scores']);
 
             $existing = MicroBusinessIdea::query()
                 ->where('slug', $slug)
                 ->first();
 
-            MicroBusinessIdea::updateOrCreate(
+            $businessIdea = MicroBusinessIdea::updateOrCreate(
                 ['slug' => $slug],
                 [
                     ...$idea,
@@ -43,13 +47,15 @@ class BusinessIdeaImportService
                         : ($existing?->description ?? $this->buildDescription(
                             $idea['capital_min'],
                             $capitalEstimate,
-                            (string) ($assoc['kategori'] ?? $assoc['lokasi'] ?? ''),
+                            (string) ($assoc['kategori_usaha'] ?? $assoc['lokasi'] ?? $assoc['kategori'] ?? ''),
                             (string) ($assoc['waktu'] ?? '')
                         )),
                     'slug' => $slug,
                     'is_active' => true,
                 ]
             );
+
+            $this->syncScores($businessIdea, $criteria, $scores);
 
             $imported++;
         }
@@ -66,6 +72,48 @@ class BusinessIdeaImportService
             'imported' => $imported,
             'deactivated' => $deactivated,
         ];
+    }
+
+    /**
+     * @return array<string,Criterion>
+     */
+    private function seedCriteria(): array
+    {
+        $criteria = [
+            'modal' => ['name' => 'Modal', 'weight' => 0.45, 'type' => 'cost', 'sort_order' => 1],
+            'lokasi' => ['name' => 'Lokasi', 'weight' => 0.30, 'type' => 'benefit', 'sort_order' => 2],
+            'waktu' => ['name' => 'Waktu', 'weight' => 0.25, 'type' => 'benefit', 'sort_order' => 3],
+        ];
+
+        return collect($criteria)
+            ->mapWithKeys(fn (array $criterion, string $code) => [
+                $code => Criterion::updateOrCreate(
+                    ['code' => $code],
+                    [
+                        ...$criterion,
+                        'is_active' => true,
+                    ]
+                ),
+            ])
+            ->all();
+    }
+
+    /**
+     * @param array<string,Criterion> $criteria
+     * @param array<string,int> $scores
+     */
+    private function syncScores(MicroBusinessIdea $idea, array $criteria, array $scores): void
+    {
+        foreach ($scores as $code => $score) {
+            if (! isset($criteria[$code])) {
+                continue;
+            }
+
+            $idea->scores()->updateOrCreate(
+                ['criterion_id' => $criteria[$code]->id],
+                ['score' => $score]
+            );
+        }
     }
 
     /**
@@ -284,8 +332,14 @@ class BusinessIdeaImportService
             ? $this->moneyToInt($modalMinRaw)
             : $this->estimateModalMinFromScore($modalEstimate, (string) ($assoc['skormodal'] ?? ''));
 
-        $categoryRaw = trim((string) ($assoc['kategori'] ?? $assoc['lokasi'] ?? ''));
+        $categoryRaw = trim((string) ($assoc['kategori_usaha'] ?? $assoc['lokasi'] ?? $assoc['kategori'] ?? ''));
         $timeRaw = trim((string) ($assoc['waktu'] ?? ''));
+        $capitalScore = $this->scoreToInt((string) ($assoc['skormodal'] ?? ''));
+        $locationScore = $this->scoreToInt((string) ($assoc['skorlokasi'] ?? ''));
+        $timeScore = $this->scoreToInt((string) ($assoc['skorwaktu'] ?? ''));
+        $capitalScore = $capitalScore > 0 ? $capitalScore : $this->scoreFromModal($modalEstimate);
+        $locationScore = $locationScore > 0 ? $locationScore : $this->scoreFromLocation($categoryRaw);
+        $timeScore = $timeScore > 0 ? $timeScore : $this->scoreFromTime($timeRaw);
         [$freeTimeMin, $freeTimeMax] = $this->mapWaktuToRange($timeRaw);
 
         return [
@@ -297,12 +351,72 @@ class BusinessIdeaImportService
             'free_time_min_hours' => $freeTimeMin,
             'free_time_max_hours' => $freeTimeMax,
             'suitable_locations' => $this->mapCategoryToCodes($categoryRaw),
+            'location_label' => $categoryRaw,
+            'time_label' => $timeRaw,
+            'scores' => [
+                'modal' => $capitalScore,
+                'lokasi' => $locationScore,
+                'waktu' => $timeScore,
+            ],
         ];
     }
 
     private function moneyToInt(string $value): int
     {
         return (int) preg_replace('/[^\d]/', '', $value);
+    }
+
+    private function scoreToInt(string $value): int
+    {
+        return max(0, min(255, (int) preg_replace('/[^\d]/', '', $value)));
+    }
+
+    private function scoreFromModal(int $modalEstimate): int
+    {
+        $score = $this->masterScoreFromRange(BusinessMasterOption::TYPE_CAPITAL, $modalEstimate);
+
+        if ($score !== null) {
+            return $score;
+        }
+
+        return match (true) {
+            $modalEstimate <= 500_000 => 4,
+            $modalEstimate <= 1_500_000 => 3,
+            $modalEstimate <= 3_000_000 => 2,
+            default => 1,
+        };
+    }
+
+    private function scoreFromLocation(string $location): int
+    {
+        $score = $this->masterScore(BusinessMasterOption::TYPE_LOCATION, $location);
+
+        if ($score !== null) {
+            return $score;
+        }
+
+        return match (Str::lower(trim($location))) {
+            'online', 'fleksibel', 'hybrid' => 4,
+            'rumah', 'rumahan' => 2,
+            default => 3,
+        };
+    }
+
+    private function scoreFromTime(string $time): int
+    {
+        $score = $this->masterScore(BusinessMasterOption::TYPE_TIME, $time);
+
+        if ($score !== null) {
+            return $score;
+        }
+
+        return match (Str::lower(trim($time))) {
+            'fleksibel' => 4,
+            'rendah' => 1,
+            'sedang' => 2,
+            'tinggi' => 3,
+            default => 2,
+        };
     }
 
     private function mapCategoryToCodes(string $category): array
@@ -349,6 +463,42 @@ class BusinessIdeaImportService
         $min = (int) (round($min / 50_000) * 50_000);
 
         return min($min, $modalEstimate);
+    }
+
+    private function masterScore(string $type, string $label): ?int
+    {
+        $normalized = Str::lower(trim($label));
+
+        if ($normalized === '') {
+            return null;
+        }
+
+        $option = BusinessMasterOption::query()
+            ->active()
+            ->ofType($type)
+            ->whereRaw('LOWER(label) = ?', [$normalized])
+            ->first();
+
+        return $option?->score;
+    }
+
+    private function masterScoreFromRange(string $type, int $value): ?int
+    {
+        $option = BusinessMasterOption::query()
+            ->active()
+            ->ofType($type)
+            ->where(function ($query) use ($value) {
+                $query->whereNull('value_min')
+                    ->orWhere('value_min', '<=', $value);
+            })
+            ->where(function ($query) use ($value) {
+                $query->whereNull('value_max')
+                    ->orWhere('value_max', '>=', $value);
+            })
+            ->orderBy('sort_order')
+            ->first();
+
+        return $option?->score;
     }
 
     private function buildDescription(int $modalMin, int $modalEstimate, string $category, string $time): string

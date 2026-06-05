@@ -1,51 +1,51 @@
-id,namausaha,modal,modal_min,lokasi,waktu,skormodal,skorlokasi,skorwaktu,total_skor
-1,Reseller Baju,500000,250000,Online,Fleksibel,4,4,4,12
-2,Jasa Pengetikan,2000000,1600000,Rumah,Sedang,2,2,2,6
-3,Pulsa & Token,1000000,650000,Fleksibel,Rendah,3,3,1,7
-4,Admin Medsos,0,0,Online,Fleksibel,4,4,4,12
-5,Makanan Ringan,1500000,1000000,Rumah,Sedang,3,2,2,7
-6,Desain Grafis,0,0,Online,Fleksibel,4,4,4,12
-7,Laundry Kiloan,5000000,4500000,Rumah,Tinggi,1,2,3,6
-8,Minuman Kekinian,3000000,2400000,Jalan,Sedang,2,1,2,5
-9,Fotokopi,7000000,6300000,Jalan,Tinggi,1,1,3,5
-10,Cuci Motor,4000000,3600000,Rumah,Tinggi,1,2,3,6
-11,Frozen Food,2000000,1600000,Rumah,Sedang,2,2,2,6
-12,Les Privat,0,0,Rumah,Fleksibel,4,2,4,10
-13,Sayur Online,1000000,650000,Online,Rendah,3,4,1,8
-14,Service HP,3000000,2400000,Rumah,Tinggi,2,2,3,7
-15,Affiliate,0,0,Online,Fleksibel,4,4,4,12
-16,Kue Rumahan,1500000,1000000,Rumah,Sedang,3,2,2,7
-17,Editing Video,0,0,Online,Fleksibel,4,4,4,12
-18,Fotografi,2500000,2000000,Fleksibel,Sedang,2,3,2,7
-19,Es Teh/Kopi,1000000,650000,Jalan,Sedang,3,1,2,6
-20,Cleaning Service,1000000,650000,Fleksibel,Sedang,3,3,2,8
-21,Aksesoris HP,1500000,1000000,Online,Sedang,3,4,2,9
-22,Jastip,500000,250000,Online,Fleksibel,4,4,4,12
-23,Budidaya Lele,3000000,2400000,Rumah,Tinggi,2,2,3,7
-24,Tanaman Hias,1000000,650000,Rumah,Sedang,3,2,2,7
-25,Jasa Website,0,0,Online,Fleksibel,4,4,4,12
-26,Sembako,5000000,4500000,Rumah,Tinggi,1,2,3,6
-27,Rental PS,4000000,3600000,Rumah,Tinggi,1,2,3,6
-28,Snack Online,1000000,650000,Online,Fleksibel,3,4,4,11
-29,Penerjemah,0,0,Online,Fleksibel,4,4,4,12
-30,Parfum Refill,2000000,1600000,Kios,Sedang,2,1,2,5
-31,MUA,3000000,2400000,Fleksibel,Sedang,2,3,2,7
-32,Gorengan,500000,250000,Jalan,Sedang,4,1,2,7
-33,Babysitter,0,0,Fleksibel,Tinggi,4,3,3,10
-34,Boba Drink,3000000,2400000,Jalan,Sedang,2,1,2,5
-35,Instal Software,0,0,Rumah,Fleksibel,4,2,4,10
-36,Kaos Custom,2000000,1600000,Online,Fleksibel,2,4,4,10
-37,Laundry Sepatu,1500000,1000000,Rumah,Sedang,3,2,2,7
-38,Produk Herbal,1000000,650000,Online,Fleksibel,3,4,4,11
-39,Tour Guide,0,0,Fleksibel,Fleksibel,4,3,4,11
-40,Keripik Homemade,1500000,1000000,Rumah,Sedang,3,2,2,7
-41,Voice Over,0,0,Online,Fleksibel,4,4,4,12
-42,Buku Bekas,500000,250000,Online,Fleksibel,4,4,4,12
-43,Dropship Kosmetik,500000,250000,Online,Fleksibel,4,4,4,12
-44,Cuci Mobil,5000000,4500000,Rumah,Tinggi,1,2,3,6
-45,Es Krim Keliling,2000000,1600000,Fleksibel,Sedang,2,3,2,7
-46,Jasa CV,0,0,Online,Fleksibel,4,4,4,12
-47,Alat Tulis,1000000,650000,Rumah,Sedang,3,2,2,7
-48,Print Foto,2000000,1600000,Rumah,Sedang,2,2,2,6
-49,Paket Internet,1000000,650000,Fleksibel,Rendah,3,3,1,7
-50,Kurir Lokal,500000,250000,Fleksibel,Fleksibel,4,3,4,11
+id,namausaha,modal,modal_min,kategori_usaha,waktu,deskripsi
+1,Reseller Baju,500000,250000,Online,Fleksibel,
+2,Jasa Pengetikan,2000000,1600000,Rumah,Sedang,
+3,Pulsa & Token,1000000,650000,Fleksibel,Rendah,
+4,Admin Medsos,0,0,Online,Fleksibel,
+5,Makanan Ringan,1500000,1000000,Rumah,Sedang,
+6,Desain Grafis,0,0,Online,Fleksibel,
+7,Laundry Kiloan,5000000,4500000,Rumah,Tinggi,
+8,Minuman Kekinian,3000000,2400000,Jalan,Sedang,
+9,Fotokopi,7000000,6300000,Jalan,Tinggi,
+10,Cuci Motor,4000000,3600000,Rumah,Tinggi,
+11,Frozen Food,2000000,1600000,Rumah,Sedang,
+12,Les Privat,0,0,Rumah,Fleksibel,
+13,Sayur Online,1000000,650000,Online,Rendah,
+14,Service HP,3000000,2400000,Rumah,Tinggi,
+15,Affiliate,0,0,Online,Fleksibel,
+16,Kue Rumahan,1500000,1000000,Rumah,Sedang,
+17,Editing Video,0,0,Online,Fleksibel,
+18,Fotografi,2500000,2000000,Fleksibel,Sedang,
+19,Es Teh/Kopi,1000000,650000,Jalan,Sedang,
+20,Cleaning Service,1000000,650000,Fleksibel,Sedang,
+21,Aksesoris HP,1500000,1000000,Online,Sedang,
+22,Jastip,500000,250000,Online,Fleksibel,
+23,Budidaya Lele,3000000,2400000,Rumah,Tinggi,
+24,Tanaman Hias,1000000,650000,Rumah,Sedang,
+25,Jasa Website,0,0,Online,Fleksibel,
+26,Sembako,5000000,4500000,Rumah,Tinggi,
+27,Rental PS,4000000,3600000,Rumah,Tinggi,
+28,Snack Online,1000000,650000,Online,Fleksibel,
+29,Penerjemah,0,0,Online,Fleksibel,
+30,Parfum Refill,2000000,1600000,Kios,Sedang,
+31,MUA,3000000,2400000,Fleksibel,Sedang,
+32,Gorengan,500000,250000,Jalan,Sedang,
+33,Babysitter,0,0,Fleksibel,Tinggi,
+34,Boba Drink,3000000,2400000,Jalan,Sedang,
+35,Instal Software,0,0,Rumah,Fleksibel,
+36,Kaos Custom,2000000,1600000,Online,Fleksibel,
+37,Laundry Sepatu,1500000,1000000,Rumah,Sedang,
+38,Produk Herbal,1000000,650000,Online,Fleksibel,
+39,Tour Guide,0,0,Fleksibel,Fleksibel,
+40,Keripik Homemade,1500000,1000000,Rumah,Sedang,
+41,Voice Over,0,0,Online,Fleksibel,
+42,Buku Bekas,500000,250000,Online,Fleksibel,
+43,Dropship Kosmetik,500000,250000,Online,Fleksibel,
+44,Cuci Mobil,5000000,4500000,Rumah,Tinggi,
+45,Es Krim Keliling,2000000,1600000,Fleksibel,Sedang,
+46,Jasa CV,0,0,Online,Fleksibel,
+47,Alat Tulis,1000000,650000,Rumah,Sedang,
+48,Print Foto,2000000,1600000,Rumah,Sedang,
+49,Paket Internet,1000000,650000,Fleksibel,Rendah,
+50,Kurir Lokal,500000,250000,Fleksibel,Fleksibel,
