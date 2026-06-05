@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BusinessMasterOption;
 use App\Models\Criterion;
+use App\Models\FormulaSetting;
 use App\Models\MicroBusinessIdea;
 use App\Services\BusinessIdeaImportService;
 use Illuminate\Http\RedirectResponse;
@@ -45,6 +46,23 @@ class AdminBusinessIdeaController extends Controller
         return $this->masterView('waktu');
     }
 
+    public function formulaMaster(): View
+    {
+        return view('admin.formula.index', [
+            'formula' => FormulaSetting::current(),
+        ]);
+    }
+
+    public function criteriaMaster(): View
+    {
+        return view('admin.criteria.index', [
+            'criteria' => Criterion::query()
+                ->orderBy('sort_order')
+                ->orderBy('name')
+                ->get(),
+        ]);
+    }
+
     public function storeMasterOption(Request $request): RedirectResponse
     {
         $validated = $this->validateMasterOption($request);
@@ -72,6 +90,67 @@ class AdminBusinessIdeaController extends Controller
 
         return $this->redirectToMasterSection($type)
             ->with('status', 'Master berhasil dihapus.');
+    }
+
+    public function updateCriterion(Request $request, Criterion $criterion): RedirectResponse
+    {
+        $validated = $request->validate([
+            'code' => [
+                'required',
+                'string',
+                'max:100',
+                Rule::unique('criteria', 'code')->ignore($criterion->id),
+            ],
+            'name' => ['required', 'string', 'max:255'],
+            'weight' => ['required', 'numeric', 'min:0', 'max:999.99'],
+            'type' => ['required', Rule::in(['benefit', 'cost'])],
+            'sort_order' => ['required', 'integer', 'min:0'],
+            'is_active' => ['nullable', 'boolean'],
+        ]);
+
+        $criterion->update([
+            'code' => $validated['code'],
+            'name' => $validated['name'],
+            'weight' => $validated['weight'],
+            'type' => $validated['type'],
+            'sort_order' => $validated['sort_order'],
+            'is_active' => $request->boolean('is_active'),
+        ]);
+
+        return redirect()
+            ->route('admin.master.criteria.index')
+            ->with('status', 'Kriteria berhasil diperbarui.');
+    }
+
+    public function updateFormulaSetting(Request $request, FormulaSetting $formulaSetting): RedirectResponse
+    {
+        $validated = $request->validate([
+            'modal_weight' => ['required', 'numeric', 'min:0', 'max:9.99'],
+            'location_weight' => ['required', 'numeric', 'min:0', 'max:9.99'],
+            'time_weight' => ['required', 'numeric', 'min:0', 'max:9.99'],
+            'is_active' => ['nullable', 'boolean'],
+        ]);
+
+        $weightTotal = (float) $validated['modal_weight']
+            + (float) $validated['location_weight']
+            + (float) $validated['time_weight'];
+
+        if ($weightTotal <= 0) {
+            return back()
+                ->withInput()
+                ->withErrors(['modal_weight' => 'Total bobot formula harus lebih dari 0.']);
+        }
+
+        $formulaSetting->update([
+            'modal_weight' => $validated['modal_weight'],
+            'location_weight' => $validated['location_weight'],
+            'time_weight' => $validated['time_weight'],
+            'is_active' => $request->boolean('is_active'),
+        ]);
+
+        return redirect()
+            ->route('admin.master.formula.index')
+            ->with('status', 'Formula berhasil diperbarui.');
     }
 
     private function masterView(string $section): View
@@ -205,6 +284,16 @@ class AdminBusinessIdeaController extends Controller
         return redirect()
             ->route('admin.business-ideas.index', ['page' => $request->integer('page', 1)])
             ->with('status', 'Data usaha berhasil dihapus.');
+    }
+
+    public function destroyAll(Request $request): RedirectResponse
+    {
+        $deletedCount = MicroBusinessIdea::query()->count();
+        MicroBusinessIdea::query()->delete();
+
+        return redirect()
+            ->route('admin.business-ideas.index')
+            ->with('status', "Semua data usaha berhasil dihapus. {$deletedCount} data terhapus.");
     }
 
     private function locationCodes(string $location): array

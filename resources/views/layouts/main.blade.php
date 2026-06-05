@@ -319,6 +319,10 @@
                     <span class="sidebar-icon"><i class="bi bi-clock"></i></span>
                     <span class="sidebar-text">Waktu Luang</span>
                 </a>
+                <a class="sidebar-link {{ request()->routeIs('admin.master.formula.*') ? 'active' : '' }}" href="{{ route('admin.master.formula.index') }}" title="Formula">
+                    <span class="sidebar-icon"><i class="bi bi-sliders"></i></span>
+                    <span class="sidebar-text">Formula</span>
+                </a>
                 <a class="sidebar-link {{ request()->routeIs('admin.business-ideas.*') ? 'active' : '' }}" href="{{ route('admin.business-ideas.index') }}" title="Data Usaha">
                     <span class="sidebar-icon"><i class="bi bi-database-check"></i></span>
                     <span class="sidebar-text">Data Usaha</span>
@@ -358,6 +362,7 @@
                     <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('rekomendasi.form') }}">Rekomendasi</a>
                     <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.master.capitals.index') }}">Modal</a>
                     <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.master.categories.index') }}">Kategori</a>
+                    <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.master.formula.index') }}">Formula</a>
                     <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.business-ideas.index') }}">Data</a>
                 </div>
             </div>

@@ -119,7 +119,19 @@
                     <i class="bi bi-list-check text-primary me-1"></i>
                     <strong>Daftar Usaha</strong>
                 </span>
-                <span class="text-muted small">{{ $ideas->total() }} data</span>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="text-muted small">{{ $ideas->total() }} data</span>
+                    @if ($ideas->total() > 0)
+                        <form method="POST" action="{{ route('admin.business-ideas.destroy-all') }}" onsubmit="return confirm('Hapus semua data usaha? Aksi ini tidak bisa dibatalkan.')" class="mb-0">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-outline-danger" type="submit">
+                                <i class="bi bi-trash3 me-1"></i>
+                                Delete All
+                            </button>
+                        </form>
+                    @endif
+                </div>
             </div>
             <div class="card-body">
                 @if ($ideas->isEmpty())

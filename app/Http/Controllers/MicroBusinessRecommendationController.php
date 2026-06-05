@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BusinessMasterOption;
 use App\Models\Criterion;
+use App\Models\FormulaSetting;
 use App\Models\MicroBusinessIdea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -16,11 +17,13 @@ class MicroBusinessRecommendationController extends Controller
     {
         [$locations, $times] = $this->masterOptions();
         $criteria = $this->activeCriteria();
+        $formula = FormulaSetting::current();
 
         return view('rekomendasi.form', [
             'locations' => $locations,
             'times' => $times,
             'criteria' => $criteria,
+            'formula' => $formula,
             'input' => [
                 'capital' => old('capital'),
                 'location' => old('location'),
@@ -34,6 +37,7 @@ class MicroBusinessRecommendationController extends Controller
     {
         [$locations, $times] = $this->masterOptions();
         $criteria = $this->activeCriteria();
+        $formula = FormulaSetting::current();
 
         $validated = $request->validate([
             'capital' => ['required', 'integer', 'min:0'],
@@ -53,9 +57,11 @@ class MicroBusinessRecommendationController extends Controller
         $selectedLocationLabel = (string) ($selectedLocation?->label ?? $location);
         $selectedTimeLabel = (string) ($selectedTime?->label ?? $time);
 
-        $weights = $criteria->mapWithKeys(fn (Criterion $criterion) => [
-            $criterion->code => (float) $criterion->weight,
-        ])->all();
+        $weights = [
+            'modal' => (float) $formula->modal_weight,
+            'lokasi' => (float) $formula->location_weight,
+            'waktu' => (float) $formula->time_weight,
+        ];
 
         $weightTotal = array_sum($weights);
 
@@ -64,6 +70,12 @@ class MicroBusinessRecommendationController extends Controller
                 fn (float $weight): float => $weight / $weightTotal,
                 $weights
             );
+        } else {
+            $weights = [
+                'modal' => 0.45,
+                'lokasi' => 0.30,
+                'waktu' => 0.25,
+            ];
         }
 
         $ideas = MicroBusinessIdea::query()
@@ -105,6 +117,7 @@ class MicroBusinessRecommendationController extends Controller
             'locations' => $locations,
             'times' => $times,
             'criteria' => $criteria,
+            'formula' => $formula,
             'input' => [
                 'capital' => $capital,
                 'location' => $location,

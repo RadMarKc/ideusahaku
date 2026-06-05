@@ -21,11 +21,15 @@
                 </div>
 
                 <div class="d-flex flex-wrap gap-2">
-                    @foreach ($criteria as $criterion)
-                        <span class="badge rounded-pill text-bg-light border px-3 py-2">
-                            {{ $criterion->name }}: {{ number_format((float) $criterion->weight, 2) }}
-                        </span>
-                    @endforeach
+                    <span class="badge rounded-pill text-bg-light border px-3 py-2">
+                        Modal: {{ number_format((float) $formula->modal_weight, 2) }}
+                    </span>
+                    <span class="badge rounded-pill text-bg-light border px-3 py-2">
+                        Lokasi: {{ number_format((float) $formula->location_weight, 2) }}
+                    </span>
+                    <span class="badge rounded-pill text-bg-light border px-3 py-2">
+                        Waktu: {{ number_format((float) $formula->time_weight, 2) }}
+                    </span>
                 </div>
             </div>
 
@@ -140,8 +144,8 @@
                             <code>waktu</code> yang tersimpan pada tabel <code>micro_business_idea_scores</code>.
                         </p>
                         <p class="text-muted small mb-0">
-                            Bobot mengikuti tabel <code>criteria</code>, jadi jika admin mengubah bobot di database,
-                            hasil rekomendasi ikut menyesuaikan.
+                            Bobot formula diambil dari tabel <code>formula_settings</code>, jadi bisa diubah kapan saja
+                            tanpa mengubah kode.
                         </p>
                     </div>
                 </div>
