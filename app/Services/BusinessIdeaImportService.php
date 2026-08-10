@@ -99,8 +99,8 @@ class BusinessIdeaImportService
     }
 
     /**
-     * @param array<string,Criterion> $criteria
-     * @param array<string,int> $scores
+     * @param  array<string,Criterion>  $criteria
+     * @param  array<string,int>  $scores
      */
     private function syncScores(MicroBusinessIdea $idea, array $criteria, array $scores): void
     {
@@ -154,6 +154,7 @@ class BusinessIdeaImportService
 
             if ($header === null) {
                 $header = $this->normalizeHeader($row);
+
                 continue;
             }
 
@@ -172,7 +173,7 @@ class BusinessIdeaImportService
             throw new RuntimeException('Ekstensi PHP ZipArchive diperlukan untuk membaca file .xlsx.');
         }
 
-        $zip = new ZipArchive();
+        $zip = new ZipArchive;
 
         if ($zip->open($path) !== true) {
             throw new RuntimeException('File Excel tidak dapat dibuka.');
@@ -284,7 +285,7 @@ class BusinessIdeaImportService
     }
 
     /**
-     * @param array<int,string> $row
+     * @param  array<int,string>  $row
      * @return array<int,string>
      */
     private function normalizeHeader(array $row): array
@@ -297,8 +298,8 @@ class BusinessIdeaImportService
     }
 
     /**
-     * @param array<int,string> $header
-     * @param array<int,string> $row
+     * @param  array<int,string>  $header
+     * @param  array<int,string>  $row
      * @return array<string,string>
      */
     private function combineRow(array $header, array $row): array
@@ -315,7 +316,7 @@ class BusinessIdeaImportService
     }
 
     /**
-     * @param array<string,string> $assoc
+     * @param  array<string,string>  $assoc
      * @return array<string,mixed>|null
      */
     private function mapRowToIdea(array $assoc): ?array
@@ -504,21 +505,21 @@ class BusinessIdeaImportService
     private function buildDescription(int $modalMin, int $modalEstimate, string $category, string $time): string
     {
         $parts = [
-            'Modal minimal: Rp' . number_format($modalMin, 0, ',', '.'),
+            'Modal minimal: Rp'.number_format($modalMin, 0, ',', '.'),
         ];
 
         if ($modalEstimate > 0 && $modalEstimate !== $modalMin) {
-            $parts[] = 'Estimasi modal: Rp' . number_format($modalEstimate, 0, ',', '.');
+            $parts[] = 'Estimasi modal: Rp'.number_format($modalEstimate, 0, ',', '.');
         }
 
         if (trim($category) !== '') {
-            $parts[] = 'Kategori: ' . trim($category);
+            $parts[] = 'Kategori: '.trim($category);
         }
 
         if (trim($time) !== '') {
-            $parts[] = 'Waktu: ' . trim($time);
+            $parts[] = 'Waktu: '.trim($time);
         }
 
-        return implode('. ', $parts) . '.';
+        return implode('. ', $parts).'.';
     }
 }

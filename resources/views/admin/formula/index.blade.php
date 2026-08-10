@@ -6,7 +6,7 @@
     <div class="container">
         <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center mb-4">
             <div>
-                <h1 class="h3 mb-1"><i class="bi bi-sliders text-primary me-2"></i>Formula Rekomendasi</h1>
+                <h1 class="h3 mb-1 fw-bold"><i class="bi bi-sliders text-primary me-2"></i>Formula Rekomendasi</h1>
                 <p class="text-muted mb-0">Bobot ini dipakai langsung oleh perhitungan Weighted Product pada halaman rekomendasi.</p>
             </div>
             <a class="btn btn-primary" href="{{ route('rekomendasi.form') }}">
@@ -14,10 +14,6 @@
                 Lihat Rekomendasi
             </a>
         </div>
-
-        @if (session('status'))
-            <div class="alert alert-success">{{ session('status') }}</div>
-        @endif
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -31,11 +27,14 @@
 
         @php
             $weightTotal = (float) $formula->modal_weight + (float) $formula->location_weight + (float) $formula->time_weight;
+            $modalPct = $weightTotal > 0 ? ((float) $formula->modal_weight / $weightTotal) * 100 : 0;
+            $locationPct = $weightTotal > 0 ? ((float) $formula->location_weight / $weightTotal) * 100 : 0;
+            $timePct = $weightTotal > 0 ? ((float) $formula->time_weight / $weightTotal) * 100 : 0;
         @endphp
 
         <div class="row g-4">
             <div class="col-lg-7">
-                <div class="card shadow-sm">
+                <div class="card border-0 shadow-sm">
                     <div class="card-header bg-white">
                         <strong>Ubah Bobot Formula</strong>
                     </div>
@@ -46,7 +45,7 @@
 
                             <div class="row g-3">
                                 <div class="col-md-4">
-                                    <label class="form-label" for="modal_weight">Modal</label>
+                                    <label class="form-label fw-semibold" for="modal_weight">Modal</label>
                                     <input
                                         id="modal_weight"
                                         type="number"
@@ -60,7 +59,7 @@
                                     >
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="form-label" for="location_weight">Lokasi</label>
+                                    <label class="form-label fw-semibold" for="location_weight">Lokasi</label>
                                     <input
                                         id="location_weight"
                                         type="number"
@@ -74,7 +73,7 @@
                                     >
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="form-label" for="time_weight">Waktu</label>
+                                    <label class="form-label fw-semibold" for="time_weight">Waktu</label>
                                     <input
                                         id="time_weight"
                                         type="number"
@@ -105,22 +104,37 @@
             </div>
 
             <div class="col-lg-5">
-                <div class="card shadow-sm h-100">
+                <div class="card border-0 shadow-sm h-100">
                     <div class="card-header bg-white">
-                        <strong>Ringkasan</strong>
+                        <strong>Distribusi Bobot</strong>
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <div class="text-muted small">Modal</div>
-                            <div class="fw-semibold">{{ number_format((float) $formula->modal_weight, 2) }}</div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted small">Modal</span>
+                                <span class="fw-semibold">{{ number_format((float) $formula->modal_weight, 2) }} ({{ number_format($modalPct, 1) }}%)</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar" style="width: {{ $modalPct }}%"></div>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <div class="text-muted small">Lokasi</div>
-                            <div class="fw-semibold">{{ number_format((float) $formula->location_weight, 2) }}</div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted small">Lokasi</span>
+                                <span class="fw-semibold">{{ number_format((float) $formula->location_weight, 2) }} ({{ number_format($locationPct, 1) }}%)</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar" style="width: {{ $locationPct }}%"></div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <div class="text-muted small">Waktu</div>
-                            <div class="fw-semibold">{{ number_format((float) $formula->time_weight, 2) }}</div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="text-muted small">Waktu</span>
+                                <span class="fw-semibold">{{ number_format((float) $formula->time_weight, 2) }} ({{ number_format($timePct, 1) }}%)</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar" style="width: {{ $timePct }}%"></div>
+                            </div>
                         </div>
                         <div class="alert alert-info mb-0">
                             Total bobot saat ini: <strong>{{ number_format($weightTotal, 2) }}</strong>

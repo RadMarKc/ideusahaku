@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\RecommendationDataService;
 use Illuminate\Database\Eloquent\Model;
 
 class FormulaSetting extends Model
@@ -28,5 +29,11 @@ class FormulaSetting extends Model
             'time_weight' => 0.25,
             'is_active' => true,
         ]);
+    }
+
+    protected static function booted(): void
+    {
+        static::saved(fn () => app(RecommendationDataService::class)->flush());
+        static::deleted(fn () => app(RecommendationDataService::class)->flush());
     }
 }

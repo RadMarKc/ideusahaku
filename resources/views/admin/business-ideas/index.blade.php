@@ -6,7 +6,7 @@
     <div class="container">
         <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center mb-4">
             <div>
-                <h1 class="h3 mb-1"><i class="bi bi-database-check text-primary me-2"></i>Data Usaha</h1>
+                <h1 class="h3 mb-1 fw-bold"><i class="bi bi-database-check text-primary me-2"></i>Data Usaha</h1>
                 <p class="text-muted mb-0">Upload data CSV/Excel sesuai format dataset usaha, lalu kelola data dari dashboard.</p>
             </div>
             <a class="btn btn-primary" href="{{ route('rekomendasi.form') }}">
@@ -16,7 +16,7 @@
         </div>
 
         @if (session('status'))
-            <div class="alert alert-success">{{ session('status') }}</div>
+            <div class="alert alert-success"><i class="bi bi-check-circle-fill me-1"></i>{{ session('status') }}</div>
         @endif
 
         @if ($errors->any())

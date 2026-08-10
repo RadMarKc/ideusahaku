@@ -55,12 +55,15 @@ class AdminBusinessIdeaTest extends TestCase
             'capital_min' => 250000,
             'location_label' => 'Online',
             'time_label' => 'Fleksibel',
-            'capital_score' => 4,
-            'location_score' => 4,
-            'time_score' => 4,
-            'total_score' => 12,
             'is_active' => true,
         ]);
+
+        $idea = MicroBusinessIdea::query()->where('slug', 'reseller-baju')->firstOrFail();
+
+        $this->assertSame(4, $idea->capital_score);
+        $this->assertSame(4, $idea->location_score);
+        $this->assertSame(4, $idea->time_score);
+        $this->assertSame(12, $idea->total_score);
     }
 
     public function test_admin_can_update_manual_description(): void

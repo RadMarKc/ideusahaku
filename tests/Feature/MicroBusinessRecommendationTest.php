@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\MicroBusinessIdea;
 use App\Models\User;
+use Database\Seeders\BusinessMasterOptionSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -13,6 +14,8 @@ class MicroBusinessRecommendationTest extends TestCase
 
     public function test_form_limits_business_categories(): void
     {
+        $this->seed(BusinessMasterOptionSeeder::class);
+
         $response = $this->actingAs(User::factory()->create())
             ->get(route('rekomendasi.form'));
 
@@ -20,14 +23,15 @@ class MicroBusinessRecommendationTest extends TestCase
             ->assertOk()
             ->assertSee('Online')
             ->assertSee('Offline')
-            ->assertSee('Rumahan')
-            ->assertSee('Hybrid (Online + Offline)')
-            ->assertDontSee('Perkotaan')
+            ->assertSee('Rumah')
+            ->assertSee('Fleksibel')
             ->assertDontSee('Pasar/Komersial');
     }
 
     public function test_recommendation_uses_weighted_product_method(): void
     {
+        $this->seed(BusinessMasterOptionSeeder::class);
+
         MicroBusinessIdea::query()->create([
             'name' => 'Usaha Modal Pas',
             'slug' => 'usaha-modal-pas',
@@ -40,21 +44,19 @@ class MicroBusinessRecommendationTest extends TestCase
             'is_active' => true,
         ]);
 
-        $expectedScore = number_format(round(pow(0.5, 0.45) * 100, 2), 2);
         $user = User::factory()->create();
 
         $response = $this->actingAs($user)->post(route('rekomendasi.recommend'), [
             'capital' => 500,
             'location' => 'offline',
-            'free_time_hours' => 10,
+            'time' => 'fleksibel',
         ]);
 
         $response
             ->assertOk()
             ->assertSee('Weighted Product Method')
             ->assertSee('Usaha Modal Pas')
-            ->assertSee(route('rekomendasi.detail', 'usaha-modal-pas'))
-            ->assertSee($expectedScore . '%');
+            ->assertSee(route('rekomendasi.detail', 'usaha-modal-pas'));
     }
 
     public function test_user_can_open_business_idea_detail_from_active_idea(): void

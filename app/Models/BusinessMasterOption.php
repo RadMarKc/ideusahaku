@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Services\RecommendationDataService;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class BusinessMasterOption extends Model
 {
     public const TYPE_CAPITAL = 'capital';
+
     public const TYPE_LOCATION = 'location';
+
     public const TYPE_TIME = 'time';
 
     protected $fillable = [
@@ -38,5 +41,16 @@ class BusinessMasterOption extends Model
     public function scopeOfType(Builder $query, string $type): Builder
     {
         return $query->where('type', $type);
+    }
+
+    protected static function booted(): void
+    {
+        static::saved(fn () => self::flushRecommendationCache());
+        static::deleted(fn () => self::flushRecommendationCache());
+    }
+
+    private static function flushRecommendationCache(): void
+    {
+        app(RecommendationDataService::class)->flush();
     }
 }

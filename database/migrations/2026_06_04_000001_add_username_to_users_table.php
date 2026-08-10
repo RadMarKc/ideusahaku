@@ -28,7 +28,7 @@ return new class extends Migration
 
                 DB::table('users')
                     ->where('id', $user->id)
-                    ->update(['username' => $baseUsername !== '' ? $baseUsername . '_' . $user->id : 'user_' . $user->id]);
+                    ->update(['username' => $baseUsername !== '' ? $baseUsername.'_'.$user->id : 'user_'.$user->id]);
             });
     }
 

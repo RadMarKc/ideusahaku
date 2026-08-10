@@ -72,8 +72,8 @@ class MicroBusinessIdeaSeeder extends Seeder
     }
 
     /**
-     * @param array<string,Criterion> $criteria
-     * @param array<string,int> $scores
+     * @param  array<string,Criterion>  $criteria
+     * @param  array<string,int>  $scores
      */
     private function syncScores(MicroBusinessIdea $idea, array $criteria, array $scores): void
     {
@@ -98,7 +98,7 @@ class MicroBusinessIdeaSeeder extends Seeder
      */
     private function loadIdeasFromCsv(string $path): array
     {
-        if (!File::exists($path)) {
+        if (! File::exists($path)) {
             throw new \RuntimeException("CSV seeder tidak ditemukan: {$path}");
         }
 
@@ -109,7 +109,7 @@ class MicroBusinessIdeaSeeder extends Seeder
         $ideas = [];
 
         foreach ($file as $row) {
-            if (!is_array($row)) {
+            if (! is_array($row)) {
                 continue;
             }
 
@@ -128,6 +128,7 @@ class MicroBusinessIdeaSeeder extends Seeder
                 if (isset($header[0])) {
                     $header[0] = ltrim($header[0], "\xEF\xBB\xBF");
                 }
+
                 continue;
             }
 
@@ -327,23 +328,23 @@ class MicroBusinessIdeaSeeder extends Seeder
         if ($modalMin <= 0) {
             $parts[] = 'Modal minimal: Rp0';
         } else {
-            $parts[] = 'Modal minimal: Rp' . number_format($modalMin, 0, ',', '.');
+            $parts[] = 'Modal minimal: Rp'.number_format($modalMin, 0, ',', '.');
         }
 
         if ($modalEstimate > 0 && $modalEstimate !== $modalMin) {
-            $parts[] = 'Estimasi modal: Rp' . number_format($modalEstimate, 0, ',', '.');
+            $parts[] = 'Estimasi modal: Rp'.number_format($modalEstimate, 0, ',', '.');
         }
 
         $lokasi = trim($lokasi);
         if ($lokasi !== '') {
-            $parts[] = 'Lokasi: ' . $lokasi;
+            $parts[] = 'Lokasi: '.$lokasi;
         }
 
         $waktu = trim($waktu);
         if ($waktu !== '') {
-            $parts[] = 'Waktu: ' . $waktu;
+            $parts[] = 'Waktu: '.$waktu;
         }
 
-        return implode('. ', $parts) . '.';
+        return implode('. ', $parts).'.';
     }
 }

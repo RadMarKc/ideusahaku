@@ -2,22 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BusinessMasterOption;
-use App\Models\Criterion;
-use App\Models\FormulaSetting;
 use App\Models\MicroBusinessIdea;
+use App\Services\RecommendationDataService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 class MicroBusinessRecommendationController extends Controller
 {
+    public function __construct(private readonly RecommendationDataService $data) {}
+
+    public function dashboard(): View
+    {
+        $criteria = $this->data->criteria();
+        $formula = $this->data->formula();
+
+        return view('dashboard', [
+            'ideaCount' => MicroBusinessIdea::query()->where('is_active', true)->count(),
+            'locationCount' => $this->data->locations()->count(),
+            'timeCount' => $this->data->times()->count(),
+            'criteriaCount' => $criteria->count(),
+            'criteria' => $criteria,
+            'formula' => $formula,
+            'locations' => $this->data->locations(),
+            'times' => $this->data->times(),
+        ]);
+    }
+
     public function form()
     {
-        [$locations, $times] = $this->masterOptions();
-        $criteria = $this->activeCriteria();
-        $formula = FormulaSetting::current();
+        $locations = $this->data->locations();
+        $times = $this->data->times();
+        $criteria = $this->data->criteria();
+        $formula = $this->data->formula();
 
         return view('rekomendasi.form', [
             'locations' => $locations,
@@ -35,9 +52,10 @@ class MicroBusinessRecommendationController extends Controller
 
     public function recommend(Request $request)
     {
-        [$locations, $times] = $this->masterOptions();
-        $criteria = $this->activeCriteria();
-        $formula = FormulaSetting::current();
+        $locations = $this->data->locations();
+        $times = $this->data->times();
+        $criteria = $this->data->criteria();
+        $formula = $this->data->formula();
 
         $validated = $request->validate([
             'capital' => ['required', 'integer', 'min:0'],
@@ -79,9 +97,24 @@ class MicroBusinessRecommendationController extends Controller
         }
 
         $ideas = MicroBusinessIdea::query()
-            ->with('scores.criterion')
+            ->with([
+                'scores' => fn ($query) => $query->select('id', 'micro_business_idea_id', 'criterion_id', 'score'),
+                'scores.criterion' => fn ($query) => $query->select('id', 'code'),
+            ])
             ->where('is_active', true)
-            ->get();
+            ->get([
+                'id',
+                'name',
+                'slug',
+                'description',
+                'capital_min',
+                'capital_estimate',
+                'free_time_min_hours',
+                'free_time_max_hours',
+                'suitable_locations',
+                'location_label',
+                'time_label',
+            ]);
 
         $maxScores = [
             'modal' => max(1, (int) $ideas->max(fn (MicroBusinessIdea $idea) => $idea->capital_score)),
@@ -132,14 +165,15 @@ class MicroBusinessRecommendationController extends Controller
     public function show(MicroBusinessIdea $businessIdea): View
     {
         abort_unless($businessIdea->is_active, 404);
-        $businessIdea->loadMissing('scores.criterion');
-
-        [$locations] = $this->masterOptions();
+        $businessIdea->loadMissing([
+            'scores' => fn ($query) => $query->select('id', 'micro_business_idea_id', 'criterion_id', 'score'),
+            'scores.criterion' => fn ($query) => $query->select('id', 'code'),
+        ]);
 
         return view('rekomendasi.detail', [
             'idea' => $businessIdea,
-            'locations' => $locations,
-            'criteria' => $this->activeCriteria(),
+            'locations' => $this->data->locations(),
+            'criteria' => $this->data->criteria(),
         ]);
     }
 
@@ -190,38 +224,5 @@ class MicroBusinessRecommendationController extends Controller
     private function isFlexible(string $label): bool
     {
         return in_array(mb_strtolower(trim($label)), ['fleksibel', 'hybrid'], true);
-    }
-
-    /**
-     * @return array{0:Collection<string,BusinessMasterOption>,1:Collection<string,BusinessMasterOption>}
-     */
-    private function masterOptions(): array
-    {
-        $locations = BusinessMasterOption::query()
-            ->active()
-            ->ofType(BusinessMasterOption::TYPE_LOCATION)
-            ->orderBy('sort_order')
-            ->get()
-            ->keyBy('code');
-
-        $times = BusinessMasterOption::query()
-            ->active()
-            ->ofType(BusinessMasterOption::TYPE_TIME)
-            ->orderBy('sort_order')
-            ->get()
-            ->keyBy('code');
-
-        return [$locations, $times];
-    }
-
-    /**
-     * @return Collection<int,Criterion>
-     */
-    private function activeCriteria(): Collection
-    {
-        return Criterion::query()
-            ->where('is_active', true)
-            ->orderBy('sort_order')
-            ->get();
     }
 }

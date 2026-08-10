@@ -7,20 +7,26 @@ use App\Models\Criterion;
 use App\Models\FormulaSetting;
 use App\Models\MicroBusinessIdea;
 use App\Services\BusinessIdeaImportService;
+use App\Services\RecommendationDataService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
-use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AdminBusinessIdeaController extends Controller
 {
+    public function __construct(private readonly RecommendationDataService $data) {}
+
     public function index(): View
     {
         return view('admin.business-ideas.index', [
             'ideas' => MicroBusinessIdea::query()
-                ->with('scores.criterion')
+                ->with([
+                    'scores' => fn ($query) => $query->select('id', 'micro_business_idea_id', 'criterion_id', 'score'),
+                    'scores.criterion' => fn ($query) => $query->select('id', 'code'),
+                ])
                 ->orderBy('name')
                 ->paginate(15),
         ]);
@@ -159,19 +165,12 @@ class AdminBusinessIdeaController extends Controller
             ->active()
             ->ofType(BusinessMasterOption::TYPE_CAPITAL)
             ->orderBy('sort_order')
+            ->orderBy('id')
             ->get();
 
-        $locations = BusinessMasterOption::query()
-            ->active()
-            ->ofType(BusinessMasterOption::TYPE_LOCATION)
-            ->orderBy('sort_order')
-            ->get();
+        $locations = $this->data->locations()->values();
 
-        $times = BusinessMasterOption::query()
-            ->active()
-            ->ofType(BusinessMasterOption::TYPE_TIME)
-            ->orderBy('sort_order')
-            ->get();
+        $times = $this->data->times()->values();
 
         return view('admin.categories.index', [
             'capitals' => $capitals,
@@ -390,7 +389,7 @@ class AdminBusinessIdeaController extends Controller
     }
 
     /**
-     * @param array<string,int> $scores
+     * @param  array<string,int>  $scores
      */
     private function syncScores(MicroBusinessIdea $idea, array $scores): void
     {

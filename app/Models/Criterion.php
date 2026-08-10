@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\RecommendationDataService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -25,5 +26,11 @@ class Criterion extends Model
     public function ideaScores(): HasMany
     {
         return $this->hasMany(MicroBusinessIdeaScore::class);
+    }
+
+    protected static function booted(): void
+    {
+        static::saved(fn () => app(RecommendationDataService::class)->flush());
+        static::deleted(fn () => app(RecommendationDataService::class)->flush());
     }
 }
