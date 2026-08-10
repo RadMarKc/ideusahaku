@@ -7,7 +7,7 @@
         <div class="app-hero rounded-4 p-4 p-md-5 mb-4">
             <div class="d-flex align-items-start gap-3">
                 <div class="app-hero-icon">
-                    <i class="bi bi-stars fs-3"></i>
+                    <i class="bi bi-question-lg fs-3"></i>
                 </div>
                 <div>
                     <p class="text-uppercase small mb-2 opacity-75">Ringkasan Sistem</p>

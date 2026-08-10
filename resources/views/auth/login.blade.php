@@ -6,7 +6,7 @@
     <div class="auth-wrap d-flex">
         <div class="auth-brand-panel d-none d-lg-flex flex-column justify-content-between p-5 w-50">
             <div class="d-flex align-items-center gap-3">
-                <span class="app-hero-icon"><i class="bi bi-stars fs-3"></i></span>
+                <span class="app-hero-icon"><i class="bi bi-question-lg fs-3"></i></span>
                 <div>
                     <div class="h5 mb-0 fw-bold">IdeUsahaKu</div>
                     <small class="opacity-75">Rekomendasi Usaha Mikro</small>
@@ -39,7 +39,7 @@
         <div class="flex-grow-1 d-flex align-items-center justify-content-center p-4">
             <div class="w-100" style="max-width: 420px;">
                 <div class="text-center mb-4">
-                    <span class="brand-mark mx-auto mb-3"><i class="bi bi-stars fs-3 text-white"></i></span>
+                    <span class="brand-mark mx-auto mb-3"><i class="bi bi-question-lg fs-3 text-white"></i></span>
                     <h1 class="h3 fw-bold mb-1">Selamat Datang</h1>
                     <p class="text-muted mb-0">Masuk untuk mulai menggunakan aplikasi.</p>
                 </div>

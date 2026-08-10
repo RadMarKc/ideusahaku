@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'IdeUsahaKu')</title>
 
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -46,15 +47,26 @@
 
         .brand-mark {
             align-items: center;
-            background: linear-gradient(135deg, #6366f1, #0ea5e9);
-            border-radius: 1rem;
-            box-shadow: 0 10px 26px rgba(79, 70, 229, .35);
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #0ea5e9 100%);
+            border: 1px solid rgba(255, 255, 255, .35);
+            border-radius: 1.1rem;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, .12), 0 12px 30px rgba(79, 70, 229, .4);
             display: inline-flex;
             flex: 0 0 2.6rem;
             height: 2.6rem;
             justify-content: center;
+            position: relative;
             width: 2.6rem;
         }
+        .brand-mark::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, .5), transparent 45%);
+            pointer-events: none;
+        }
+        .brand-mark i { position: relative; z-index: 1; text-shadow: 0 2px 6px rgba(15, 23, 42, .25); }
 
         .app-page { padding: 1.75rem 1rem; animation: fadeUp .35s ease both; }
 
@@ -148,7 +160,7 @@
 <nav class="public-navbar sticky-top">
     <div class="container d-flex justify-content-between align-items-center py-2">
         <a class="text-decoration-none d-flex align-items-center gap-2 text-reset" href="{{ route('home') }}">
-            <span class="brand-mark"><i class="bi bi-stars fs-5 text-white"></i></span>
+            <span class="brand-mark"><i class="bi bi-question-lg fs-5 text-white"></i></span>
             <span class="fw-bold fs-5">IdeUsahaKu</span>
         </a>
         <div class="d-flex align-items-center gap-2">
