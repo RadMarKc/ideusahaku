@@ -26,7 +26,7 @@ class AccessSeparationTest extends TestCase
             'capital' => 1000000,
             'location' => 'offline',
             'time' => 'rendah',
-        ])->assertOk();
+        ])->assertRedirect(route('rekomendasi.form', ['page' => 1]));
     }
 
     public function test_guest_can_access_public_detail_page(): void

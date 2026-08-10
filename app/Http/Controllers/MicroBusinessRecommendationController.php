@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\MicroBusinessIdea;
 use App\Services\RecommendationDataService;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
@@ -29,24 +31,45 @@ class MicroBusinessRecommendationController extends Controller
         ]);
     }
 
-    public function form()
+    public function form(Request $request)
     {
         $locations = $this->data->locations();
         $times = $this->data->times();
         $criteria = $this->data->criteria();
         $formula = $this->data->formula();
 
+        $input = session('rekomendasi_input', [
+            'capital' => null,
+            'location' => null,
+            'time' => null,
+        ]);
+
+        $recommendations = null;
+        $selectedLocation = null;
+        $selectedTime = null;
+
+        if (session()->has('rekomendasi_results')) {
+            $results = session('rekomendasi_results');
+            $page = max(1, (int) $request->integer('page', 1));
+            $recommendations = $this->paginateResults($results, $page);
+
+            if (is_array($input) && isset($input['location'])) {
+                $selectedLocation = $locations->get($input['location']);
+            }
+            if (is_array($input) && isset($input['time'])) {
+                $selectedTime = $times->get($input['time']);
+            }
+        }
+
         return view('rekomendasi.form', [
             'locations' => $locations,
             'times' => $times,
             'criteria' => $criteria,
             'formula' => $formula,
-            'input' => [
-                'capital' => old('capital'),
-                'location' => old('location'),
-                'time' => old('time'),
-            ],
-            'recommendations' => null,
+            'input' => $input,
+            'selectedLocation' => $selectedLocation,
+            'selectedTime' => $selectedTime,
+            'recommendations' => $recommendations,
         ]);
     }
 
@@ -146,20 +169,14 @@ class MicroBusinessRecommendationController extends Controller
             ];
         })->sortByDesc('score')->sortByDesc(fn ($row) => $row['idea']->total_score)->values();
 
-        return view('rekomendasi.form', [
-            'locations' => $locations,
-            'times' => $times,
-            'criteria' => $criteria,
-            'formula' => $formula,
-            'input' => [
-                'capital' => $capital,
-                'location' => $location,
-                'time' => $time,
-            ],
-            'selectedLocation' => $selectedLocation,
-            'selectedTime' => $selectedTime,
-            'recommendations' => $scored->take(10),
+        $request->session()->put('rekomendasi_input', [
+            'capital' => $capital,
+            'location' => $location,
+            'time' => $time,
         ]);
+        $request->session()->put('rekomendasi_results', $scored);
+
+        return redirect()->route('rekomendasi.form', ['page' => 1]);
     }
 
     public function show(MicroBusinessIdea $businessIdea): View
@@ -181,6 +198,17 @@ class MicroBusinessRecommendationController extends Controller
      * Weighted Product Method: S_i = product(x_ij ^ w_j).
      * Nilai kriteria memakai skala 0..1, lalu dikonversi menjadi persen pada output.
      */
+    private function paginateResults(Collection $results, int $page, int $perPage = 5): LengthAwarePaginator
+    {
+        return new LengthAwarePaginator(
+            $results->forPage($page, $perPage)->values(),
+            $results->count(),
+            $perPage,
+            $page,
+            ['path' => route('rekomendasi.form')]
+        );
+    }
+
     private function weightedProductScore(array $criteria, array $weights): float
     {
         $score = 1.0;

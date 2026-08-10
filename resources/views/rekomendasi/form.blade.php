@@ -255,11 +255,61 @@
                                                             </div>
                                                         @endforeach
                                                     </div>
+
+                                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                                        <button
+                                                            class="btn btn-sm btn-outline-primary"
+                                                            type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#detail-{{ $idea->id }}"
+                                                            aria-expanded="false"
+                                                            aria-controls="detail-{{ $idea->id }}"
+                                                        >
+                                                            <i class="bi bi-plus-circle me-1"></i>Lihat Selengkapnya
+                                                        </button>
+                                                        <a class="btn btn-sm btn-outline-secondary" href="{{ route('rekomendasi.detail', $idea) }}">
+                                                            <i class="bi bi-box-arrow-up-right me-1"></i>Detail Halaman
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="collapse mt-3" id="detail-{{ $idea->id }}">
+                                                        <div class="rounded-3 border bg-light p-3 small">
+                                                            <div class="row g-3">
+                                                                <div class="col-md-6">
+                                                                    <div class="text-muted fw-semibold mb-1"><i class="bi bi-card-text me-1"></i>Deskripsi</div>
+                                                                    <div class="text-dark">{{ $idea->description ?: 'Belum ada deskripsi.' }}</div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="text-muted fw-semibold mb-1"><i class="bi bi-list-ul me-1"></i>Info Lengkap</div>
+                                                                    <dl class="mb-0 row row-cols-2 g-2">
+                                                                        <dt class="col-5 text-muted fw-normal mb-0">Estimasi Modal</dt>
+                                                                        <dd class="col-7 mb-0">Rp{{ number_format($idea->capital_estimate, 0, ',', '.') }}</dd>
+                                                                        <dt class="col-5 text-muted fw-normal mb-0">Modal Minimal</dt>
+                                                                        <dd class="col-7 mb-0">Rp{{ number_format($idea->capital_min, 0, ',', '.') }}</dd>
+                                                                        <dt class="col-5 text-muted fw-normal mb-0">Kategori</dt>
+                                                                        <dd class="col-7 mb-0">{{ $idea->location_label ?: ($locationSummary !== '' ? $locationSummary : '-') }}</dd>
+                                                                        <dt class="col-5 text-muted fw-normal mb-0">Waktu Luang</dt>
+                                                                        <dd class="col-7 mb-0">{{ $idea->time_label ?: '-' }}</dd>
+                                                                        <dt class="col-5 text-muted fw-normal mb-0">Jam/minggu</dt>
+                                                                        <dd class="col-7 mb-0">
+                                                                            {{ $idea->free_time_min_hours }}@if($idea->free_time_max_hours)-{{ $idea->free_time_max_hours }}@endif
+                                                                        </dd>
+                                                                        <dt class="col-5 text-muted fw-normal mb-0">Skor Akumulasi</dt>
+                                                                        <dd class="col-7 mb-0">{{ $idea->total_score }}</dd>
+                                                                    </dl>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
+                            </div>
+
+                            <div class="d-flex justify-content-center mt-4">
+                                {{ $recommendations->links('pagination::bootstrap-5') }}
                             </div>
                         @endif
                     </div>

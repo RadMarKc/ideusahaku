@@ -44,19 +44,59 @@ class MicroBusinessRecommendationTest extends TestCase
             'is_active' => true,
         ]);
 
-        $user = User::factory()->create();
-
-        $response = $this->actingAs($user)->post(route('rekomendasi.recommend'), [
+        $response = $this->post(route('rekomendasi.recommend'), [
             'capital' => 500,
             'location' => 'offline',
             'time' => 'fleksibel',
         ]);
 
         $response
+            ->assertRedirect(route('rekomendasi.form', ['page' => 1]));
+
+        $this->get(route('rekomendasi.form', ['page' => 1]))
             ->assertOk()
             ->assertSee('Weighted Product Method')
             ->assertSee('Usaha Modal Pas')
             ->assertSee(route('rekomendasi.detail', 'usaha-modal-pas'));
+    }
+
+    public function test_recommendation_results_are_paginated_five_per_page(): void
+    {
+        $this->seed(BusinessMasterOptionSeeder::class);
+
+        for ($i = 1; $i <= 12; $i++) {
+            MicroBusinessIdea::query()->create([
+                'name' => "Usaha Uji $i",
+                'slug' => "usaha-uji-$i",
+                'description' => "Deskripsi $i.",
+                'capital_min' => 1000,
+                'capital_max' => null,
+                'free_time_min_hours' => 10,
+                'free_time_max_hours' => null,
+                'suitable_locations' => ['offline'],
+                'location_label' => 'Offline',
+                'time_label' => 'Fleksibel',
+                'is_active' => true,
+            ]);
+        }
+
+        $this->post(route('rekomendasi.recommend'), [
+            'capital' => 500,
+            'location' => 'offline',
+            'time' => 'fleksibel',
+        ]);
+
+        $page1 = $this->get(route('rekomendasi.form', ['page' => 1]))->assertOk();
+
+        $count = preg_match_all('/data-bs-target="#detail-\d+"/', $page1->getContent());
+
+        $this->assertSame(5, $count);
+
+        $page2 = $this->get(route('rekomendasi.form', ['page' => 2]))->assertOk();
+
+        $countPage2 = preg_match_all('/data-bs-target="#detail-\d+"/', $page2->getContent());
+
+        $this->assertGreaterThan(0, $countPage2);
     }
 
     public function test_user_can_open_business_idea_detail_from_active_idea(): void
