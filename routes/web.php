@@ -5,38 +5,56 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MicroBusinessRecommendationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return auth()->check()
-        ? redirect()->route('dashboard')
-        : app(AuthController::class)->showLogin();
-})->name('login');
+/*
+|--------------------------------------------------------------------------
+| Publik - tidak perlu login
+|--------------------------------------------------------------------------
+*/
 
-Route::get('/login', fn () => redirect()->route('login'))->middleware('guest');
+Route::get('/', [MicroBusinessRecommendationController::class, 'form'])->name('home');
 
-Route::middleware('guest')->group(function () {
-    Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-});
+Route::get('/rekomendasi-usaha', [MicroBusinessRecommendationController::class, 'form'])->name('rekomendasi.form');
+Route::post('/rekomendasi-usaha', [MicroBusinessRecommendationController::class, 'recommend'])->name('rekomendasi.recommend');
+Route::get('/rekomendasi-usaha/{businessIdea:slug}', [MicroBusinessRecommendationController::class, 'show'])->name('rekomendasi.detail');
+
+/*
+|--------------------------------------------------------------------------
+| Autentikasi (admin)
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit')->middleware('guest');
 
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/dashboard', [MicroBusinessRecommendationController::class, 'dashboard'])->name('dashboard');
-    Route::get('/rekomendasi-usaha', [MicroBusinessRecommendationController::class, 'form'])->name('rekomendasi.form');
-    Route::post('/rekomendasi-usaha', [MicroBusinessRecommendationController::class, 'recommend'])->name('rekomendasi.recommend');
-    Route::get('/rekomendasi-usaha/{businessIdea:slug}', [MicroBusinessRecommendationController::class, 'show'])->name('rekomendasi.detail');
+});
 
-    Route::get('/admin/master/modal-usaha', [AdminBusinessIdeaController::class, 'capitalMaster'])->name('admin.master.capitals.index');
-    Route::get('/admin/master/kategori-usaha', [AdminBusinessIdeaController::class, 'categoryMaster'])->name('admin.master.categories.index');
-    Route::get('/admin/master/waktu-luang', [AdminBusinessIdeaController::class, 'timeMaster'])->name('admin.master.times.index');
-    Route::get('/admin/master/formula', [AdminBusinessIdeaController::class, 'formulaMaster'])->name('admin.master.formula.index');
-    Route::post('/admin/master/options', [AdminBusinessIdeaController::class, 'storeMasterOption'])->name('admin.master-options.store');
-    Route::put('/admin/master/options/{masterOption}', [AdminBusinessIdeaController::class, 'updateMasterOption'])->name('admin.master-options.update');
-    Route::delete('/admin/master/options/{masterOption}', [AdminBusinessIdeaController::class, 'destroyMasterOption'])->name('admin.master-options.destroy');
-    Route::put('/admin/master/formula/{formulaSetting}', [AdminBusinessIdeaController::class, 'updateFormulaSetting'])->name('admin.master.formula.update');
-    Route::get('/admin/kategori-usaha', [AdminBusinessIdeaController::class, 'categories'])->name('admin.business-categories.index');
-    Route::get('/admin/data-usaha', [AdminBusinessIdeaController::class, 'index'])->name('admin.business-ideas.index');
-    Route::get('/admin/data-usaha/template', [AdminBusinessIdeaController::class, 'template'])->name('admin.business-ideas.template');
-    Route::post('/admin/data-usaha/import', [AdminBusinessIdeaController::class, 'import'])->name('admin.business-ideas.import');
-    Route::delete('/admin/data-usaha', [AdminBusinessIdeaController::class, 'destroyAll'])->name('admin.business-ideas.destroy-all');
-    Route::put('/admin/data-usaha/{businessIdea}', [AdminBusinessIdeaController::class, 'update'])->name('admin.business-ideas.update');
-    Route::delete('/admin/data-usaha/{businessIdea}', [AdminBusinessIdeaController::class, 'destroy'])->name('admin.business-ideas.destroy');
+/*
+|--------------------------------------------------------------------------
+| Admin - wajib login
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [MicroBusinessRecommendationController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('/master/modal-usaha', [AdminBusinessIdeaController::class, 'capitalMaster'])->name('master.capitals.index');
+    Route::get('/master/kategori-usaha', [AdminBusinessIdeaController::class, 'categoryMaster'])->name('master.categories.index');
+    Route::get('/master/waktu-luang', [AdminBusinessIdeaController::class, 'timeMaster'])->name('master.times.index');
+    Route::get('/master/formula', [AdminBusinessIdeaController::class, 'formulaMaster'])->name('master.formula.index');
+
+    Route::post('/master/options', [AdminBusinessIdeaController::class, 'storeMasterOption'])->name('master-options.store');
+    Route::put('/master/options/{masterOption}', [AdminBusinessIdeaController::class, 'updateMasterOption'])->name('master-options.update');
+    Route::delete('/master/options/{masterOption}', [AdminBusinessIdeaController::class, 'destroyMasterOption'])->name('master-options.destroy');
+    Route::put('/master/formula/{formulaSetting}', [AdminBusinessIdeaController::class, 'updateFormulaSetting'])->name('master.formula.update');
+
+    Route::get('/kategori-usaha', [AdminBusinessIdeaController::class, 'categories'])->name('business-categories.index');
+
+    Route::get('/data-usaha', [AdminBusinessIdeaController::class, 'index'])->name('business-ideas.index');
+    Route::get('/data-usaha/template', [AdminBusinessIdeaController::class, 'template'])->name('business-ideas.template');
+    Route::post('/data-usaha/import', [AdminBusinessIdeaController::class, 'import'])->name('business-ideas.import');
+    Route::delete('/data-usaha', [AdminBusinessIdeaController::class, 'destroyAll'])->name('business-ideas.destroy-all');
+    Route::put('/data-usaha/{businessIdea}', [AdminBusinessIdeaController::class, 'update'])->name('business-ideas.update');
+    Route::delete('/data-usaha/{businessIdea}', [AdminBusinessIdeaController::class, 'destroy'])->name('business-ideas.destroy');
 });

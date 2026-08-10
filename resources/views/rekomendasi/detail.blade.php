@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.public')
 
 @section('title', $idea->name)
 

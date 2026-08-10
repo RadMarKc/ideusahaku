@@ -26,7 +26,7 @@ class AdminBusinessIdeaTest extends TestCase
             'is_active' => true,
         ]);
 
-        $this->actingAs(User::factory()->create())
+        $this->actingAs(User::factory()->admin()->create())
             ->get(route('admin.business-ideas.index'))
             ->assertOk()
             ->assertSee('Dashboard Data Usaha')
@@ -43,7 +43,7 @@ class AdminBusinessIdeaTest extends TestCase
 
         $file = UploadedFile::fake()->createWithContent('usaha.csv', $csv);
 
-        $this->actingAs(User::factory()->create())
+        $this->actingAs(User::factory()->admin()->create())
             ->post(route('admin.business-ideas.import'), [
                 'business_file' => $file,
             ])
@@ -80,7 +80,7 @@ class AdminBusinessIdeaTest extends TestCase
             'is_active' => true,
         ]);
 
-        $this->actingAs(User::factory()->create())
+        $this->actingAs(User::factory()->admin()->create())
             ->put(route('admin.business-ideas.update', $idea), [
                 'name' => 'Katering Harian',
                 'capital_estimate' => 500000,
@@ -123,7 +123,7 @@ class AdminBusinessIdeaTest extends TestCase
             'is_active' => true,
         ]);
 
-        $this->actingAs(User::factory()->create())
+        $this->actingAs(User::factory()->admin()->create())
             ->delete(route('admin.business-ideas.destroy', $idea))
             ->assertRedirect(route('admin.business-ideas.index', ['page' => 1]));
 

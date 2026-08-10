@@ -360,7 +360,7 @@
             </div>
 
             <nav class="d-grid gap-2">
-                <a class="sidebar-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}" title="Dashboard">
+                <a class="sidebar-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}" title="Dashboard">
                     <span class="sidebar-icon"><i class="bi bi-house"></i></span>
                     <span class="sidebar-text">Dashboard</span>
                 </a>
@@ -427,7 +427,7 @@
                     </form>
                 </div>
                 <div class="d-flex gap-2 mt-3">
-                    <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('dashboard') }}">Home</a>
+                    <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.dashboard') }}">Home</a>
                     <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('rekomendasi.form') }}">Rekomendasi</a>
                     <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.master.capitals.index') }}">Modal</a>
                     <a class="btn btn-outline-light btn-sm flex-fill" href="{{ route('admin.master.categories.index') }}">Kategori</a>

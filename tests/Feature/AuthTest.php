@@ -11,7 +11,7 @@ class AuthTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_login_page_is_accessible_as_first_page(): void
+    public function test_login_page_is_accessible(): void
     {
         $this->get(route('login'))
             ->assertOk()
@@ -20,24 +20,32 @@ class AuthTest extends TestCase
             ->assertSee('Password');
     }
 
-    public function test_user_can_login_with_username_and_password(): void
+    public function test_admin_can_login_with_username_and_password(): void
     {
         $user = User::factory()->create([
             'username' => 'admin',
             'password' => Hash::make('password'),
+            'is_admin' => true,
         ]);
 
         $this->post(route('login.submit'), [
             'username' => 'admin',
             'password' => 'password',
-        ])->assertRedirect(route('dashboard'));
+        ])->assertRedirect(route('admin.dashboard'));
 
         $this->assertAuthenticatedAs($user);
     }
 
-    public function test_recommendation_page_requires_authentication(): void
+    public function test_recommendation_page_is_publicly_accessible(): void
     {
         $this->get(route('rekomendasi.form'))
+            ->assertOk()
+            ->assertSee('Temukan ide usaha mikro yang paling cocok');
+    }
+
+    public function test_admin_dashboard_requires_authentication(): void
+    {
+        $this->get(route('admin.dashboard'))
             ->assertRedirect(route('login'));
     }
 }
