@@ -1,0 +1,14 @@
+kind: wasmer.io/App.v0
+name: ideusahaku
+description: Sistem Rekomendasi Ide Usaha Mikro (Weighted Product Method)
+debug: false
+env:
+  APP_ENV: production
+  APP_DEBUG: "false"
+  APP_KEY: "base64:KuDfaFMg347MnWHGxEC6JvnurEJCJdxZ17pGPoCfoYE="
+  DB_CONNECTION: sqlite
+  SESSION_DRIVER: file
+  CACHE_STORE: file
+  LOG_LEVEL: error
+scaling:
+  mode: single_concurrency
