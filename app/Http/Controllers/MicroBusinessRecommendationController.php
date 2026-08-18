@@ -48,9 +48,21 @@ class MicroBusinessRecommendationController extends Controller
         $selectedLocation = null;
         $selectedTime = null;
 
-        if (session()->has('rekomendasi_results')) {
-            $results = session('rekomendasi_results');
+        if (
+            is_array($input)
+            && isset($input['capital'], $input['location'], $input['time'])
+            && $input['capital'] !== null
+            && $input['location'] !== null
+            && $input['time'] !== null
+        ) {
             $page = max(1, (int) $request->integer('page', 1));
+
+            $results = $this->buildRecommendations(
+                (int) $input['capital'],
+                (string) $input['location'],
+                (string) $input['time'],
+            );
+
             $recommendations = $this->paginateResults($results, $page);
 
             if (is_array($input) && isset($input['location'])) {
@@ -77,8 +89,6 @@ class MicroBusinessRecommendationController extends Controller
     {
         $locations = $this->data->locations();
         $times = $this->data->times();
-        $criteria = $this->data->criteria();
-        $formula = $this->data->formula();
 
         $validated = $request->validate([
             'capital' => ['required', 'integer', 'min:0'],
@@ -90,9 +100,30 @@ class MicroBusinessRecommendationController extends Controller
             'time.required' => 'Waktu wajib dipilih.',
         ]);
 
-        $capital = (int) $validated['capital'];
-        $location = (string) $validated['location'];
-        $time = (string) $validated['time'];
+        $request->session()->put('rekomendasi_input', [
+            'capital' => (int) $validated['capital'],
+            'location' => (string) $validated['location'],
+            'time' => (string) $validated['time'],
+        ]);
+
+        return redirect()->route('rekomendasi.form', ['page' => 1]);
+    }
+
+    /**
+     * Hitung ulang skor rekomendasi dari parameter input.
+     *
+     * Hasil tidak lagi disimpan ke session (sebelumnya membuat cookie session
+     * membengkak hingga >300KB sehingga browser menolak & memicu
+     * ERR_HTTP2_COMPRESSION_ERROR), melainkan dihitung ulang saat halaman dibuka.
+     *
+     * @return Collection<int, array{idea: MicroBusinessIdea, score: float, breakdown: array<string,float>}>
+     */
+    private function buildRecommendations(int $capital, string $location, string $time): Collection
+    {
+        $locations = $this->data->locations();
+        $times = $this->data->times();
+        $formula = $this->data->formula();
+
         $selectedLocation = $locations->get($location);
         $selectedTime = $times->get($time);
         $selectedLocationLabel = (string) ($selectedLocation?->label ?? $location);
@@ -145,7 +176,7 @@ class MicroBusinessRecommendationController extends Controller
             'waktu' => max(1, (int) $ideas->max(fn (MicroBusinessIdea $idea) => $idea->time_score)),
         ];
 
-        $scored = $ideas->map(function (MicroBusinessIdea $idea) use ($capital, $selectedLocationLabel, $selectedTimeLabel, $weights, $maxScores) {
+        return $ideas->map(function (MicroBusinessIdea $idea) use ($capital, $selectedLocationLabel, $selectedTimeLabel, $weights, $maxScores) {
             $capitalValue = $this->capitalScore($idea, $capital);
             $locationValue = $this->labelScore($idea->location_score, (string) $idea->location_label, $selectedLocationLabel);
             $timeValue = $this->labelScore($idea->time_score, (string) $idea->time_label, $selectedTimeLabel);
@@ -168,15 +199,6 @@ class MicroBusinessRecommendationController extends Controller
                 ],
             ];
         })->sortByDesc('score')->sortByDesc(fn ($row) => $row['idea']->total_score)->values();
-
-        $request->session()->put('rekomendasi_input', [
-            'capital' => $capital,
-            'location' => $location,
-            'time' => $time,
-        ]);
-        $request->session()->put('rekomendasi_results', $scored);
-
-        return redirect()->route('rekomendasi.form', ['page' => 1]);
     }
 
     public function show(MicroBusinessIdea $businessIdea): View
