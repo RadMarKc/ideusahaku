@@ -26,6 +26,11 @@ Route::get('/rekomendasi-usaha/{businessIdea:slug}', [MicroBusinessRecommendatio
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit')->middleware('guest');
 
+Route::get('/lupa-password', [AuthController::class, 'showForgot'])->name('password.request')->middleware('guest');
+Route::post('/lupa-password', [AuthController::class, 'sendResetLink'])->name('password.email')->middleware('guest');
+Route::get('/reset-password/{token}', [AuthController::class, 'showReset'])->name('password.reset')->middleware('guest');
+Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update')->middleware('guest');
+
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
