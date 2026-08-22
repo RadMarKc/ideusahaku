@@ -5,7 +5,6 @@ debug: false
 env:
   APP_ENV: production
   APP_DEBUG: "false"
-  APP_KEY: "base64:KuDfaFMg347MnWHGxEC6JvnurEJCJdxZ17pGPoCfoYE="
   DB_CONNECTION: sqlite
   SESSION_DRIVER: cookie
   CACHE_STORE: array
