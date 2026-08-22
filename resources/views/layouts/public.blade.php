@@ -161,7 +161,7 @@
     <div class="container d-flex justify-content-between align-items-center py-2">
         <a class="text-decoration-none d-flex align-items-center gap-2 text-reset" href="{{ route('home') }}">
             <span class="brand-mark"><i class="bi bi-question-lg fs-5 text-white"></i></span>
-            <span class="fw-bold fs-5">IdeUsahaKu</span><small class="text-muted ms-1">&bull; tes-deploy</small>
+            <span class="fw-bold fs-5">IdeUsahaKu</span>
         </a>
         <div class="d-flex align-items-center gap-2">
             @auth
