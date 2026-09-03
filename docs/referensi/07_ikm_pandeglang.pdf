@@ -1,0 +1,3227 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Implementasi Metode Weighted Product Untuk Pemilihan Pemberdayaan Industri Kecil Menengah Pada Dinas Perindustrian Perdagangan Kabupaten Pandeglang
+							| JURNAL TEKNIK INFORMATIKA UNIS
+			</title>
+
+	
+<meta name="generator" content="Open Journal Systems 3.3.0.21" />
+<meta name="google-site-verification" content="740yWKiJQ28aIeuNdHKnuLz2aZwIhsQ1RfJEGSlbDpk" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.Creator.PersonalName" content="Aghy Gilar Pratama"/>
+<meta name="DC.Creator.PersonalName" content="Andrianto Heri Wibowo"/>
+<meta name="DC.Creator.PersonalName" content="Ardiansyah Ardiansyah"/>
+<meta name="DC.Creator.PersonalName" content="Robby Rizky"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2025-03-27"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2021-01-29"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2025-03-27"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2025-03-27"/>
+<meta name="DC.Description" xml:lang="en" content="Industi kecil menengah adalah industri yang harus terus diarahkan agar dapat bekembang menjadi industri yang besar, jumlah industri kecil pada saat ini berkembang dengan sangat cepat yang didukung oleh sumberdaya alam dan sumberaya manusia yang memadai, akan tetapi untuk pengoptimalan keberadaan industri kecil menengah oleh Dinas Perindustrian Perdagangan Kabupaten Pandeglang masih belum merata dan cendurng sangat lambat, sehingga banyak industri kecil menengah yang tidak bisa berkembang karena tidak ada pemberdayaan dari Dinas terkait. Industri kecil menengah ini memiliki peran sebagai pemacu dalam pertumbuhan ekonomi daerah, dimana industri dapat memanfaatkan sumber daya alam dan manusia agar dapat merubah perekonomian daerah, sesuai dengan Peraturan Mentri Perindustrian RI Nomor 64 Tahun 2016, bahwa industri kecil menengah merupakan industri yang memenuhi ketentuan karyawan paling banyak 19 orang tenaga kerja dan memeiliki investai paling sedikit satu milyar rupiah. Penelitian ini bertujuan untuk memudahkan Dinas Perindustrian Perdagangan Kabupaten Pandeglang pada Proses pemberdayaan industry, dengan menggunakan metode Weighted Product (WP). Metode Weighted Product (WP) merupakan teknik pengamabilan keputusan dari beberap pilihan alternatif yang ada, metode ini dapat membantu menyelesaikan dalam menentukan keputusan secara efektif, dengan memecahan masalah, multikriteria yang hasilnya dapat diambil berdasarkan nilai teringgi. Proses penentuan nilai/rangking metode Weighted Product, dimulai dengan pembobotan kriteria kemudian perhitungan nilai total dan selanjutnya perhitungan penentuan rangking, sehingga sistem pendukung keputusan mampu menampilkan rangking dari pemilihan pemberdayaan peserta industri kecil menengah. Adapuan kriteria yang digunakan adalah Tenaga Kerja, Nilai Investasi, Jumlah Kapasitas dan Nilai Produksi, dengan adanya penerapan metode Weighted Product (WP) pada sistem Pendukung keputusan mampu menampilkan rangking dari pemilihan pemberdayaan peserta industri kecil menengah sebagai bahan pertimbangan."/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Identifier" content="1104"/>
+<meta name="DC.Identifier.pageNumber" content="135-145"/>
+<meta name="DC.Identifier.DOI" content="10.33592/jutis.v8i2.1104"/>
+<meta name="DC.Identifier.URI" content="https://ejournal.unis.ac.id/index.php/jutis/article/view/1104"/>
+<meta name="DC.Language" scheme="ISO639-1" content="en"/>
+<meta name="DC.Rights" content="Copyright (c) 2025 Jutis (Jurnal Teknik Informatika)"/>
+<meta name="DC.Rights" content="http://creativecommons.org/licenses/by-nc-nd/4.0"/>
+<meta name="DC.Source" content="JURNAL TEKNIK INFORMATIKA UNIS"/>
+<meta name="DC.Source.ISSN" content="2656-0860"/>
+<meta name="DC.Source.Issue" content="2"/>
+<meta name="DC.Source.Volume" content="8"/>
+<meta name="DC.Source.URI" content="https://ejournal.unis.ac.id/index.php/jutis"/>
+<meta name="DC.Subject" xml:lang="en" content="Industri kecil menengah"/>
+<meta name="DC.Subject" xml:lang="en" content="Weighted Product"/>
+<meta name="DC.Subject" xml:lang="en" content="sistem pendukung keputusan"/>
+<meta name="DC.Subject" xml:lang="en" content="pemberdayaan."/>
+<meta name="DC.Title" content="Implementasi Metode Weighted Product Untuk Pemilihan Pemberdayaan Industri Kecil Menengah Pada Dinas Perindustrian Perdagangan Kabupaten Pandeglang"/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type" xml:lang="en" content=""/>
+<meta name="DC.Type.articleType" content="Articles"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="JURNAL TEKNIK INFORMATIKA UNIS"/>
+<meta name="citation_journal_abbrev" content="JUTIS"/>
+<meta name="citation_issn" content="2656-0860"/> 
+<meta name="citation_author" content="Aghy Gilar Pratama"/>
+<meta name="citation_author_institution" content="Universitas Mathla`ul Anwar"/>
+<meta name="citation_author" content="Andrianto Heri Wibowo"/>
+<meta name="citation_author_institution" content="Universitas Mathla`ul Anwar"/>
+<meta name="citation_author" content="Ardiansyah Ardiansyah"/>
+<meta name="citation_author_institution" content="Universitas Mathla`ul Anwar"/>
+<meta name="citation_author" content="Robby Rizky"/>
+<meta name="citation_author_institution" content="Universitas Mathla`ul Anwar"/>
+<meta name="citation_title" content="Implementasi Metode Weighted Product Untuk Pemilihan Pemberdayaan Industri Kecil Menengah Pada Dinas Perindustrian Perdagangan Kabupaten Pandeglang"/>
+<meta name="citation_language" content="en"/>
+<meta name="citation_date" content="2020"/>
+<meta name="citation_volume" content="8"/>
+<meta name="citation_issue" content="2"/>
+<meta name="citation_firstpage" content="135"/>
+<meta name="citation_lastpage" content="145"/>
+<meta name="citation_doi" content="10.33592/jutis.v8i2.1104"/>
+<meta name="citation_abstract_html_url" content="https://ejournal.unis.ac.id/index.php/jutis/article/view/1104"/>
+<meta name="citation_keywords" xml:lang="en" content="Industri kecil menengah"/>
+<meta name="citation_keywords" xml:lang="en" content="Weighted Product"/>
+<meta name="citation_keywords" xml:lang="en" content="sistem pendukung keputusan"/>
+<meta name="citation_keywords" xml:lang="en" content="pemberdayaan."/>
+<meta name="citation_pdf_url" content="https://ejournal.unis.ac.id/index.php/jutis/article/download/1104/838"/>
+<meta name="citation_reference" content="P. R. Dewi, ???Tantangan Dan Peluang Pengembangan Industri Alas Kaki : Implikasi Flux Footwear,??? vol. 2, 2017."/>
+<meta name="citation_reference" content="E. Ridhawati, ???Penggunaan Analitical Hierarchy Process (Ahp) Dalam Menentukan Prioritas Pengembangan Industri Kecil Dan Menengah Di Kecamatan Bandar Negeri Suoh Kabupaten Lampung Barat,??? J. TAM ( Technol. Accept. Model ), vol. 6, no. 1, pp. 51???59, 2016.[3] J. Prihatini, ???Pemberdayaan Industri Kecil Anyaman Bambu Dalam Meningkatkan Pendapatan Masyarakat Di Desa Karayunan Kecamatan Cigasong Kabupaten Majalengka Provinsi Jawa Barat,??? J. Ilmu Pemerintah. Widya Praja, vol. 42, no. 1, p. 11, 2016, doi: 10.33701/jipwp.v42i1.138."/>
+<meta name="citation_reference" content="J. Warmansyah, Metode Penelitian dan Pengolahan Data Untuk Pengambilan Keputusan pada perusahaan. Sleman, yogyakarta, 2020."/>
+<meta name="citation_reference" content="Sukisno, S. (2020). Perancangan Sistem Informasi Perhitungan Caddie Fee Pada Imperial Klub Golf Karawaci Kabupaten Tangerang. Jurnal Teknik Informatika Unis, 7(2), 153???158. https://doi.org/10.33592/jutis.v7i2.397"/>
+<meta name="citation_reference" content="N. Pakaya, ???Pemuda Nusantara Dengan Menggunakan Metode,??? vol. 9, pp. 331???337, 2017."/>
+<meta name="citation_reference" content="N. Fartindyyah and Subiyanto, ???Sistem pendukung keputusan peminatan sma menggunakan metode,??? J. Pendidik., vol. 44, no. november 2014, pp. 139???145, 2013."/>
+<meta name="citation_reference" content="Basri, ???Metode Weightd Product (Wp) Dalam Sistem Pendukung Keputusan Penerimaan Beasiswa Prestasi,??? J. INSYPRO (Information Syst. Process., vol. 2, no. 1, pp. 1???6, 2017, doi: https://doi.org/10.24252/insypro.v2i1.2474.g2610."/>
+<meta name="citation_reference" content="K. Eliyen and F. S. Efendi, ???Implementasi Metode Weighted Product Untuk Penentuan Mustahiq Zakat,??? InfoTekJar (Jurnal Nas. Inform. dan Teknol. Jaringan), vol. 4, no. 1, pp. 146???150, 2019, doi: 10.30743/infotekjar.v4i1.1476."/>
+<meta name="citation_reference" content="Hidayat, T., &amp; Komariah, S. (2020). Pemilihan Siswa-Siswi Berprestasi Menggunakan Metode Weighted Product (WP) Studi Kasus SMP-Al Fitroh Tangerang. Jurnal Teknik Informatika Unis, 7(2), 159???163. https://doi.org/10.33592/jutis.v7i2.398"/>
+	<link rel="stylesheet" href="https://ejournal.unis.ac.id/index.php/jutis/$$$call$$$/page/page/css?name=stylesheet" type="text/css" /><link rel="stylesheet" href="https://ejournal.unis.ac.id/index.php/jutis/$$$call$$$/page/page/css?name=font" type="text/css" /><link rel="stylesheet" href="https://ejournal.unis.ac.id/lib/pkp/styles/fontawesome/fontawesome.css?v=3.3.0.21" type="text/css" /><style type="text/css">.pkp_structure_head { background: center / cover no-repeat url("https://ejournal.unis.ac.id/public/journals/1/homepageImage_en_US.png");}</style><link rel="stylesheet" href="https://ejournal.unis.ac.id/plugins/generic/orcidProfile/css/orcidProfile.css?v=3.3.0.21" type="text/css" />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap');
+
+		/* ===== Site index header — floating pill (ref) ===== */
+		.is_site_unis.is_site_home,
+		.is_site_unis.is_site_home .pkp_structure_page {
+			background: #eef1f6 !important;
+		}
+		.is_site_unis .pkp_structure_head,
+		.is_site_unis #headerNavigationContainer.pkp_structure_head {
+			background: transparent !important;
+			background-color: transparent !important;
+			border-bottom: none !important;
+			box-shadow: none !important;
+			margin-bottom: 0 !important;
+			padding: 16px 20px 10px !important;
+			position: sticky !important;
+			top: 0 !important;
+			z-index: 1000 !important;
+		}
+		.is_site_unis.has_site_logo .pkp_head_wrapper,
+		.is_site_unis .pkp_head_wrapper.unis_head_wrapper,
+		.is_site_unis.has_site_logo .pkp_structure_head .pkp_head_wrapper {
+			padding: 0 !important;
+			margin: 0 auto !important;
+			width: 100% !important;
+			max-width: 1180px !important;
+			position: relative !important;
+			float: none !important;
+			background: transparent !important;
+			background-color: transparent !important;
+			box-shadow: none !important;
+			border: none !important;
+		}
+		.is_site_unis .unis_header_bar {
+			display: grid !important;
+			grid-template-columns: minmax(0, 1fr) auto !important;
+			align-items: center !important;
+			column-gap: 24px !important;
+			padding: 10px 22px 10px 12px !important;
+			min-height: 64px !important;
+			width: 100% !important;
+			box-sizing: border-box !important;
+			background: #fff !important;
+			background-color: #fff !important;
+			border: 1px solid rgba(226, 232, 240, 0.95) !important;
+			border-radius: 999px !important;
+			box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10) !important;
+		}
+		.is_site_unis .unis_header_brand {
+			display: flex !important;
+			align-items: center !important;
+			gap: 14px !important;
+			min-width: 0 !important;
+			float: none !important;
+			position: static !important;
+		}
+		.is_site_unis .unis_header_logo {
+			flex: 0 0 56px !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			width: 56px !important;
+			height: 56px !important;
+			border-radius: 10px !important;
+			background: #f0fdf4 !important;
+			border: 1px solid #bbf7d0 !important;
+			overflow: hidden !important;
+			text-decoration: none !important;
+			position: static !important;
+			float: none !important;
+		}
+		.is_site_unis .unis_header_logo img {
+			max-width: 44px !important;
+			max-height: 44px !important;
+			width: auto !important;
+			height: auto !important;
+			object-fit: contain !important;
+			display: block !important;
+			position: static !important;
+		}
+		.is_site_unis .unis_header_titles {
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 2px !important;
+			min-width: 0 !important;
+			position: static !important;
+		}
+		.is_site_unis .unis_header_title {
+			display: block !important;
+			font-size: 20px !important;
+			font-weight: 800 !important;
+			color: #1e3a8a !important;
+			line-height: 1.2 !important;
+		}
+		.is_site_unis .unis_header_subtitle {
+			display: block !important;
+			font-size: 12px !important;
+			font-weight: 500 !important;
+			color: #64748b !important;
+			line-height: 1.3 !important;
+		}
+		.is_site_unis .unis_header_actions {
+			display: flex !important;
+			align-items: center !important;
+			justify-content: flex-end !important;
+			gap: 8px !important;
+			flex-shrink: 0 !important;
+			position: static !important;
+			float: none !important;
+			transform: none !important;
+			top: auto !important;
+			left: auto !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			border: none !important;
+		}
+		.is_site_unis .unis_header_search {
+			display: inline-flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			gap: 6px !important;
+			padding: 9px 14px !important;
+			border-radius: 8px !important;
+			background: #fff !important;
+			color: #334155 !important;
+			font-size: 13px !important;
+			font-weight: 600 !important;
+			text-decoration: none !important;
+			white-space: nowrap !important;
+			border: 1px solid #e2e8f0 !important;
+			position: static !important;
+			float: none !important;
+			line-height: 1 !important;
+		}
+		.is_site_unis .unis_header_search:hover {
+			background: #f8fafc !important;
+			border-color: #cbd5e1 !important;
+			color: #1e40af !important;
+		}
+		.is_site_unis .unis_header_user {
+			display: flex !important;
+			align-items: center !important;
+			position: static !important;
+			float: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			border: none !important;
+		}
+		.is_site_unis .unis_nav_user,
+		.is_site_unis .unis_nav_user.pkp_nav_list {
+			display: flex !important;
+			flex-direction: row !important;
+			flex-wrap: wrap !important;
+			align-items: center !important;
+			justify-content: flex-end !important;
+			gap: 8px !important;
+			list-style: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			border: none !important;
+			position: static !important;
+			float: none !important;
+			transform: none !important;
+			width: auto !important;
+			max-width: 100% !important;
+			text-align: right !important;
+		}
+		.is_site_unis .unis_nav_user > li,
+		.is_site_unis .unis_nav_user.pkp_nav_list > li {
+			display: flex !important;
+			flex-direction: row !important;
+			flex-wrap: wrap !important;
+			align-items: center !important;
+			gap: 8px !important;
+			position: static !important;
+			float: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+		/* Flatten OJS nested user dropdown so Dashboard/Logout always visible */
+		.is_site_unis .unis_nav_user > li > ul,
+		.is_site_unis .unis_nav_user ul {
+			display: flex !important;
+			flex-direction: row !important;
+			flex-wrap: wrap !important;
+			align-items: center !important;
+			gap: 8px !important;
+			list-style: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			position: static !important;
+			float: none !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			height: auto !important;
+			width: auto !important;
+			max-width: none !important;
+			background: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+			transform: none !important;
+		}
+		.is_site_unis .unis_nav_user a {
+			display: inline-flex !important;
+			align-items: center !important;
+			gap: 6px !important;
+			padding: 9px 14px !important;
+			border-radius: 8px !important;
+			font-size: 13px !important;
+			font-weight: 600 !important;
+			color: #334155 !important;
+			text-decoration: none !important;
+			border: 1px solid #e2e8f0 !important;
+			background: #fff !important;
+			line-height: 1 !important;
+			position: static !important;
+			float: none !important;
+			white-space: nowrap !important;
+		}
+		.is_site_unis .unis_nav_user a:hover {
+			background: #f8fafc !important;
+			border-color: #cbd5e1 !important;
+			color: #1e40af !important;
+		}
+		.is_site_unis .unis_nav_user .task_count {
+			display: inline-flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			min-width: 18px !important;
+			padding: 2px 6px !important;
+			border-radius: 999px !important;
+			background: #fee2e2 !important;
+			color: #b91c1c !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			line-height: 1 !important;
+		}
+		/* Guest: Register (last top-level) as primary CTA */
+		.is_site_unis .unis_nav_user > li:last-child:not(:has(> ul)) > a,
+		.is_site_unis body:not(.pkp_page_login) .unis_nav_user > li:last-child > a[href*="register"] {
+			background: #1e40af !important;
+			border-color: #1e40af !important;
+			color: #fff !important;
+		}
+		/* Logged-in: Administration + Logout stand out */
+		.is_site_unis .unis_nav_user a[href*="/admin"] {
+			background: #0b1f3a !important;
+			border-color: #0b1f3a !important;
+			color: #fff !important;
+		}
+		.is_site_unis .unis_nav_user a[href*="/admin"]:hover {
+			background: #12345c !important;
+			border-color: #12345c !important;
+			color: #fff !important;
+		}
+		.is_site_unis .unis_nav_user a[href*="signOut"],
+		.is_site_unis .unis_nav_user a[href*="logout"] {
+			background: #fff !important;
+			border-color: #fecaca !important;
+			color: #b91c1c !important;
+		}
+		.is_site_unis .unis_mobile_toggle {
+			display: none !important;
+			align-items: center !important;
+			justify-content: center !important;
+			width: 44px !important;
+			height: 44px !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			border: 0 !important;
+			border-radius: 999px !important;
+			background: transparent !important;
+			color: #0b1f3a !important;
+			cursor: pointer !important;
+			flex-shrink: 0 !important;
+			position: relative !important;
+			z-index: 2 !important;
+		}
+		.is_site_unis .unis_burger {
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: center !important;
+			gap: 5px !important;
+			width: 22px !important;
+			height: 16px !important;
+		}
+		.is_site_unis .unis_burger i {
+			display: block !important;
+			width: 100% !important;
+			height: 2.5px !important;
+			border-radius: 999px !important;
+			background: #0b1f3a !important;
+			transition: transform .25s ease, opacity .2s ease !important;
+		}
+		.is_site_unis .unis_header_bar.is-menu-open .unis_burger i:nth-child(1) {
+			transform: translateY(7.5px) rotate(45deg) !important;
+		}
+		.is_site_unis .unis_header_bar.is-menu-open .unis_burger i:nth-child(2) {
+			opacity: 0 !important;
+		}
+		.is_site_unis .unis_header_bar.is-menu-open .unis_burger i:nth-child(3) {
+			transform: translateY(-7.5px) rotate(-45deg) !important;
+		}
+		.is_site_unis .pkp_site_nav_toggle:not(.unis_mobile_toggle),
+		.is_site_unis .modern_head_meta,
+		.is_site_unis .pkp_site_name_wrapper,
+		.is_site_unis .pkp_site_nav_menu,
+		.is_site_unis .pkp_navigation_user_wrapper {
+			display: none !important;
+		}
+
+		@media (max-width: 768px) {
+			.is_site_unis .pkp_structure_head {
+				padding: 12px 12px 8px !important;
+			}
+			.is_site_unis .unis_header_bar {
+				display: flex !important;
+				align-items: center !important;
+				justify-content: space-between !important;
+				gap: 12px !important;
+				padding: 8px 10px 8px 8px !important;
+				min-height: 58px !important;
+				border-radius: 999px !important;
+				position: relative !important;
+			}
+			.is_site_unis .unis_mobile_toggle {
+				display: inline-flex !important;
+			}
+			.is_site_unis .unis_header_titles {
+				display: none !important;
+			}
+			.is_site_unis .unis_header_logo {
+				flex-basis: 44px !important;
+				width: 44px !important;
+				height: 44px !important;
+				border-radius: 12px !important;
+			}
+			.is_site_unis .unis_header_logo img {
+				max-width: 34px !important;
+				max-height: 34px !important;
+			}
+			.is_site_unis .unis_header_actions {
+				display: none !important;
+				position: absolute !important;
+				top: calc(100% + 10px) !important;
+				left: 0 !important;
+				right: 0 !important;
+				flex-direction: column !important;
+				align-items: stretch !important;
+				gap: 8px !important;
+				padding: 14px !important;
+				background: #fff !important;
+				border: 1px solid rgba(226, 232, 240, 0.95) !important;
+				border-radius: 22px !important;
+				box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14) !important;
+				z-index: 20 !important;
+			}
+			.is_site_unis .unis_header_actions.is-open {
+				display: flex !important;
+			}
+			.is_site_unis .unis_header_user,
+			.is_site_unis .unis_nav_user,
+			.is_site_unis .unis_nav_user.pkp_nav_list,
+			.is_site_unis .unis_nav_user > li,
+			.is_site_unis .unis_nav_user > li > ul,
+			.is_site_unis .unis_nav_user ul {
+				display: flex !important;
+				flex-direction: column !important;
+				align-items: stretch !important;
+				width: 100% !important;
+				gap: 8px !important;
+			}
+			.is_site_unis .unis_header_search,
+			.is_site_unis .unis_nav_user a {
+				width: 100% !important;
+				justify-content: center !important;
+				box-sizing: border-box !important;
+				border-radius: 999px !important;
+				padding: 12px 14px !important;
+			}
+		}
+
+		@media (max-width: 640px) {
+			.is_site_unis .pkp_structure_head {
+				padding: 12px 12px 8px !important;
+			}
+			.is_site_unis .unis_header_title { font-size: 17px !important; }
+		}
+
+		/* Keep footer at viewport bottom on short pages */
+		.is_site_unis .pkp_structure_page {
+			min-height: 100vh !important;
+			display: flex !important;
+			flex-direction: column !important;
+		}
+		.is_site_unis .pkp_structure_content {
+			flex: 1 0 auto !important;
+		}
+		.is_site_unis .pkp_structure_footer_wrapper {
+			margin-top: auto !important;
+		}
+
+		/* Halaman situs selain homepage — layout normal terpusat */
+		.is_site_unis:not(.is_site_home) .pkp_structure_content {
+			width: 100% !important;
+			max-width: 100% !important;
+			padding-top: 0 !important;
+		}
+		.is_site_unis:not(.is_site_home) .pkp_structure_main {
+			width: 100% !important;
+			max-width: 800px !important;
+			margin: 0 auto !important;
+			float: none !important;
+			padding: 32px 24px 48px !important;
+		}
+		.is_site_unis:not(.is_site_home) .pkp_structure_main:before,
+		.is_site_unis:not(.is_site_home) .pkp_structure_main:after {
+			display: none !important;
+			content: none !important;
+		}
+		.is_site_unis:not(.is_site_home) .pkp_structure_sidebar {
+			display: none !important;
+		}
+
+		/* ===== Footer ===== */
+		.unis_footer.pkp_structure_footer_wrapper {
+			background: #0f172a !important;
+			color: #cbd5e1 !important;
+			margin-top: 0 !important;
+			width: 100% !important;
+			max-width: 100% !important;
+		}
+		.unis_footer .pkp_structure_footer {
+			max-width: 1200px !important;
+			margin: 0 auto !important;
+			padding: 40px 24px 24px !important;
+			text-align: left !important;
+		}
+		.unis_footer .unis_footer_main {
+			display: grid !important;
+			grid-template-columns: 1fr !important;
+			gap: 32px !important;
+			padding-bottom: 28px !important;
+			border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+		}
+		.unis_footer .unis_footer_brand {
+			display: flex !important;
+			align-items: flex-start !important;
+			gap: 16px !important;
+		}
+		.unis_footer .unis_footer_logo {
+			flex-shrink: 0 !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			width: 64px !important;
+			height: 64px !important;
+			background: #fff !important;
+			border-radius: 10px !important;
+			padding: 6px !important;
+			text-decoration: none !important;
+		}
+		.unis_footer .unis_footer_logo img {
+			max-width: 100% !important;
+			max-height: 100% !important;
+			object-fit: contain !important;
+			display: block !important;
+		}
+		.unis_footer .unis_footer_brand_text h3 {
+			margin: 0 0 8px !important;
+			font-size: 16px !important;
+			font-weight: 700 !important;
+			color: #fff !important;
+			line-height: 1.35 !important;
+		}
+		.unis_footer .unis_footer_brand_text p {
+			margin: 0 !important;
+			font-size: 13px !important;
+			line-height: 1.6 !important;
+			color: #94a3b8 !important;
+			max-width: 360px !important;
+		}
+		.unis_footer .unis_footer_columns {
+			display: grid !important;
+			grid-template-columns: repeat(2, 1fr) !important;
+			gap: 24px !important;
+		}
+		.unis_footer .unis_footer_col h4 {
+			margin: 0 0 12px !important;
+			font-size: 12px !important;
+			font-weight: 700 !important;
+			text-transform: uppercase !important;
+			letter-spacing: 0.06em !important;
+			color: #e2e8f0 !important;
+		}
+		.unis_footer .unis_footer_col ul {
+			list-style: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+		.unis_footer .unis_footer_col li + li {
+			margin-top: 8px !important;
+		}
+		.unis_footer .unis_footer_col a {
+			color: #94a3b8 !important;
+			text-decoration: none !important;
+			font-size: 13px !important;
+			transition: color 0.15s !important;
+		}
+		.unis_footer .unis_footer_col a:hover {
+			color: #fff !important;
+		}
+		.unis_footer .pkp_footer_content {
+			padding: 20px 0 !important;
+			border-top: none !important;
+			color: #94a3b8 !important;
+			font-size: 13px !important;
+		}
+		.unis_footer .unis_footer_bottom {
+			display: flex !important;
+			align-items: center !important;
+			justify-content: space-between !important;
+			gap: 16px !important;
+			padding-top: 20px !important;
+			flex-wrap: wrap !important;
+		}
+		.unis_footer .unis_footer_copy {
+			margin: 0 !important;
+			font-size: 12px !important;
+			color: #64748b !important;
+			line-height: 1.5 !important;
+		}
+		.unis_footer .unis_footer_ojs {
+			display: block !important;
+			opacity: 0.6 !important;
+			transition: opacity 0.15s !important;
+			float: none !important;
+			margin: 0 !important;
+		}
+		.unis_footer .unis_footer_ojs:hover { opacity: 1 !important; }
+		.unis_footer .unis_footer_ojs img {
+			display: block !important;
+			height: 32px !important;
+			width: auto !important;
+		}
+		.unis_footer .pkp_brand_footer {
+			display: none !important;
+		}
+		@media (min-width: 768px) {
+			.unis_footer .unis_footer_main {
+				grid-template-columns: 1.4fr 1fr !important;
+				align-items: start !important;
+			}
+		}
+
+		/* Ejournal UNIS — kategori di pinggir, katalog di tengah */
+		.is_site_home .pkp_structure_content {
+			background: #f1f5f9 !important;
+			width: 100% !important;
+			max-width: 100% !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		.is_site_home .pkp_structure_main {
+			width: 100% !important;
+			max-width: 100% !important;
+			margin: 0 !important;
+			float: none !important;
+			padding: 0 !important;
+			position: relative !important;
+		}
+		.is_site_home .pkp_structure_main:before,
+		.is_site_home .pkp_structure_main:after {
+			display: none !important;
+			content: none !important;
+		}
+		.is_site_home .pkp_structure_sidebar {
+			display: none !important;
+		}
+		.is_site_home .page_index_site,
+		.is_site_home .journals_library {
+			max-width: 100% !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			overflow-x: hidden !important;
+		}
+		body.is_site_home,
+		body.is_site_unis {
+			overflow-x: hidden !important;
+		}
+
+		/* ===== Landing hero + center carousel (ref) ===== */
+
+		.is_site_home .unis_landing_hero,
+		.page_index_site .unis_landing_hero {
+			position: relative !important;
+			overflow: hidden !important;
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			gap: 28px !important;
+			padding: 40px 0 48px !important;
+			color: #0f172a !important;
+			background: #eef1f6 !important;
+			touch-action: pan-y !important;
+		}
+		.is_site_home .unis_landing_hero_intro,
+		.page_index_site .unis_landing_hero_intro {
+			width: 100% !important;
+			max-width: 720px !important;
+			margin: 0 auto !important;
+			padding: 0 24px !important;
+			text-align: center !important;
+			z-index: 2 !important;
+		}
+		.is_site_home .unis_landing_brand,
+		.page_index_site .unis_landing_brand {
+			margin: 0 0 8px !important;
+			font-family: "Fraunces", Georgia, serif !important;
+			font-size: clamp(26px, 3.6vw, 40px) !important;
+			font-weight: 700 !important;
+			line-height: 1.15 !important;
+			letter-spacing: -0.025em !important;
+			color: #0b1f3a !important;
+			text-wrap: balance !important;
+		}
+		.is_site_home .unis_landing_title,
+		.page_index_site .unis_landing_title {
+			margin: 0 0 10px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: clamp(15px, 1.6vw, 18px) !important;
+			font-weight: 600 !important;
+			color: #0f766e !important;
+			line-height: 1.4 !important;
+		}
+		.is_site_home .unis_landing_lead,
+		.page_index_site .unis_landing_lead {
+			margin: 0 auto 20px !important;
+			max-width: 520px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 15px !important;
+			line-height: 1.65 !important;
+			color: #64748b !important;
+		}
+		.is_site_home .unis_landing_cta,
+		.page_index_site .unis_landing_cta {
+			display: flex !important;
+			flex-wrap: wrap !important;
+			justify-content: center !important;
+			gap: 10px !important;
+		}
+		.is_site_home .unis_landing_btn,
+		.page_index_site .unis_landing_btn {
+			display: inline-flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			padding: 12px 20px !important;
+			border-radius: 999px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 14px !important;
+			font-weight: 600 !important;
+			text-decoration: none !important;
+			transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+		}
+		.is_site_home .unis_landing_btn:hover,
+		.page_index_site .unis_landing_btn:hover {
+			transform: translateY(-2px) !important;
+		}
+		.is_site_home .unis_landing_btn_primary,
+		.page_index_site .unis_landing_btn_primary {
+			background: linear-gradient(135deg, #34d399 0%, #10b981 100%) !important;
+			color: #052e16 !important;
+			box-shadow: 0 8px 22px rgba(16,185,129,0.25) !important;
+		}
+		.is_site_home .unis_landing_btn_ghost,
+		.page_index_site .unis_landing_btn_ghost {
+			background: #fff !important;
+			color: #0b1f3a !important;
+			border: 1px solid #cbd5e1 !important;
+		}
+
+		/* Center-mode carousel — overlapping coverflow like ref */
+		.is_site_home .unis_coverflow,
+		.page_index_site .unis_coverflow {
+			position: relative !important;
+			width: 100% !important;
+			max-width: 1180px !important;
+			margin: 0 auto !important;
+			height: clamp(320px, 34vw, 400px) !important;
+			min-height: 300px !important;
+			outline: none !important;
+			cursor: grab !important;
+			user-select: none !important;
+			padding: 12px 0 28px !important;
+			box-sizing: content-box !important;
+		}
+		.is_site_home .unis_coverflow.is-dragging,
+		.page_index_site .unis_coverflow.is-dragging {
+			cursor: grabbing !important;
+		}
+		.is_site_home .unis_coverflow_stage,
+		.page_index_site .unis_coverflow_stage {
+			position: absolute !important;
+			inset: 12px 0 28px !important;
+			overflow: visible !important;
+		}
+		.is_site_home .unis_cover_card,
+		.page_index_site .unis_cover_card {
+			--card-w: min(700px, 58vw);
+			position: absolute !important;
+			left: 50% !important;
+			top: 50% !important;
+			width: var(--card-w) !important;
+			height: min(100%, 380px) !important;
+			margin: 0 !important;
+			border: 0 !important;
+			border-radius: 28px !important;
+			overflow: hidden !important;
+			display: grid !important;
+			grid-template-columns: 1.05fr 0.95fr !important;
+			background: #0b1f3a !important;
+			box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14) !important;
+			transform: translate3d(-50%, -50%, 0) scale(0.78) !important;
+			opacity: 0 !important;
+			visibility: hidden !important;
+			pointer-events: none !important;
+			transition: transform .45s cubic-bezier(.25,.8,.25,1), opacity .35s ease, box-shadow .35s ease !important;
+			z-index: 1 !important;
+			cursor: pointer !important;
+			backface-visibility: hidden !important;
+			-webkit-backface-visibility: hidden !important;
+			will-change: transform, opacity !important;
+		}
+		.is_site_home .unis_cover_card::after,
+		.page_index_site .unis_cover_card::after {
+			content: "" !important;
+			position: absolute !important;
+			inset: 0 !important;
+			z-index: 4 !important;
+			background: rgba(15, 23, 42, 0.38) !important;
+			pointer-events: none !important;
+			opacity: 1 !important;
+			transition: opacity .3s ease !important;
+		}
+		.is_site_home .unis_cover_card_media,
+		.page_index_site .unis_cover_card_media {
+			position: relative !important;
+			min-height: 100% !important;
+			order: 2 !important;
+			background:
+				radial-gradient(ellipse 70% 55% at 60% 40%, rgba(45,212,191,0.25), transparent 60%),
+				linear-gradient(145deg, #e2e8f0 0%, #f8fafc 100%) !important;
+			background-size: cover !important;
+			background-position: center !important;
+		}
+		.is_site_home .unis_cover_card_media::before,
+		.page_index_site .unis_cover_card_media::before {
+			content: "" !important;
+			position: absolute !important;
+			inset: 0 auto 0 0 !important;
+			width: 28% !important;
+			z-index: 1 !important;
+			background: linear-gradient(90deg, #0b1f3a 0%, rgba(11,31,58,0) 100%) !important;
+			pointer-events: none !important;
+		}
+		.is_site_home .unis_cover_card.has-cover .unis_cover_card_media,
+		.page_index_site .unis_cover_card.has-cover .unis_cover_card_media {
+			background-image: var(--cover) !important;
+			background-size: cover !important;
+			background-position: center !important;
+		}
+		.is_site_home .unis_cover_card--ft .unis_cover_card_media { background-image: radial-gradient(ellipse 60% 50% at 60% 40%, rgba(56,189,248,0.35), transparent 60%), linear-gradient(145deg, #0c4a6e 0%, #e0f2fe 100%) !important; }
+		.is_site_home .unis_cover_card--fkip .unis_cover_card_media { background-image: radial-gradient(ellipse 60% 50% at 60% 40%, rgba(52,211,153,0.32), transparent 60%), linear-gradient(145deg, #064e3b 0%, #d1fae5 100%) !important; }
+		.is_site_home .unis_cover_card--feb .unis_cover_card_media { background-image: radial-gradient(ellipse 60% 50% at 60% 40%, rgba(251,191,36,0.28), transparent 60%), linear-gradient(145deg, #78350f 0%, #fef3c7 100%) !important; }
+		.is_site_home .unis_cover_card--fisip .unis_cover_card_media { background-image: radial-gradient(ellipse 60% 50% at 60% 40%, rgba(125,211,252,0.3), transparent 60%), linear-gradient(145deg, #1e3a8a 0%, #dbeafe 100%) !important; }
+		.is_site_home .unis_cover_card--fh .unis_cover_card_media { background-image: radial-gradient(ellipse 60% 50% at 60% 40%, rgba(252,165,165,0.28), transparent 60%), linear-gradient(145deg, #7f1d1d 0%, #fee2e2 100%) !important; }
+		.is_site_home .unis_cover_card--lppm .unis_cover_card_media,
+		.is_site_home .unis_cover_card--other .unis_cover_card_media { background-image: radial-gradient(ellipse 60% 50% at 60% 40%, rgba(45,212,191,0.32), transparent 60%), linear-gradient(145deg, #115e59 0%, #ccfbf1 100%) !important; }
+		.is_site_home .unis_cover_card.has-cover .unis_cover_card_media,
+		.page_index_site .unis_cover_card.has-cover .unis_cover_card_media {
+			background-image: var(--cover) !important;
+		}
+		.is_site_home .unis_cover_card_body,
+		.page_index_site .unis_cover_card_body {
+			position: relative !important;
+			z-index: 2 !important;
+			order: 1 !important;
+			padding: clamp(22px, 2.6vw, 36px) clamp(20px, 2.4vw, 34px) !important;
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: center !important;
+			align-items: flex-start !important;
+			gap: 8px !important;
+			background: linear-gradient(135deg, #0b1f3a 0%, #152a4a 55%, #123445 100%) !important;
+		}
+		.is_site_home .unis_cover_card_kicker,
+		.page_index_site .unis_cover_card_kicker {
+			margin: 0 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 12px !important;
+			font-weight: 600 !important;
+			letter-spacing: 0.12em !important;
+			text-transform: uppercase !important;
+			color: #6ee7b7 !important;
+		}
+		.is_site_home .unis_cover_card_title,
+		.page_index_site .unis_cover_card_title {
+			margin: 0 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: clamp(17px, 1.85vw, 26px) !important;
+			font-weight: 800 !important;
+			line-height: 1.18 !important;
+			letter-spacing: -0.02em !important;
+			text-transform: uppercase !important;
+			color: #fff !important;
+			display: -webkit-box !important;
+			-webkit-line-clamp: 3 !important;
+			-webkit-box-orient: vertical !important;
+			overflow: hidden !important;
+		}
+		.is_site_home .unis_cover_card_cat,
+		.page_index_site .unis_cover_card_cat {
+			margin: 2px 0 6px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 14px !important;
+			line-height: 1.45 !important;
+			color: rgba(226,232,240,0.88) !important;
+		}
+		.is_site_home .unis_cover_card_btn,
+		.page_index_site .unis_cover_card_btn {
+			margin-top: 10px !important;
+			display: inline-flex !important;
+			align-items: center !important;
+			gap: 6px !important;
+			padding: 12px 20px !important;
+			border-radius: 999px !important;
+			background: #fff !important;
+			color: #0b1f3a !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 13px !important;
+			font-weight: 700 !important;
+			text-decoration: none !important;
+			box-shadow: 0 6px 16px rgba(0,0,0,0.15) !important;
+			transition: transform .2s ease, background .2s ease !important;
+			position: relative !important;
+			z-index: 5 !important;
+		}
+		.is_site_home .unis_cover_card_btn:hover,
+		.page_index_site .unis_cover_card_btn:hover {
+			background: #ecfdf5 !important;
+			transform: translateY(-1px) !important;
+		}
+
+		/* Active = large center; sides tucked behind (overlap) */
+		.is_site_home .unis_cover_card.is-active,
+		.page_index_site .unis_cover_card.is-active {
+			transform: translate3d(-50%, -50%, 0) scale(1) !important;
+			opacity: 1 !important;
+			visibility: visible !important;
+			pointer-events: auto !important;
+			z-index: 6 !important;
+			box-shadow: 0 28px 60px rgba(15, 23, 42, 0.28) !important;
+		}
+		.is_site_home .unis_cover_card.is-active::after,
+		.page_index_site .unis_cover_card.is-active::after {
+			opacity: 0 !important;
+		}
+		.is_site_home .unis_cover_card.is-prev,
+		.page_index_site .unis_cover_card.is-prev {
+			transform: translate3d(calc(-50% - 48%), -50%, 0) scale(0.86) !important;
+			opacity: 1 !important;
+			visibility: visible !important;
+			pointer-events: auto !important;
+			z-index: 3 !important;
+		}
+		.is_site_home .unis_cover_card.is-next,
+		.page_index_site .unis_cover_card.is-next {
+			transform: translate3d(calc(-50% + 48%), -50%, 0) scale(0.86) !important;
+			opacity: 1 !important;
+			visibility: visible !important;
+			pointer-events: auto !important;
+			z-index: 3 !important;
+		}
+		/* Only 3 cards visible: hide far sides */
+		.is_site_home .unis_cover_card.is-prev2,
+		.is_site_home .unis_cover_card.is-next2,
+		.page_index_site .unis_cover_card.is-prev2,
+		.page_index_site .unis_cover_card.is-next2 {
+			transform: translate3d(-50%, -50%, 0) scale(0.7) !important;
+			opacity: 0 !important;
+			visibility: hidden !important;
+			pointer-events: none !important;
+			z-index: 1 !important;
+		}
+
+		/* Dots sit on bottom of active card */
+		.is_site_home .unis_hero_slide_nav,
+		.page_index_site .unis_hero_slide_nav {
+			position: absolute !important;
+			left: 50% !important;
+			bottom: 42px !important;
+			transform: translateX(-50%) !important;
+			z-index: 8 !important;
+			display: flex !important;
+			align-items: center !important;
+			gap: 8px !important;
+			padding: 0 !important;
+			background: transparent !important;
+			pointer-events: auto !important;
+		}
+		.is_site_home .unis_hero_dot,
+		.page_index_site .unis_hero_dot {
+			width: 8px !important;
+			height: 8px !important;
+			min-width: 8px !important;
+			padding: 0 !important;
+			border: 0 !important;
+			border-radius: 999px !important;
+			background: rgba(255,255,255,0.45) !important;
+			cursor: pointer !important;
+			transition: background .25s ease, transform .25s ease !important;
+			pointer-events: auto !important;
+		}
+		.is_site_home .unis_hero_dot.is-active,
+		.page_index_site .unis_hero_dot.is-active {
+			width: 8px !important;
+			background: #3b82f6 !important;
+			transform: scale(1.2) !important;
+		}
+		.is_site_home .unis_hero_arrow,
+		.page_index_site .unis_hero_arrow {
+			position: absolute !important;
+			top: 50% !important;
+			transform: translateY(-50%) !important;
+			z-index: 9 !important;
+			width: 46px !important;
+			height: 46px !important;
+			display: inline-flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			padding: 0 !important;
+			border: 0 !important;
+			border-radius: 999px !important;
+			background: rgba(255,255,255,0.88) !important;
+			color: #0b1f3a !important;
+			cursor: pointer !important;
+			box-shadow: 0 8px 22px rgba(15,23,42,0.14) !important;
+			backdrop-filter: blur(8px) !important;
+			transition: background .2s ease, transform .2s ease, box-shadow .2s ease !important;
+			pointer-events: auto !important;
+		}
+		.is_site_home .unis_hero_arrow:hover,
+		.page_index_site .unis_hero_arrow:hover {
+			background: #fff !important;
+			box-shadow: 0 10px 26px rgba(15,23,42,0.18) !important;
+		}
+		/* Arrows on the peeking side of center card */
+		.is_site_home .unis_hero_arrow--prev,
+		.page_index_site .unis_hero_arrow--prev {
+			left: calc(50% - min(350px, 29vw) - 6px) !important;
+		}
+		.is_site_home .unis_hero_arrow--next,
+		.page_index_site .unis_hero_arrow--next {
+			right: calc(50% - min(350px, 29vw) - 6px) !important;
+			left: auto !important;
+		}
+
+		/* ===== Statistik publish ===== */
+		.is_site_home .unis_stats {
+			background: #f8fafc !important;
+			border-bottom: 1px solid #e2e8f0 !important;
+			padding: 40px 24px !important;
+		}
+		.is_site_home .unis_stats_inner {
+			max-width: 1100px !important;
+			margin: 0 auto !important;
+		}
+		.is_site_home .unis_stats_intro {
+			display: flex !important;
+			align-items: flex-end !important;
+			justify-content: space-between !important;
+			gap: 16px !important;
+			margin-bottom: 24px !important;
+			flex-wrap: wrap !important;
+		}
+		.is_site_home .unis_stats_heading {
+			margin: 0 0 6px !important;
+			font-family: "Fraunces", Georgia, serif !important;
+			font-size: 28px !important;
+			font-weight: 700 !important;
+			color: #0f172a !important;
+			line-height: 1.2 !important;
+		}
+		.is_site_home .unis_stats_sub {
+			margin: 0 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 14px !important;
+			color: #64748b !important;
+		}
+		.is_site_home .unis_stats_year_filter {
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 6px !important;
+			min-width: 160px !important;
+		}
+		.is_site_home .unis_stats_year_label {
+			font-family: "Outfit", sans-serif !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.06em !important;
+			text-transform: uppercase !important;
+			color: #64748b !important;
+		}
+		.is_site_home .unis_stats_year_select {
+			appearance: none !important;
+			-webkit-appearance: none !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 14px !important;
+			font-weight: 600 !important;
+			color: #0b1f3a !important;
+			background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 12px center !important;
+			border: 1px solid #cbd5e1 !important;
+			border-radius: 10px !important;
+			padding: 10px 36px 10px 14px !important;
+			cursor: pointer !important;
+			min-width: 160px !important;
+			box-shadow: 0 1px 2px rgba(15,23,42,0.04) !important;
+		}
+		.is_site_home .unis_stats_year_select:focus {
+			outline: none !important;
+			border-color: #5eead4 !important;
+			box-shadow: 0 0 0 3px rgba(15,118,110,0.12) !important;
+		}
+		.is_site_home .unis_stats_grid {
+			display: grid !important;
+			grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+			gap: 0 !important;
+			border-top: 1px solid #e2e8f0 !important;
+			border-bottom: 1px solid #e2e8f0 !important;
+		}
+		.is_site_home .unis_stat {
+			padding: 22px 16px !important;
+			text-align: center !important;
+			border-right: 1px solid #e2e8f0 !important;
+		}
+		.is_site_home .unis_stat:last-child {
+			border-right: none !important;
+		}
+		.is_site_home .unis_stat_value {
+			display: block !important;
+			font-family: "Fraunces", Georgia, serif !important;
+			font-size: 34px !important;
+			font-weight: 700 !important;
+			color: #0b3b6e !important;
+			line-height: 1.1 !important;
+			margin-bottom: 6px !important;
+		}
+		.is_site_home .unis_stat_label {
+			display: block !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 12px !important;
+			font-weight: 600 !important;
+			color: #64748b !important;
+			letter-spacing: 0.02em !important;
+			text-transform: uppercase !important;
+		}
+		.is_site_home .unis_sinta_charts {
+			margin-top: 28px !important;
+			padding: 24px !important;
+			border: 1px solid #e2e8f0 !important;
+			border-radius: 16px !important;
+			background: #fff !important;
+			box-shadow: 0 8px 24px rgba(15,23,42,0.04) !important;
+		}
+		.is_site_home .unis_sinta_charts_head {
+			margin-bottom: 20px !important;
+		}
+		.is_site_home .unis_sinta_charts_title {
+			margin: 0 0 4px !important;
+			font-family: "Fraunces", Georgia, serif !important;
+			font-size: 22px !important;
+			font-weight: 700 !important;
+			color: #0b1f3a !important;
+		}
+		.is_site_home .unis_sinta_charts_sub {
+			margin: 0 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 13px !important;
+			color: #64748b !important;
+		}
+		.is_site_home .unis_sinta_charts_body {
+			display: grid !important;
+			grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr) !important;
+			gap: 28px !important;
+			align-items: start !important;
+		}
+		.is_site_home .unis_chart_caption {
+			margin: 0 0 12px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.08em !important;
+			text-transform: uppercase !important;
+			color: #94a3b8 !important;
+		}
+		.is_site_home .unis_donut_box {
+			position: relative !important;
+			width: 180px !important;
+			height: 180px !important;
+			margin: 0 auto 14px !important;
+		}
+		.is_site_home .unis_donut {
+			width: 180px !important;
+			height: 180px !important;
+			display: block !important;
+		}
+		.is_site_home .unis_donut_center {
+			position: absolute !important;
+			inset: 0 !important;
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			justify-content: center !important;
+			pointer-events: none !important;
+		}
+		.is_site_home .unis_donut_total {
+			font-family: "Fraunces", Georgia, serif !important;
+			font-size: 34px !important;
+			font-weight: 700 !important;
+			color: #0b1f3a !important;
+			line-height: 1 !important;
+		}
+		.is_site_home .unis_donut_total_label {
+			font-family: "Outfit", sans-serif !important;
+			font-size: 12px !important;
+			color: #64748b !important;
+			margin-top: 2px !important;
+		}
+		.is_site_home .unis_donut_legend {
+			display: flex !important;
+			flex-wrap: wrap !important;
+			justify-content: center !important;
+			gap: 8px 12px !important;
+		}
+		.is_site_home .unis_donut_legend_item {
+			display: inline-flex !important;
+			align-items: center !important;
+			gap: 6px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 12px !important;
+			font-weight: 600 !important;
+			color: #475569 !important;
+		}
+		.is_site_home .unis_donut_legend_item i {
+			width: 10px !important;
+			height: 10px !important;
+			border-radius: 999px !important;
+			display: inline-block !important;
+		}
+		.is_site_home .unis_sinta_bars {
+			list-style: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 10px !important;
+		}
+		.is_site_home .unis_sinta_bar_row {
+			display: grid !important;
+			grid-template-columns: 72px minmax(0, 1fr) 28px !important;
+			gap: 10px !important;
+			align-items: center !important;
+		}
+		.is_site_home .unis_sinta_bar_label {
+			font-family: "Outfit", sans-serif !important;
+			font-size: 12px !important;
+			font-weight: 700 !important;
+			color: #334155 !important;
+		}
+		.is_site_home .unis_sinta_bar_track {
+			height: 26px !important;
+			border-radius: 8px !important;
+			background: #f1f5f9 !important;
+			overflow: hidden !important;
+		}
+		.is_site_home .unis_sinta_bar_fill {
+			display: flex !important;
+			align-items: center !important;
+			height: 100% !important;
+			min-width: 0 !important;
+			padding: 0 10px !important;
+			border-radius: 8px !important;
+			color: #fff !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			white-space: nowrap !important;
+			transition: width 0.7s ease !important;
+		}
+		.is_site_home .unis_sinta_bar_count {
+			font-family: "Outfit", sans-serif !important;
+			font-size: 13px !important;
+			font-weight: 700 !important;
+			color: #0b1f3a !important;
+			text-align: right !important;
+		}
+		@media (max-width: 800px) {
+			.is_site_home .unis_sinta_charts_body {
+				grid-template-columns: 1fr !important;
+			}
+		}
+
+		.is_site_home .unis_about_site {
+			max-width: 1100px !important;
+			margin: 0 auto !important;
+			padding: 28px 24px 0 !important;
+			font-family: "Outfit", sans-serif !important;
+			color: #334155 !important;
+		}
+
+		@media (max-width: 1000px) {
+			.is_site_home .unis_stats_grid {
+				grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+			}
+			.is_site_home .unis_stat:nth-child(3n) {
+				border-right: none !important;
+			}
+			.is_site_home .unis_stat:nth-child(n+4) {
+				border-top: 1px solid #e2e8f0 !important;
+			}
+		}
+		@media (max-width: 640px) {
+			.is_site_home .unis_stats {
+				padding: 24px 14px !important;
+			}
+			.is_site_home .unis_stats_grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+			}
+			.is_site_home .unis_stat {
+				border-right: 1px solid #e2e8f0 !important;
+			}
+			.is_site_home .unis_stat:nth-child(2n) {
+				border-right: none !important;
+			}
+			.is_site_home .unis_stat:nth-child(n+3) {
+				border-top: 1px solid #e2e8f0 !important;
+			}
+			.is_site_home .unis_stat_value {
+				font-size: 26px !important;
+			}
+		}
+
+		.is_site_home .library_section_intro {
+			max-width: 1100px !important;
+			margin: 0 auto !important;
+			padding: 40px 24px 8px !important;
+		}
+		.is_site_home .library_section_eyebrow {
+			margin: 0 0 8px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 12px !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.08em !important;
+			text-transform: uppercase !important;
+			color: #0f766e !important;
+		}
+		.is_site_home .library_section_title {
+			margin: 0 0 8px !important;
+			font-family: "Fraunces", Georgia, serif !important;
+			font-size: clamp(28px, 3.5vw, 36px) !important;
+			font-weight: 700 !important;
+			color: #0b1f3a !important;
+			line-height: 1.15 !important;
+			letter-spacing: -0.02em !important;
+		}
+		.is_site_home .library_section_lead {
+			margin: 0 !important;
+			max-width: 560px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 15px !important;
+			line-height: 1.6 !important;
+			color: #64748b !important;
+		}
+		.is_site_home .library_layout {
+			display: flex !important;
+			flex-direction: row !important;
+			align-items: flex-start !important;
+			width: 100% !important;
+			max-width: 1200px !important;
+			margin: 0 auto !important;
+			min-height: 0 !important;
+			background: transparent !important;
+			border: none !important;
+			border-radius: 0 !important;
+			box-shadow: none !important;
+			overflow: visible !important;
+			padding: 20px 24px 56px !important;
+			gap: 20px !important;
+		}
+		.is_site_home .library_sidebar {
+			flex: 0 0 260px !important;
+			width: 260px !important;
+			background: #fff !important;
+			border: 1px solid #e2e8f0 !important;
+			border-radius: 16px !important;
+			padding: 20px 14px !important;
+			box-shadow: 0 8px 28px rgba(15, 23, 42, 0.04) !important;
+			position: sticky !important;
+			top: 16px !important;
+			align-self: flex-start !important;
+			height: auto !important;
+			max-height: calc(100vh - 32px) !important;
+			overflow-y: auto !important;
+		}
+		.is_site_home .library_panels {
+			flex: 1 1 auto !important;
+			min-width: 0 !important;
+			background: transparent !important;
+			display: block !important;
+			padding: 0 !important;
+		}
+		.is_site_home .library_panel {
+			display: none !important;
+			width: 100% !important;
+			background: transparent !important;
+			border: none !important;
+			padding: 0 !important;
+			box-shadow: none !important;
+		}
+		.is_site_home .library_panel.is_active {
+			display: block !important;
+			animation: unisCatalogFade 0.35s ease !important;
+		}
+		@keyframes unisCatalogFade {
+			from { opacity: 0; transform: translateY(6px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+		.is_site_home .library_main_center {
+			width: 100% !important;
+			max-width: 100% !important;
+			margin: 0 !important;
+			background: #fff !important;
+			border: 1px solid #e2e8f0 !important;
+			border-radius: 16px !important;
+			padding: 24px 26px 28px !important;
+			box-shadow: 0 8px 28px rgba(15,23,42,0.04) !important;
+			box-sizing: border-box !important;
+			overflow: hidden !important;
+			min-width: 0 !important;
+		}
+		.is_site_home .library_categories li {
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+		.is_site_home .library_sidebar_title {
+			margin: 0 0 14px !important;
+			padding: 0 8px 12px 8px !important;
+			border-bottom: 1px solid #e2e8f0 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			text-transform: uppercase !important;
+			letter-spacing: 0.08em !important;
+			color: #94a3b8 !important;
+		}
+		.is_site_home .library_categories {
+			list-style: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 4px !important;
+		}
+		.is_site_home .library_cat_btn {
+			display: flex !important;
+			align-items: center !important;
+			justify-content: space-between !important;
+			gap: 8px !important;
+			width: 100% !important;
+			padding: 11px 12px !important;
+			border: 1px solid transparent !important;
+			border-radius: 10px !important;
+			background: transparent !important;
+			color: #334155 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 13px !important;
+			font-weight: 600 !important;
+			text-align: left !important;
+			cursor: pointer !important;
+			transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.18s !important;
+		}
+		.is_site_home .library_cat_btn:hover {
+			background: #f0fdfa !important;
+			border-color: #ccfbf1 !important;
+			color: #0f766e !important;
+		}
+		.is_site_home .library_cat_btn.is_active {
+			background: linear-gradient(135deg, #0b1f3a 0%, #12345c 100%) !important;
+			border-color: transparent !important;
+			color: #fff !important;
+			box-shadow: 0 6px 16px rgba(11, 31, 58, 0.18) !important;
+		}
+		.is_site_home .library_cat_label {
+			flex: 1 !important;
+			min-width: 0 !important;
+			line-height: 1.35 !important;
+			padding-right: 4px !important;
+		}
+		.is_site_home .library_cat_count {
+			flex-shrink: 0 !important;
+			min-width: 26px !important;
+			padding: 3px 8px !important;
+			border-radius: 999px !important;
+			background: #f1f5f9 !important;
+			color: #64748b !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			text-align: center !important;
+		}
+		.is_site_home .library_cat_btn.is_active .library_cat_count {
+			background: rgba(255,255,255,0.18) !important;
+			color: #fff !important;
+		}
+		.is_site_home .library_panel_header {
+			display: flex !important;
+			align-items: flex-start !important;
+			justify-content: space-between !important;
+			gap: 16px !important;
+			margin-bottom: 18px !important;
+			padding-bottom: 0 !important;
+			border-bottom: none !important;
+		}
+		.is_site_home .library_panel_heading {
+			flex: 1 !important;
+		}
+		.is_site_home .library_panel_heading h2,
+		.is_site_home .library_panel_heading h3 {
+			margin: 0 0 4px !important;
+			font-family: "Fraunces", Georgia, serif !important;
+			font-size: 24px !important;
+			font-weight: 700 !important;
+			color: #0b1f3a !important;
+			line-height: 1.25 !important;
+		}
+		.is_site_home .library_panel_heading p {
+			margin: 0 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 13px !important;
+			color: #64748b !important;
+			line-height: 1.5 !important;
+		}
+		.is_site_home .library_panel_count {
+			display: inline-block !important;
+			padding: 7px 12px !important;
+			border-radius: 999px !important;
+			background: #ecfdf5 !important;
+			color: #047857 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 12px !important;
+			font-weight: 700 !important;
+			white-space: nowrap !important;
+		}
+		.is_site_home .library_search_wrap {
+			margin-bottom: 4px !important;
+		}
+		.is_site_home .library_toolbar {
+			margin-bottom: 18px !important;
+			padding-bottom: 18px !important;
+			border-bottom: 1px solid #e2e8f0 !important;
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 12px !important;
+		}
+		.is_site_home .library_sinta_filters {
+			display: flex !important;
+			flex-wrap: wrap !important;
+			align-items: center !important;
+			gap: 8px !important;
+		}
+		.is_site_home .library_sinta_filters_label {
+			font-family: "Outfit", sans-serif !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.08em !important;
+			text-transform: uppercase !important;
+			color: #94a3b8 !important;
+			margin-right: 4px !important;
+		}
+		.is_site_home .library_sinta_btn {
+			display: inline-flex !important;
+			align-items: center !important;
+			gap: 6px !important;
+			border: 1px solid #e2e8f0 !important;
+			background: #f8fafc !important;
+			color: #334155 !important;
+			border-radius: 999px !important;
+			padding: 6px 10px 6px 12px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 12px !important;
+			font-weight: 600 !important;
+			cursor: pointer !important;
+			line-height: 1.2 !important;
+			transition: background 0.18s, border-color 0.18s, color 0.18s, box-shadow 0.18s !important;
+		}
+		.is_site_home .library_sinta_btn:hover {
+			background: #fff !important;
+			border-color: #99f6e4 !important;
+			color: #0f766e !important;
+		}
+		.is_site_home .library_sinta_count {
+			min-width: 18px !important;
+			padding: 1px 6px !important;
+			border-radius: 999px !important;
+			background: #e2e8f0 !important;
+			color: #475569 !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			text-align: center !important;
+		}
+		.is_site_home .library_sinta_btn.is_active {
+			background: #0f766e !important;
+			border-color: #0f766e !important;
+			color: #fff !important;
+			box-shadow: 0 6px 16px rgba(15, 118, 110, 0.18) !important;
+		}
+		.is_site_home .library_sinta_btn.is_active .library_sinta_count {
+			background: rgba(255,255,255,0.22) !important;
+			color: #fff !important;
+		}
+		.is_site_home .library_sinta_btn--4.is_active { background: #2563eb !important; border-color: #2563eb !important; }
+		.is_site_home .library_sinta_btn--5.is_active { background: #7c3aed !important; border-color: #7c3aed !important; }
+		.is_site_home .library_sinta_btn--6.is_active { background: #334155 !important; border-color: #334155 !important; }
+		.is_site_home .library_sinta_btn--1.is_active { background: #d97706 !important; border-color: #d97706 !important; }
+		.is_site_home .library_sinta_btn--2.is_active { background: #64748b !important; border-color: #64748b !important; }
+		.is_site_home .library_sinta_btn--3.is_active { background: #8b5e34 !important; border-color: #8b5e34 !important; }
+		.is_site_home .library_sinta_btn--none.is_active { background: #475569 !important; border-color: #475569 !important; }
+		.is_site_home .library_search {
+			display: flex !important;
+			align-items: center !important;
+			gap: 10px !important;
+			padding: 12px 16px !important;
+			border: 1px solid #e2e8f0 !important;
+			border-radius: 12px !important;
+			background: #f8fafc !important;
+			color: #64748b !important;
+			transition: border-color 0.18s, box-shadow 0.18s, background 0.18s !important;
+		}
+		.is_site_home .library_search:focus-within {
+			border-color: #5eead4 !important;
+			background: #fff !important;
+			box-shadow: 0 0 0 3px rgba(15,118,110,0.12) !important;
+		}
+		.is_site_home .library_search input {
+			flex: 1 !important;
+			border: none !important;
+			background: transparent !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 14px !important;
+			color: #0f172a !important;
+			outline: none !important;
+		}
+		.is_site_home .library_search input::placeholder {
+			color: #94a3b8 !important;
+		}
+		.is_site_home .library_grid_cards {
+			display: flex !important;
+			flex-direction: row !important;
+			flex-wrap: nowrap !important;
+			gap: 16px !important;
+			align-items: stretch !important;
+			overflow-x: auto !important;
+			overflow-y: hidden !important;
+			scroll-snap-type: x mandatory !important;
+			scroll-behavior: smooth !important;
+			-webkit-overflow-scrolling: touch !important;
+			overscroll-behavior-x: contain !important;
+			padding: 4px 4px 14px !important;
+			margin: 0 !important;
+			width: 100% !important;
+			max-width: 100% !important;
+			box-sizing: border-box !important;
+			scrollbar-width: thin !important;
+			scrollbar-color: #99f6e4 #f1f5f9 !important;
+		}
+		.is_site_home .library_grid_cards::-webkit-scrollbar {
+			height: 8px !important;
+		}
+		.is_site_home .library_grid_cards::-webkit-scrollbar-track {
+			background: #f1f5f9 !important;
+			border-radius: 999px !important;
+		}
+		.is_site_home .library_grid_cards::-webkit-scrollbar-thumb {
+			background: #99f6e4 !important;
+			border-radius: 999px !important;
+		}
+		.is_site_home .library_card.is_hidden {
+			display: none !important;
+		}
+		.is_site_home .library_card {
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: stretch !important;
+			gap: 0 !important;
+			flex: 0 0 260px !important;
+			width: 260px !important;
+			max-width: 260px !important;
+			box-sizing: border-box !important;
+			background: #fff !important;
+			border: 1px solid #e2e8f0 !important;
+			border-radius: 14px !important;
+			overflow: hidden !important;
+			padding: 0 !important;
+			height: auto !important;
+			min-height: 0 !important;
+			position: relative !important;
+			z-index: 0 !important;
+			scroll-snap-align: start !important;
+			transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s !important;
+		}
+		.is_site_home .library_card:hover {
+			border-color: #99f6e4 !important;
+			box-shadow: 0 12px 28px rgba(15,118,110,0.1) !important;
+			transform: translateY(-2px) !important;
+			z-index: 1 !important;
+		}
+		.is_site_home .library_card_cover {
+			flex: none !important;
+			width: 100% !important;
+			min-width: 0 !important;
+			height: 140px !important;
+			align-self: auto !important;
+			border-radius: 0 !important;
+			background: linear-gradient(160deg, #ecfeff 0%, #dbeafe 55%, #ccfbf1 100%) !important;
+			position: relative !important;
+			overflow: hidden !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+		}
+		.is_site_home .library_card_sinta {
+			position: absolute !important;
+			top: 10px !important;
+			right: 10px !important;
+			left: auto !important;
+			z-index: 2 !important;
+			display: inline-flex !important;
+			align-items: center !important;
+			gap: 5px !important;
+			padding: 5px 10px 5px 8px !important;
+			border-radius: 999px !important;
+			background: linear-gradient(135deg, #b8860b 0%, #8b5e34 55%, #6b4423 100%) !important;
+			color: #fff !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 10px !important;
+			font-weight: 800 !important;
+			line-height: 1 !important;
+			letter-spacing: 0.04em !important;
+			text-transform: uppercase !important;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.22) !important;
+			border: 1px solid rgba(255,255,255,0.25) !important;
+			white-space: nowrap !important;
+		}
+		.is_site_home .library_card_sinta_icon {
+			flex-shrink: 0 !important;
+			opacity: 0.95 !important;
+		}
+		.is_site_home .library_card_sinta--1 {
+			background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+		}
+		.is_site_home .library_card_sinta--2 {
+			background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%) !important;
+		}
+		.is_site_home .library_card_sinta--3 {
+			background: linear-gradient(135deg, #c4a574 0%, #8b5e34 100%) !important;
+		}
+		.is_site_home .library_card_sinta--4 {
+			background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%) !important;
+		}
+		.is_site_home .library_card_sinta--5 {
+			background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%) !important;
+		}
+		.is_site_home .library_card_sinta--6 {
+			background: linear-gradient(135deg, #64748b 0%, #334155 100%) !important;
+		}
+		.is_site_home .library_card_cover img {
+			width: 100% !important;
+			height: 100% !important;
+			object-fit: cover !important;
+			transition: transform 0.35s ease !important;
+		}
+		.is_site_home .library_card:hover .library_card_cover img {
+			transform: scale(1.04) !important;
+		}
+		.is_site_home .library_card_placeholder svg {
+			width: 36px !important;
+			height: 36px !important;
+			color: #5eead4 !important;
+		}
+		.is_site_home .library_card_content {
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 8px !important;
+			padding: 14px !important;
+			flex: 1 !important;
+			min-width: 0 !important;
+			justify-content: flex-start !important;
+		}
+		.is_site_home .library_card_badge {
+			display: inline-block !important;
+			align-self: flex-start !important;
+			padding: 4px 9px !important;
+			border-radius: 6px !important;
+			background: #f1f5f9 !important;
+			color: #475569 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 10px !important;
+			font-weight: 700 !important;
+			line-height: 1.3 !important;
+			max-width: 100% !important;
+			overflow: hidden !important;
+			text-overflow: ellipsis !important;
+			white-space: nowrap !important;
+		}
+		.is_site_home .library_card_publish_month {
+			display: inline-block !important;
+			align-self: flex-start !important;
+			margin-top: 0 !important;
+			padding: 4px 9px !important;
+			border-radius: 999px !important;
+			background: #ecfeff !important;
+			color: #0e7490 !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 10px !important;
+			font-weight: 700 !important;
+			line-height: 1.3 !important;
+		}
+		.is_site_home .library_card_title {
+			margin: 0 !important;
+			font-family: "Fraunces", Georgia, serif !important;
+			font-size: 16px !important;
+			font-weight: 700 !important;
+			line-height: 1.35 !important;
+			display: -webkit-box !important;
+			-webkit-line-clamp: 2 !important;
+			-webkit-box-orient: vertical !important;
+			overflow: hidden !important;
+			min-height: auto !important;
+		}
+		.is_site_home .library_card_title a {
+			color: #0b1f3a !important;
+			text-decoration: none !important;
+		}
+		.is_site_home .library_card_title a:hover { color: #0f766e !important; }
+		.is_site_home .library_card_actions {
+			display: flex !important;
+			gap: 8px !important;
+			margin-top: auto !important;
+			padding-top: 8px !important;
+		}
+		.is_site_home .library_btn {
+			flex: 1 !important;
+			display: inline-block !important;
+			padding: 9px 10px !important;
+			border-radius: 8px !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			text-decoration: none !important;
+			text-align: center !important;
+			white-space: nowrap !important;
+			transition: background 0.15s, color 0.15s, border-color 0.15s !important;
+		}
+		.is_site_home .library_btn_primary {
+			background: #0b1f3a !important;
+			color: #fff !important;
+		}
+		.is_site_home .library_btn_primary:hover {
+			background: #12345c !important;
+			color: #fff !important;
+		}
+		.is_site_home .library_btn_secondary {
+			background: #fff !important;
+			color: #0f766e !important;
+			border: 1px solid #99f6e4 !important;
+		}
+		.is_site_home .library_btn_secondary:hover {
+			background: #f0fdfa !important;
+		}
+		.is_site_home .library_no_results {
+			margin: 0 0 16px !important;
+			padding: 18px !important;
+			border-radius: 12px !important;
+			background: #f8fafc !important;
+			color: #64748b !important;
+			text-align: center !important;
+			font-family: "Outfit", sans-serif !important;
+			font-size: 14px !important;
+		}
+		.is_site_home .pkp_structure_content {
+			background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
+		}
+		@media (max-width: 992px) {
+			.is_site_home .library_layout {
+				flex-direction: column !important;
+				min-height: auto !important;
+				padding: 16px 16px 40px !important;
+				gap: 14px !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				box-sizing: border-box !important;
+			}
+			.is_site_home .library_sidebar {
+				flex: none !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				height: auto !important;
+				max-height: none !important;
+				position: static !important;
+				padding: 14px 14px 16px !important;
+				box-sizing: border-box !important;
+				overflow: visible !important;
+			}
+			.is_site_home .library_categories {
+				display: flex !important;
+				flex-direction: row !important;
+				flex-wrap: nowrap !important;
+				align-items: center !important;
+				gap: 8px !important;
+				overflow-x: auto !important;
+				overflow-y: visible !important;
+				-webkit-overflow-scrolling: touch !important;
+				overscroll-behavior-x: contain !important;
+				padding: 2px 2px 6px !important;
+				margin: 0 !important;
+				scrollbar-width: none !important;
+				-ms-overflow-style: none !important;
+			}
+			.is_site_home .library_categories::-webkit-scrollbar {
+				display: none !important;
+				height: 0 !important;
+			}
+			.is_site_home .library_categories li {
+				flex: 0 0 auto !important;
+				list-style: none !important;
+			}
+			.is_site_home .library_cat_btn {
+				white-space: nowrap !important;
+				border: 1px solid #e2e8f0 !important;
+				min-height: 40px !important;
+				box-shadow: none !important;
+				transform: none !important;
+			}
+			.is_site_home .library_cat_btn.is_active {
+				border-color: transparent !important;
+				box-shadow: none !important;
+			}
+			.is_site_home .library_cat_label {
+				overflow: hidden !important;
+				text-overflow: ellipsis !important;
+				max-width: 180px !important;
+			}
+			.is_site_home .library_panels,
+			.is_site_home .library_panel {
+				width: 100% !important;
+				max-width: 100% !important;
+				min-width: 0 !important;
+			}
+			.is_site_home .library_main_center {
+				padding: 18px 14px 20px !important;
+			}
+			.is_site_home .library_panel_header {
+				flex-direction: column !important;
+				gap: 10px !important;
+			}
+			.is_site_home .library_panel_heading h2,
+			.is_site_home .library_panel_heading h3 {
+				font-size: 20px !important;
+			}
+			.is_site_home .library_card {
+				flex-basis: min(78vw, 280px) !important;
+				width: min(78vw, 280px) !important;
+				max-width: min(78vw, 280px) !important;
+			}
+			.is_site_home .library_card_title {
+				font-size: 15px !important;
+			}
+			.is_site_home .library_btn {
+				padding: 10px 8px !important;
+				font-size: 11px !important;
+			}
+			.is_site_home .library_section_intro {
+				padding: 28px 16px 4px !important;
+				box-sizing: border-box !important;
+			}
+			.is_site_home .unis_sinta_charts {
+				padding: 16px !important;
+			}
+			.is_site_home .unis_stats_year_filter,
+			.is_site_home .unis_stats_year_select {
+				width: 100% !important;
+				min-width: 0 !important;
+				max-width: 100% !important;
+				box-sizing: border-box !important;
+			}
+		}
+		@media (max-width: 960px) {
+			.is_site_home .unis_landing_hero,
+			.page_index_site .unis_landing_hero {
+				gap: 20px !important;
+				padding: 28px 0 40px !important;
+			}
+			.is_site_home .unis_coverflow,
+			.page_index_site .unis_coverflow {
+				max-width: 100% !important;
+				height: clamp(280px, 46vw, 340px) !important;
+			}
+			.is_site_home .unis_cover_card,
+			.page_index_site .unis_cover_card {
+				--card-w: min(560px, 68vw);
+				border-radius: 22px !important;
+			}
+			.is_site_home .unis_cover_card.is-prev,
+			.page_index_site .unis_cover_card.is-prev {
+				transform: translate3d(calc(-50% - 38%), -50%, 0) scale(0.82) !important;
+			}
+			.is_site_home .unis_cover_card.is-next,
+			.page_index_site .unis_cover_card.is-next {
+				transform: translate3d(calc(-50% + 38%), -50%, 0) scale(0.82) !important;
+			}
+			.is_site_home .unis_cover_card.is-prev2,
+			.is_site_home .unis_cover_card.is-next2,
+			.page_index_site .unis_cover_card.is-prev2,
+			.page_index_site .unis_cover_card.is-next2 {
+				opacity: 0 !important;
+				visibility: hidden !important;
+			}
+			.is_site_home .unis_hero_arrow--prev,
+			.page_index_site .unis_hero_arrow--prev {
+				left: 10px !important;
+			}
+			.is_site_home .unis_hero_arrow--next,
+			.page_index_site .unis_hero_arrow--next {
+				right: 10px !important;
+			}
+			.is_site_home .unis_hero_slide_nav,
+			.page_index_site .unis_hero_slide_nav {
+				bottom: 36px !important;
+			}
+		}
+		@media (max-width: 640px) {
+			.is_site_home .unis_landing_hero,
+			.page_index_site .unis_landing_hero {
+				padding: 18px 0 28px !important;
+				gap: 16px !important;
+				overflow: hidden !important;
+			}
+			.is_site_home .unis_coverflow,
+			.page_index_site .unis_coverflow {
+				height: 420px !important;
+				min-height: 400px !important;
+				padding: 8px 0 20px !important;
+				touch-action: pan-y !important;
+			}
+			.is_site_home .unis_coverflow_stage,
+			.page_index_site .unis_coverflow_stage {
+				inset: 8px 0 24px !important;
+			}
+			.is_site_home .unis_cover_card,
+			.page_index_site .unis_cover_card {
+				--card-w: min(300px, 78vw);
+				grid-template-columns: 1fr !important;
+				grid-template-rows: 150px minmax(0, 1fr) !important;
+				border-radius: 18px !important;
+				height: 360px !important;
+				box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16) !important;
+				transition: transform .3s cubic-bezier(.25,.8,.25,1), opacity .25s ease !important;
+			}
+			.is_site_home .unis_cover_card.is-active,
+			.page_index_site .unis_cover_card.is-active {
+				box-shadow: 0 14px 30px rgba(15, 23, 42, 0.2) !important;
+			}
+			.is_site_home .unis_cover_card_media,
+			.page_index_site .unis_cover_card_media {
+				min-height: 150px !important;
+				height: 150px !important;
+				order: 1 !important;
+			}
+			.is_site_home .unis_cover_card_media::before,
+			.page_index_site .unis_cover_card_media::before {
+				display: none !important;
+			}
+			.is_site_home .unis_cover_card_body,
+			.page_index_site .unis_cover_card_body {
+				order: 2 !important;
+				padding: 14px 14px 20px !important;
+				gap: 4px !important;
+				justify-content: flex-start !important;
+			}
+			.is_site_home .unis_cover_card_title,
+			.page_index_site .unis_cover_card_title {
+				font-size: 15px !important;
+				-webkit-line-clamp: 3 !important;
+			}
+			.is_site_home .unis_cover_card_cat,
+			.page_index_site .unis_cover_card_cat {
+				font-size: 12px !important;
+			}
+			.is_site_home .unis_cover_card_btn,
+			.page_index_site .unis_cover_card_btn {
+				margin-top: auto !important;
+				padding: 9px 14px !important;
+				font-size: 12px !important;
+			}
+			.is_site_home .unis_cover_card.is-prev,
+			.page_index_site .unis_cover_card.is-prev {
+				transform: translate3d(calc(-50% - 74%), -50%, 0) scale(0.9) !important;
+			}
+			.is_site_home .unis_cover_card.is-next,
+			.page_index_site .unis_cover_card.is-next {
+				transform: translate3d(calc(-50% + 74%), -50%, 0) scale(0.9) !important;
+			}
+			.is_site_home .unis_hero_arrow,
+			.page_index_site .unis_hero_arrow {
+				width: 36px !important;
+				height: 36px !important;
+				box-shadow: 0 4px 12px rgba(15,23,42,0.12) !important;
+			}
+			.is_site_home .unis_hero_arrow--prev,
+			.page_index_site .unis_hero_arrow--prev {
+				left: max(4px, calc(50% - 39vw)) !important;
+			}
+			.is_site_home .unis_hero_arrow--next,
+			.page_index_site .unis_hero_arrow--next {
+				right: max(4px, calc(50% - 39vw)) !important;
+			}
+			.is_site_home .unis_hero_slide_nav,
+			.page_index_site .unis_hero_slide_nav {
+				bottom: 2px !important;
+			}
+			.is_site_home .unis_landing_brand,
+			.page_index_site .unis_landing_brand {
+				font-size: clamp(22px, 7vw, 30px) !important;
+			}
+			.is_site_home .unis_landing_cta,
+			.page_index_site .unis_landing_cta {
+				flex-direction: column !important;
+				align-items: stretch !important;
+			}
+			.is_site_home .unis_landing_btn,
+			.page_index_site .unis_landing_btn {
+				width: 100% !important;
+				box-sizing: border-box !important;
+			}
+			.is_site_home .unis_stats {
+				padding: 24px 14px !important;
+			}
+			.is_site_home .unis_stats_heading {
+				font-size: 22px !important;
+			}
+			.is_site_home .unis_stats_grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+			}
+			.is_site_home .unis_stat {
+				padding: 16px 10px !important;
+				border-right: 1px solid #e2e8f0 !important;
+				box-sizing: border-box !important;
+			}
+			.is_site_home .unis_stat:nth-child(2n) {
+				border-right: none !important;
+			}
+			.is_site_home .unis_stat:nth-child(n+3) {
+				border-top: 1px solid #e2e8f0 !important;
+			}
+			.is_site_home .unis_stat:nth-child(3n) {
+				border-right: 1px solid #e2e8f0 !important;
+			}
+			.is_site_home .unis_stat_value {
+				font-size: 26px !important;
+			}
+			.is_site_home .unis_stat_label {
+				font-size: 11px !important;
+			}
+			.is_site_home .unis_donut_box,
+			.is_site_home .unis_donut {
+				width: 150px !important;
+				height: 150px !important;
+			}
+			.is_site_home .unis_sinta_bar_row {
+				grid-template-columns: 58px minmax(0, 1fr) 24px !important;
+				gap: 8px !important;
+			}
+			.is_site_home .library_card {
+				flex-basis: min(84vw, 300px) !important;
+				width: min(84vw, 300px) !important;
+				max-width: min(84vw, 300px) !important;
+			}
+			.is_site_home .library_card_cover {
+				height: 120px !important;
+			}
+			.is_site_home .library_card_actions {
+				flex-wrap: wrap !important;
+			}
+			.is_site_home .library_btn {
+				flex: 1 1 calc(50% - 4px) !important;
+				min-width: 0 !important;
+			}
+			.is_site_home .library_search {
+				padding: 10px 12px !important;
+			}
+			.is_site_home .library_search input {
+				font-size: 16px !important; /* prevent iOS zoom */
+			}
+			.is_site_home .library_sinta_filters {
+				flex-wrap: nowrap !important;
+				overflow-x: auto !important;
+				-webkit-overflow-scrolling: touch !important;
+				padding-bottom: 4px !important;
+				scrollbar-width: none !important;
+			}
+			.is_site_home .library_sinta_filters::-webkit-scrollbar {
+				display: none !important;
+			}
+			.is_site_home .library_sinta_btn {
+				flex: 0 0 auto !important;
+			}
+			.is_site_unis .unis_header_title { font-size: 16px !important; }
+			.is_site_unis .unis_header_subtitle {
+				font-size: 11px !important;
+			}
+			.is_site_unis .unis_header_logo {
+				flex-basis: 44px !important;
+				width: 44px !important;
+				height: 44px !important;
+			}
+			.unis_footer .pkp_structure_footer {
+				padding: 28px 16px 20px !important;
+			}
+			.unis_footer .unis_footer_brand {
+				flex-direction: column !important;
+				align-items: flex-start !important;
+			}
+		}
+		@media (max-width: 380px) {
+			.is_site_home .library_card_actions {
+				flex-direction: column !important;
+			}
+			.is_site_home .library_btn {
+				width: 100% !important;
+				flex: 1 1 auto !important;
+			}
+		}
+
+		/* ===== Floating support chat ===== */
+		.unis_support_chat {
+			position: fixed !important;
+			right: 20px !important;
+			bottom: 20px !important;
+			z-index: 1200 !important;
+			font-family: "Outfit", sans-serif !important;
+		}
+		.unis_support_fab {
+			width: 58px !important;
+			height: 58px !important;
+			border: 0 !important;
+			border-radius: 999px !important;
+			display: inline-flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			background: linear-gradient(135deg, #0f766e 0%, #0b1f3a 100%) !important;
+			color: #fff !important;
+			cursor: pointer !important;
+			box-shadow: 0 12px 28px rgba(15, 23, 42, 0.28) !important;
+			transition: transform .2s ease, box-shadow .2s ease !important;
+		}
+		.unis_support_fab:hover {
+			transform: translateY(-2px) scale(1.03) !important;
+			box-shadow: 0 16px 34px rgba(15, 23, 42, 0.34) !important;
+		}
+		.unis_support_panel {
+			position: absolute !important;
+			right: 0 !important;
+			bottom: 72px !important;
+			width: min(360px, calc(100vw - 28px)) !important;
+			background: #fff !important;
+			border: 1px solid #e2e8f0 !important;
+			border-radius: 20px !important;
+			box-shadow: 0 18px 48px rgba(15, 23, 42, 0.2) !important;
+			padding: 16px 16px 14px !important;
+			box-sizing: border-box !important;
+		}
+		.unis_support_panel_head {
+			display: flex !important;
+			align-items: flex-start !important;
+			justify-content: space-between !important;
+			gap: 12px !important;
+			margin-bottom: 6px !important;
+		}
+		.unis_support_panel_eyebrow {
+			margin: 0 !important;
+			font-size: 11px !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.08em !important;
+			text-transform: uppercase !important;
+			color: #0f766e !important;
+		}
+		.unis_support_panel_title {
+			margin: 2px 0 0 !important;
+			font-size: 18px !important;
+			font-weight: 700 !important;
+			color: #0b1f3a !important;
+			line-height: 1.2 !important;
+		}
+		.unis_support_close {
+			width: 32px !important;
+			height: 32px !important;
+			border: 0 !important;
+			border-radius: 999px !important;
+			background: #f1f5f9 !important;
+			color: #334155 !important;
+			font-size: 22px !important;
+			line-height: 1 !important;
+			cursor: pointer !important;
+		}
+		.unis_support_panel_lead {
+			margin: 0 0 12px !important;
+			font-size: 13px !important;
+			line-height: 1.5 !important;
+			color: #64748b !important;
+		}
+		.unis_support_form {
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 10px !important;
+		}
+		.unis_support_field {
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 5px !important;
+			font-size: 12px !important;
+			font-weight: 600 !important;
+			color: #334155 !important;
+		}
+		.unis_support_field input,
+		.unis_support_field textarea {
+			width: 100% !important;
+			box-sizing: border-box !important;
+			border: 1px solid #cbd5e1 !important;
+			border-radius: 12px !important;
+			padding: 10px 12px !important;
+			font: inherit !important;
+			font-weight: 500 !important;
+			color: #0f172a !important;
+			background: #fff !important;
+			resize: vertical !important;
+		}
+		.unis_support_field input[readonly] {
+			background: #f8fafc !important;
+			color: #475569 !important;
+		}
+		.unis_support_field textarea {
+			min-height: 96px !important;
+		}
+		.unis_support_status {
+			margin: 0 !important;
+			font-size: 12.5px !important;
+			font-weight: 600 !important;
+			line-height: 1.4 !important;
+		}
+		.unis_support_status.is-ok { color: #047857 !important; }
+		.unis_support_status.is-error { color: #b91c1c !important; }
+		.unis_support_submit {
+			border: 0 !important;
+			border-radius: 999px !important;
+			padding: 12px 16px !important;
+			background: linear-gradient(135deg, #0f766e 0%, #115e59 100%) !important;
+			color: #fff !important;
+			font: inherit !important;
+			font-weight: 700 !important;
+			cursor: pointer !important;
+		}
+		.unis_support_submit:disabled {
+			opacity: 0.7 !important;
+			cursor: wait !important;
+		}
+		@media (max-width: 640px) {
+			.unis_support_chat {
+				right: 14px !important;
+				bottom: 14px !important;
+			}
+			.unis_support_fab {
+				width: 54px !important;
+				height: 54px !important;
+			}
+		}
+	</style>
+</head>
+<body class="pkp_page_article pkp_op_view" dir="ltr">
+
+	<div class="pkp_structure_page">
+
+				<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">
+						
+ <nav class="cmp_skip_to_content" aria-label="Jump to content links">
+	<a href="#pkp_content_main">Skip to main content</a>
+	<a href="#siteNav">Skip to main navigation menu</a>
+		<a href="#pkp_content_footer">Skip to site footer</a>
+</nav>
+
+			<div class="pkp_head_wrapper">
+									<div class="pkp_site_name_wrapper">
+						<button class="pkp_site_nav_toggle">
+							<span>Open Menu</span>
+						</button>
+												<div class="pkp_site_name">
+																			<a href="							https://ejournal.unis.ac.id/index.php/jutis/index
+						" class="is_text">JURNAL TEKNIK INFORMATIKA UNIS</a>
+												</div>
+					</div>
+
+					
+					<nav class="pkp_site_nav_menu" aria-label="Site Navigation">
+						<a id="siteNav"></a>
+						<div class="pkp_navigation_primary_row">
+							<div class="pkp_navigation_primary_wrapper">
+															<ul id="navigationPrimary" class="pkp_navigation_primary pkp_nav_list">
+								<li class="">
+				<a href="https://ejournal.unis.ac.id/index.php/jutis/issue/current">
+					Current
+				</a>
+							</li>
+								<li class="">
+				<a href="https://ejournal.unis.ac.id/index.php/jutis/issue/archive">
+					Archives
+				</a>
+							</li>
+								<li class="">
+				<a href="https://ejournal.unis.ac.id/index.php/jutis/announcement">
+					Announcements
+				</a>
+							</li>
+								<li class="">
+				<a href="https://ejournal.unis.ac.id/index.php/jutis/about">
+					About
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://ejournal.unis.ac.id/index.php/jutis/about">
+										About the Journal
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://ejournal.unis.ac.id/index.php/jutis/about/submissions">
+										Submissions
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://ejournal.unis.ac.id/index.php/jutis/about/editorialTeam">
+										Editorial Team
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://ejournal.unis.ac.id/index.php/jutis/about/contact">
+										Contact
+									</a>
+								</li>
+																		</ul>
+							</li>
+			</ul>
+
+					
+																	<div class="pkp_navigation_search_wrapper">
+										<a href="https://ejournal.unis.ac.id/index.php/jutis/search" class="pkp_search pkp_search_desktop">
+											<span class="fa fa-search" aria-hidden="true"></span>
+											Search
+										</a>
+									</div>
+															</div>
+						</div>
+						<div class="pkp_navigation_user_wrapper" id="navigationUserWrapper">
+								<ul id="navigationUser" class="pkp_navigation_user pkp_nav_list">
+								<li class="profile">
+				<a href="https://ejournal.unis.ac.id/index.php/jutis/user/register">
+					Register
+				</a>
+							</li>
+								<li class="profile">
+				<a href="https://ejournal.unis.ac.id/index.php/jutis/login">
+					Login
+				</a>
+							</li>
+										</ul>
+
+						</div>
+					</nav>
+							</div><!-- .pkp_head_wrapper -->
+		</header><!-- .pkp_structure_head -->
+
+						<div class="pkp_structure_content has_sidebar">
+			<div class="pkp_structure_main" role="main">
+				<a id="pkp_content_main"></a>
+
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="You are here:">
+	<ol>
+		<li>
+			<a href="https://ejournal.unis.ac.id/index.php/jutis/index">
+				Home
+			</a>
+			<span class="separator">/</span>
+		</li>
+		<li>
+			<a href="https://ejournal.unis.ac.id/index.php/jutis/issue/archive">
+				Archives
+			</a>
+			<span class="separator">/</span>
+		</li>
+					<li>
+				<a href="https://ejournal.unis.ac.id/index.php/jutis/issue/view/121">
+					Vol. 8 No. 2 (2020): Jutis (Jurnal Teknik Informatika)
+				</a>
+				<span class="separator">/</span>
+			</li>
+				<li class="current" aria-current="page">
+			<span aria-current="page">
+									Articles
+							</span>
+		</li>
+	</ol>
+</nav>
+	
+		  	 <article class="obj_article_details">
+
+		
+	<h1 class="page_title">
+		Implementasi Metode Weighted Product Untuk Pemilihan Pemberdayaan Industri Kecil Menengah Pada Dinas Perindustrian Perdagangan Kabupaten Pandeglang
+	</h1>
+
+	
+	<div class="row">
+		<div class="main_entry">
+
+							<section class="item authors">
+					<h2 class="pkp_screen_reader">Authors</h2>
+					<ul class="authors">
+											<li>
+							<span class="name">
+								Aghy Gilar Pratama
+							</span>
+															<span class="affiliation">
+									Universitas Mathla`ul Anwar
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Andrianto Heri Wibowo
+							</span>
+															<span class="affiliation">
+									Universitas Mathla`ul Anwar
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Ardiansyah Ardiansyah
+							</span>
+															<span class="affiliation">
+									Universitas Mathla`ul Anwar
+																	</span>
+																				</li>
+											<li>
+							<span class="name">
+								Robby Rizky
+							</span>
+															<span class="affiliation">
+									Universitas Mathla`ul Anwar
+																	</span>
+																				</li>
+										</ul>
+				</section>
+			
+																												<section class="item doi">
+						<h2 class="label">
+														DOI:
+						</h2>
+						<span class="value">
+							<a href="https://doi.org/10.33592/jutis.v8i2.1104">
+								https://doi.org/10.33592/jutis.v8i2.1104
+							</a>
+						</span>
+					</section>
+																
+									<section class="item keywords">
+				<h2 class="label">
+										Keywords:
+				</h2>
+				<span class="value">
+											Industri kecil menengah, 											Weighted Product, 											sistem pendukung keputusan, 											pemberdayaan.									</span>
+			</section>
+			
+										<section class="item abstract">
+					<h2 class="label">Abstract</h2>
+					Industi kecil menengah adalah industri yang harus terus diarahkan agar dapat bekembang menjadi industri yang besar, jumlah industri kecil pada saat ini berkembang dengan sangat cepat yang didukung oleh sumberdaya alam dan sumberaya manusia yang memadai, akan tetapi untuk pengoptimalan keberadaan industri kecil menengah oleh Dinas Perindustrian Perdagangan Kabupaten Pandeglang masih belum merata dan cendurng sangat lambat, sehingga banyak industri kecil menengah yang tidak bisa berkembang karena tidak ada pemberdayaan dari Dinas terkait. Industri kecil menengah ini memiliki peran sebagai pemacu dalam pertumbuhan ekonomi daerah, dimana industri dapat memanfaatkan sumber daya alam dan manusia agar dapat merubah perekonomian daerah, sesuai dengan Peraturan Mentri Perindustrian RI Nomor 64 Tahun 2016, bahwa industri kecil menengah merupakan industri yang memenuhi ketentuan karyawan paling banyak 19 orang tenaga kerja dan memeiliki investai paling sedikit satu milyar rupiah. Penelitian ini bertujuan untuk memudahkan Dinas Perindustrian Perdagangan Kabupaten Pandeglang pada Proses pemberdayaan industry, dengan menggunakan metode Weighted Product (WP). Metode Weighted Product (WP) merupakan teknik pengamabilan keputusan dari beberap pilihan alternatif yang ada, metode ini dapat membantu menyelesaikan dalam menentukan keputusan secara efektif, dengan memecahan masalah, multikriteria yang hasilnya dapat diambil berdasarkan nilai teringgi. Proses penentuan nilai/rangking metode Weighted Product, dimulai dengan pembobotan kriteria kemudian perhitungan nilai total dan selanjutnya perhitungan penentuan rangking, sehingga sistem pendukung keputusan mampu menampilkan rangking dari pemilihan pemberdayaan peserta industri kecil menengah. Adapuan kriteria yang digunakan adalah Tenaga Kerja, Nilai Investasi, Jumlah Kapasitas dan Nilai Produksi, dengan adanya penerapan metode Weighted Product (WP) pada sistem Pendukung keputusan mampu menampilkan rangking dari pemilihan pemberdayaan peserta industri kecil menengah sebagai bahan pertimbangan.
+				</section>
+			
+			
+
+																																																																																<section class="item author_bios">
+					<h2 class="label">
+													Author Biographies
+											</h2>
+																		<section class="sub_item">
+								<h3 class="label">
+																																							Aghy Gilar Pratama, <span class="affiliation">Universitas Mathla`ul Anwar</span>
+																	</h3>
+								<div class="value">
+									Jurusan Sistem Informasi, Fakultas Teknologi dan Informatika
+								</div>
+							</section>
+																								<section class="sub_item">
+								<h3 class="label">
+																																							Andrianto Heri Wibowo, <span class="affiliation">Universitas Mathla`ul Anwar</span>
+																	</h3>
+								<div class="value">
+									Jurusan Sistem Informasi, Fakultas Teknologi dan Informatika
+								</div>
+							</section>
+																								<section class="sub_item">
+								<h3 class="label">
+																																							Ardiansyah Ardiansyah, <span class="affiliation">Universitas Mathla`ul Anwar</span>
+																	</h3>
+								<div class="value">
+									Jurusan Sistem Informasi, Fakultas Teknologi dan Informatika
+								</div>
+							</section>
+																								<section class="sub_item">
+								<h3 class="label">
+																																							Robby Rizky, <span class="affiliation">Universitas Mathla`ul Anwar</span>
+																	</h3>
+								<div class="value">
+									Jurusan Sistem Informasi, Fakultas Teknologi dan Informatika
+								</div>
+							</section>
+															</section>
+			
+										<section class="item references">
+					<h2 class="label">
+						References
+					</h2>
+					<div class="value">
+																					<p>P. R. Dewi, ???Tantangan Dan Peluang Pengembangan Industri Alas Kaki : Implikasi Flux Footwear,??? vol. 2, 2017. </p>
+															<p>E. Ridhawati, ???Penggunaan Analitical Hierarchy Process (Ahp) Dalam Menentukan Prioritas Pengembangan Industri Kecil Dan Menengah Di Kecamatan Bandar Negeri Suoh Kabupaten Lampung Barat,??? J. TAM ( Technol. Accept. Model ), vol. 6, no. 1, pp. 51???59, 2016.[3] J. Prihatini, ???Pemberdayaan Industri Kecil Anyaman Bambu Dalam Meningkatkan Pendapatan Masyarakat Di Desa Karayunan Kecamatan Cigasong Kabupaten Majalengka Provinsi Jawa Barat,??? J. Ilmu Pemerintah. Widya Praja, vol. 42, no. 1, p. 11, 2016, doi: 10.33701/jipwp.v42i1.138. </p>
+															<p>J. Warmansyah, Metode Penelitian dan Pengolahan Data Untuk Pengambilan Keputusan pada perusahaan. Sleman, yogyakarta, 2020. </p>
+															<p>Sukisno, S. (2020). Perancangan Sistem Informasi Perhitungan Caddie Fee Pada Imperial Klub Golf Karawaci Kabupaten Tangerang. Jurnal Teknik Informatika Unis, 7(2), 153???158. <a href="https://doi.org/10.33592/jutis.v7i2.397">https://doi.org/10.33592/jutis.v7i2.397</a> </p>
+															<p>N. Pakaya, ???Pemuda Nusantara Dengan Menggunakan Metode,??? vol. 9, pp. 331???337, 2017. </p>
+															<p>N. Fartindyyah and Subiyanto, ???Sistem pendukung keputusan peminatan sma menggunakan metode,??? J. Pendidik., vol. 44, no. november 2014, pp. 139???145, 2013. </p>
+															<p>Basri, ???Metode Weightd Product (Wp) Dalam Sistem Pendukung Keputusan Penerimaan Beasiswa Prestasi,??? J. INSYPRO (Information Syst. Process., vol. 2, no. 1, pp. 1???6, 2017, doi: <a href="https://doi.org/10.24252/insypro.v2i1.2474.g2610">https://doi.org/10.24252/insypro.v2i1.2474.g2610</a>. </p>
+															<p>K. Eliyen and F. S. Efendi, ???Implementasi Metode Weighted Product Untuk Penentuan Mustahiq Zakat,??? InfoTekJar (Jurnal Nas. Inform. dan Teknol. Jaringan), vol. 4, no. 1, pp. 146???150, 2019, doi: 10.30743/infotekjar.v4i1.1476. </p>
+															<p>Hidayat, T., &amp; Komariah, S. (2020). Pemilihan Siswa-Siswi Berprestasi Menggunakan Metode Weighted Product (WP) Studi Kasus SMP-Al Fitroh Tangerang. Jurnal Teknik Informatika Unis, 7(2), 159???163. <a href="https://doi.org/10.33592/jutis.v7i2.398">https://doi.org/10.33592/jutis.v7i2.398</a> </p>
+																		</div>
+				</section>
+			
+		</div><!-- .main_entry -->
+
+		<div class="entry_details">
+
+										<div class="item cover_image">
+					<div class="sub_item">
+													<a href="https://ejournal.unis.ac.id/index.php/jutis/issue/view/121">
+								<img src="https://ejournal.unis.ac.id/public/journals/1/cover_issue_121_en_US.jpg" alt="">
+							</a>
+											</div>
+				</div>
+			
+										<div class="item galleys">
+					<h2 class="pkp_screen_reader">
+						Downloads
+					</h2>
+					<ul class="value galleys_links">
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link pdf" href="https://ejournal.unis.ac.id/index.php/jutis/article/view/1104/838">
+
+		
+	PDF
+
+	</a>
+							</li>
+											</ul>
+				</div>
+						
+						<div class="item published">
+				<section class="sub_item">
+					<h2 class="label">
+						Published
+					</h2>
+					<div class="value">
+																			<span>2025-03-27</span>
+																	</div>
+				</section>
+							</div>
+			
+										<div class="item citation">
+					<section class="sub_item citation_display">
+						<h2 class="label">
+							How to Cite
+						</h2>
+						<div class="value">
+							<div id="citationOutput" role="region" aria-live="polite">
+								<div class="csl-bib-body">
+  <div class="csl-entry">Pratama, A. G., Wibowo, A. H., Ardiansyah, A., &#38; Rizky, R. (2025). Implementasi Metode Weighted Product Untuk Pemilihan Pemberdayaan Industri Kecil Menengah Pada Dinas Perindustrian Perdagangan Kabupaten Pandeglang. <i>JURNAL TEKNIK INFORMATIKA UNIS</i>, <i>8</i>(2), 135–145. https://doi.org/10.33592/jutis.v8i2.1104</div>
+</div>
+							</div>
+							<div class="citation_formats">
+								<button class="cmp_button citation_formats_button" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
+									More Citation Formats
+								</button>
+								<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+									<ul class="citation_formats_styles">
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/acm-sig-proceedings?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/acm-sig-proceedings?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													ACM
+												</a>
+											</li>
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/acs-nano?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/acs-nano?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													ACS
+												</a>
+											</li>
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/apa?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/apa?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													APA
+												</a>
+											</li>
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													ABNT
+												</a>
+											</li>
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/chicago-author-date?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/chicago-author-date?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													Chicago
+												</a>
+											</li>
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/harvard-cite-them-right?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/harvard-cite-them-right?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													Harvard
+												</a>
+											</li>
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/ieee?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/ieee?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													IEEE
+												</a>
+											</li>
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/modern-language-association?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/modern-language-association?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													MLA
+												</a>
+											</li>
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													Turabian
+												</a>
+											</li>
+																					<li>
+												<a
+													rel="nofollow"
+													aria-controls="citationOutput"
+													href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/vancouver?submissionId=1104&amp;publicationId=939"
+													data-load-citation
+													data-json-href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/get/vancouver?submissionId=1104&amp;publicationId=939&amp;return=json"
+												>
+													Vancouver
+												</a>
+											</li>
+																			</ul>
+																			<div class="label">
+											Download Citation
+										</div>
+										<ul class="citation_formats_styles">
+																							<li>
+													<a href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/download/ris?submissionId=1104&amp;publicationId=939">
+														<span class="fa fa-download"></span>
+														Endnote/Zotero/Mendeley (RIS)
+													</a>
+												</li>
+																							<li>
+													<a href="https://ejournal.unis.ac.id/index.php/jutis/citationstylelanguage/download/bibtex?submissionId=1104&amp;publicationId=939">
+														<span class="fa fa-download"></span>
+														BibTeX
+													</a>
+												</li>
+																					</ul>
+																	</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			
+										<div class="item issue">
+
+											<section class="sub_item">
+							<h2 class="label">
+								Issue
+							</h2>
+							<div class="value">
+								<a class="title" href="https://ejournal.unis.ac.id/index.php/jutis/issue/view/121">
+									Vol. 8 No. 2 (2020): Jutis (Jurnal Teknik Informatika)
+								</a>
+							</div>
+						</section>
+					
+											<section class="sub_item">
+							<h2 class="label">
+								Section
+							</h2>
+							<div class="value">
+								Articles
+							</div>
+						</section>
+					
+									</div>
+			
+																														
+										<div class="item copyright">
+					<h2 class="label">
+						License
+					</h2>
+																										<p>Copyright (c) 2025 Jutis (Jurnal Teknik Informatika)</p>
+														<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" src="//i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><p>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+																
+				</div>
+			
+			
+
+		</div><!-- .entry_details -->
+	</div><!-- .row -->
+
+</article>
+
+	
+
+</div><!-- .page -->
+
+	</div><!-- pkp_structure_main -->
+
+									<div class="pkp_structure_sidebar left" role="complementary" aria-label="Sidebar">
+				<div class="pkp_block block_developed_by">
+	<h2 class="pkp_screen_reader">
+		Developed By
+	</h2>
+
+	<div class="content">
+		<a href="http://pkp.sfu.ca/ojs/">
+			Open Journal Systems
+		</a>
+	</div>
+</div>
+<div class="pkp_block block_make_submission">
+	<h2 class="pkp_screen_reader">
+		Make a Submission
+	</h2>
+
+	<div class="content">
+		<a class="block_make_submission_link" href="https://ejournal.unis.ac.id/index.php/jutis/about/submissions">
+			Make a Submission
+		</a>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-submisionbaru">
+	<h2 class="title pkp_screen_reader">submisionbaru</h2>
+	<div class="content">
+		<p style="background-color: #521f05; text-align: center; font-size: 15px; font-weight: bold; color: white; /*!  */height: 40px; padding-top: 5px; border-bottom: 2px solid #547e37 !important; border-top: 2px solid #d1ddd2 !important; border-left: 2px solid #0b1c03 !important; border-right: 2px solid #dae8d5 !important; margin-top: -40px;">SUBMISSIONS</p>
+<div align="left">
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="120%"><strong><a href="http://ejournal.unis.ac.id/index.php/jutis/about/submissions"><span style="color: white;">Submit to JUTIS</span></a></strong></td>
+</tr>
+</tbody>
+</table>
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="120%"><strong><a href="http://ejournal.unis.ac.id/index.php/jutis/AuthorGuidelines"><span style="color: white;">Author Guidelines</span></a></strong></td>
+</tr>
+</tbody>
+</table>
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="110%"><strong><a href="http://ejournal.unis.ac.id/index.php/jutis/apcs"><span style="color: white;">Article Processing Charges</span></a></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-mainmenu">
+	<h2 class="title pkp_screen_reader">mainmenu</h2>
+	<div class="content">
+		<p style="background-color: #521f05; text-align: center; font-size: 15px; font-weight: bold; color: white; /*!  */height: 40px; padding-top: 5px; border-bottom: 2px solid #547e37 !important; border-top: 2px solid #d1ddd2 !important; border-left: 2px solid #0b1c03 !important; border-right: 2px solid #dae8d5 !important; margin-top: -40px;"><span style="color: #ffffff;">MAIN MENU</span></p>
+<div align="laft">
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: #white; font-size: 15px;" bgcolor="#3be52f" width="180" height="120%"><strong>&nbsp;p-ISSN: 2252-5351</strong></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td style="text-align: center; color: #white; font-size: 15px;" bgcolor="#3be52f" width="180" height="120%"><strong>e-ISSN : 2656-0860</strong></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td style="text-align: center; color: #white; font-size: 15px;" bgcolor="#d5d200" width="180" height="120%"><span style="color: #ffffff;"><strong><a style="color: #ffffff;" href="http://ejournal.unis.ac.id/index.php/jutis/user/register">Register</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="120%"><span style="color: #ffffff;"><strong><a style="color: #ffffff;" href="http://ejournal.unis.ac.id/index.php/jutis/login">Login</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="110%"><span style="color: #ffffff;"><strong><a style="color: #ffffff;" href="http://ejournal.unis.ac.id/index.php/jutis/FocusScope">Focus and Scope</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="110%"><span style="color: #ffffff;"><strong><a style="color: #ffffff;" href="http://ejournal.unis.ac.id/index.php/jutis/Editorialteam">Editorial Board</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="110%"><span style="color: #ffffff;"><strong><a style="color: #ffffff;" href="http://ejournal.unis.ac.id/index.php/jutis/Reviewer">Reviewer Team</a></strong></span></td>
+</tr>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="110%"><span style="color: #ffffff;"><a style="color: #ffffff;" href="http://ejournal.unis.ac.id/index.php/jutis/PeerReview"><strong>Peer Review</strong></a></span></td>
+</tr>
+</tbody>
+</table>
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="110%"><span style="color: #ffffff;"><strong><a style="color: #ffffff;" href="http://ejournal.unis.ac.id/index.php/jutis/about/contact">Contact Us</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="110%"><span style="color: #ffffff;"><strong><a style="color: #ffffff;" href="http://ejournal.unis.ac.id/index.php/jutis/AbstractinIndexing">Abstracting &amp; Indexing</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+<table style="height: 40px;" border="3" width="242">
+<tbody>
+<tr>
+<td style="text-align: center; color: white; font-size: 15px;" bgcolor="#d5d200" width="180" height="110%"><span style="color: #ffffff;"><strong><a style="color: #ffffff;" href="http://ejournal.unis.ac.id/index.php/jutis/Etika_Publikasi">Publication Ethic</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-indexing">
+	<h2 class="title pkp_screen_reader">indexing</h2>
+	<div class="content">
+		
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-visitors">
+	<h2 class="title pkp_screen_reader">visitors</h2>
+	<div class="content">
+		<p><a href="https://info.flagcounter.com/yt3T"><img src="https://s01.flagcounter.com/count2/yt3T/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
+<p>&nbsp;</p>
+<p><a title="Web Analytics" href="http://statcounter.com/p13032191/summary/?guest=1" target="_blank" rel="noopener"><img src="https://c.statcounter.com/13032191/0/b5ead7ed/0/" alt="Web Analytics"></a></p>
+	</div>
+</div>
+
+			</div><!-- pkp_sidebar.left -->
+			</div><!-- pkp_structure_content -->
+
+<div class="pkp_structure_footer_wrapper unis_footer" role="contentinfo">
+	<a id="pkp_content_footer"></a>
+
+	<div class="pkp_structure_footer">
+		<div class="unis_footer_main">
+			<div class="unis_footer_brand">
+				<a href="https://ejournal.unis.ac.id/index.php/jutis/index" class="unis_footer_logo">
+					<img src="https://unis.ac.id/sites/default/files/LOGO%20UNIS_1.png" alt="Universitas Islam Syekh-Yusuf" />
+				</a>
+				<div class="unis_footer_brand_text">
+											<h3>JURNAL TEKNIK INFORMATIKA UNIS</h3>
+						<p>Portal publikasi jurnal ilmiah Universitas Islam Syekh-Yusuf.</p>
+									</div>
+			</div>
+
+			<div class="unis_footer_columns">
+				<div class="unis_footer_col">
+					<h4>About</h4>
+					<ul>
+						<li><a href="https://ejournal.unis.ac.id/index.php/jutis/index">Home</a></li>
+						<li><a href="https://ejournal.unis.ac.id/index.php/jutis/search">Search</a></li>
+													<li><a href="https://ejournal.unis.ac.id/index.php/jutis/submissions">Submissions</a></li>
+											</ul>
+				</div>
+				<div class="unis_footer_col">
+					<h4>Informasi</h4>
+					<ul>
+						<li><a href="https://ejournal.unis.ac.id/index.php/jutis/about/contact">Contact</a></li>
+						<li><a href="https://ejournal.unis.ac.id/index.php/jutis/about/privacyStatement">Privacy Statement</a></li>
+						<li><a href="https://ejournal.unis.ac.id/index.php/jutis/about/aboutThisPublishingSystem">More information about the publishing system, Platform and Workflow by OJS/PKP.</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+					<div class="pkp_footer_content">
+				<p><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="" width="88" height="31" />?</p>
+<p><strong>Jutis : Jurnal Teknik Informatika</strong> this site and metadata?is licensed under a?<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_top" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+			</div>
+		
+		<div class="unis_footer_bottom">
+			<p class="unis_footer_copy">&copy; 2026 Universitas Islam Syekh-Yusuf. Public Knowledge Project</p>
+			<a class="unis_footer_ojs" href="https://ejournal.unis.ac.id/index.php/jutis/about/aboutThisPublishingSystem" title="Open Journal Systems">
+				<img alt="Open Journal Systems" src="https://ejournal.unis.ac.id/templates/images/ojs_brand_white.png" />
+			</a>
+		</div>
+	</div>
+</div><!-- pkp_structure_footer_wrapper -->
+
+</div><!-- pkp_structure_page -->
+
+<div class="unis_support_chat" id="unisSupportChat"
+	data-logged-in="0"
+	data-login-url="https://ejournal.unis.ac.id/index.php/jutis/login"
+	data-send-url="https://ejournal.unis.ac.id/index.php/jutis/support/send">
+	<button type="button" class="unis_support_fab" id="unisSupportFab" aria-expanded="false" aria-controls="unisSupportPanel" aria-label="Bantuan sistem">
+		<svg class="unis_support_fab_icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+			<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H13l-3.2 3.2c-.7.7-1.8.2-1.8-.7V16H6.5A2.5 2.5 0 0 1 4 13.5v-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+			<path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+		</svg>
+	</button>
+
+	<div class="unis_support_panel" id="unisSupportPanel" hidden>
+		<div class="unis_support_panel_head">
+			<div>
+				<p class="unis_support_panel_eyebrow">Bantuan Sistem</p>
+				<h2 class="unis_support_panel_title">Chat Support</h2>
+			</div>
+			<button type="button" class="unis_support_close" id="unisSupportClose" aria-label="Tutup">×</button>
+		</div>
+		<p class="unis_support_panel_lead">Laporkan masalah teknis portal ejournal. Pesan dikirim ke tim support.</p>
+		<form class="unis_support_form" id="unisSupportForm" novalidate>
+			<input type="hidden" name="csrfToken" value="37d7b35b8c1d8e777847ed5f5c89c253" />
+			<label class="unis_support_field">
+				<span>Nama</span>
+				<input type="text" name="name" id="unisSupportName" required maxlength="120"
+					value=""
+					>
+			</label>
+			<label class="unis_support_field">
+				<span>Email</span>
+				<input type="email" name="email" id="unisSupportEmail" required maxlength="180"
+					value=""
+					>
+			</label>
+			<label class="unis_support_field">
+				<span>Masalah</span>
+				<textarea name="message" id="unisSupportMessage" rows="4" required maxlength="4000" placeholder="Jelaskan kendala yang Anda alami..."></textarea>
+			</label>
+			<p class="unis_support_status" id="unisSupportStatus" role="status" aria-live="polite" hidden></p>
+			<button type="submit" class="unis_support_submit" id="unisSupportSubmit">Kirim Pesan</button>
+		</form>
+	</div>
+</div>
+
+<script>
+(function () {
+	var root = document.getElementById('unisSupportChat');
+	if (!root) return;
+	var fab = document.getElementById('unisSupportFab');
+	var panel = document.getElementById('unisSupportPanel');
+	var closeBtn = document.getElementById('unisSupportClose');
+	var form = document.getElementById('unisSupportForm');
+	var statusEl = document.getElementById('unisSupportStatus');
+	var submitBtn = document.getElementById('unisSupportSubmit');
+	var loggedIn = root.getAttribute('data-logged-in') === '1';
+	var loginUrl = root.getAttribute('data-login-url');
+	var sendUrl = root.getAttribute('data-send-url');
+
+	function setStatus(text, isError) {
+		if (!statusEl) return;
+		statusEl.hidden = !text;
+		statusEl.textContent = text || '';
+		statusEl.classList.toggle('is-error', !!isError);
+		statusEl.classList.toggle('is-ok', !!text && !isError);
+	}
+
+	function openPanel() {
+		if (!loggedIn) {
+			var next = encodeURIComponent(window.location.href);
+			window.location.href = loginUrl + (loginUrl.indexOf('?') >= 0 ? '&' : '?') + 'source=' + next;
+			return;
+		}
+		panel.hidden = false;
+		fab.setAttribute('aria-expanded', 'true');
+		root.classList.add('is-open');
+		var msg = document.getElementById('unisSupportMessage');
+		if (msg) setTimeout(function () { msg.focus(); }, 50);
+	}
+
+	function closePanel() {
+		panel.hidden = true;
+		fab.setAttribute('aria-expanded', 'false');
+		root.classList.remove('is-open');
+		setStatus('', false);
+	}
+
+	fab.addEventListener('click', function () {
+		if (root.classList.contains('is-open')) closePanel();
+		else openPanel();
+	});
+	if (closeBtn) closeBtn.addEventListener('click', closePanel);
+
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape' && root.classList.contains('is-open')) closePanel();
+	});
+
+	if (form) {
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			if (!loggedIn) {
+				openPanel();
+				return;
+			}
+			setStatus('', false);
+			submitBtn.disabled = true;
+			submitBtn.textContent = 'Mengirim...';
+
+			var data = new FormData(form);
+			data.append('pageUrl', window.location.href);
+			fetch(sendUrl, {
+				method: 'POST',
+				body: data,
+				credentials: 'same-origin',
+				headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' }
+			}).then(function (res) {
+				return res.json().then(function (json) {
+					return { ok: res.ok, status: res.status, json: json || {} };
+				}).catch(function () {
+					return { ok: false, status: res.status, json: { error: 'Respons tidak valid.' } };
+				});
+			}).then(function (result) {
+				if (result.json && result.json.loginRequired) {
+					openPanel();
+					return;
+				}
+				if (result.ok && result.json.ok) {
+					setStatus(result.json.message || 'Pesan terkirim.', false);
+					form.querySelector('[name="message"]').value = '';
+				} else {
+					setStatus((result.json && result.json.error) || 'Gagal mengirim pesan.', true);
+				}
+			}).catch(function () {
+				setStatus('Koneksi gagal. Coba lagi.', true);
+			}).finally(function () {
+				submitBtn.disabled = false;
+				submitBtn.textContent = 'Kirim Pesan';
+			});
+		});
+	}
+})();
+</script>
+
+<script src="https://ejournal.unis.ac.id/lib/pkp/lib/vendor/components/jquery/jquery.min.js?v=3.3.0.21" type="text/javascript"></script><script src="https://ejournal.unis.ac.id/lib/pkp/lib/vendor/components/jqueryui/jquery-ui.min.js?v=3.3.0.21" type="text/javascript"></script><script src="https://ejournal.unis.ac.id/plugins/themes/default/js/lib/popper/popper.js?v=3.3.0.21" type="text/javascript"></script><script src="https://ejournal.unis.ac.id/plugins/themes/default/js/lib/bootstrap/util.js?v=3.3.0.21" type="text/javascript"></script><script src="https://ejournal.unis.ac.id/plugins/themes/default/js/lib/bootstrap/dropdown.js?v=3.3.0.21" type="text/javascript"></script><script src="https://ejournal.unis.ac.id/plugins/themes/default/js/main.js?v=3.3.0.21" type="text/javascript"></script><script src="https://ejournal.unis.ac.id/plugins/generic/citationStyleLanguage/js/articleCitation.js?v=3.3.0.21" type="text/javascript"></script>
+
+
+</body>
+</html>

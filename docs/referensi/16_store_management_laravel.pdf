@@ -1,0 +1,868 @@
+	<!DOCTYPE html>
+<html lang="id-ID" xml:lang="id-ID">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Rancang Bangun Website Store Management System Laravel dengan Metode Agile: Studi Kasus UMKM Toko Jali
+							| Jurnal Pendidikan dan Teknologi Indonesia
+			</title>
+
+	
+<link rel="icon" href="https://jpti.journals.id/public/journals/1/favicon_id_ID.png">
+<meta name="generator" content="Open Journal Systems 3.2.1.0">
+<meta name="google-site-verification" content="-QOfifZrYQJmiDppMs18MUcHVOsR1AMHZfIaRyS4ti0" />
+<meta name="google-site-verification" content="-QOfifZrYQJmiDppMs18MUcHVOsR1AMHZfIaRyS4ti0" />
+<meta name="google-site-verification" content="-QOfifZrYQJmiDppMs18MUcHVOsR1AMHZfIaRyS4ti0" />
+<meta name="msvalidate.01" content="E5BCFA96634D53A5A407ED523F0BA283" />
+<meta name="msvalidate.01" content="E5BCFA96634D53A5A407ED523F0BA283" />
+<meta name="msvalidate.01" content="E5BCFA96634D53A5A407ED523F0BA283" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.Creator.PersonalName" content="Moch Rezeki Setiawan"/>
+<meta name="DC.Creator.PersonalName" content="Tri Luhur Indayanti Sugata"/>
+<meta name="DC.Creator.PersonalName" content="Abdul Rezha Efrat Najaf "/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2024-12-03"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2024-11-17"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2024-12-03"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2024-12-03"/>
+<meta name="DC.Description" xml:lang="id" content="Penelitian ini bertujuan untuk merancang dan mengembangkan sistem informasi berbasis website menggunakan Framework Laravel dengan pendekatan Agile, sebagai solusi atas permasalahan operasional di Toko Kelontong Jali, sebuah UMKM yang bergerak di sektor ritel. Proses bisnis manual yang diterapkan selama ini menimbulkan berbagai kendala, seperti inefisiensi operasional dan potensi kesalahan dalam pengelolaan stok serta transaksi. Sistem informasi yang dirancang diharapkan mampu mengotomatisasi dan mengintegrasikan manajemen stok, pencatatan transaksi, serta penyajian analisis data penjualan secara real-time.Metode Agile diterapkan dalam pengembangan sistem untuk memastikan fleksibilitas dan kemampuan adaptasi terhadap perubahan kebutuhan pengguna. Proses pengujian dilakukan menggunakan metode Blackbox Testing guna mengevaluasi kesesuaian fungsionalitas sistem terhadap spesifikasi yang telah ditentukan. Hasil pengujian menunjukkan bahwa seluruh fitur sistem berfungsi secara optimal, dengan peningkatan signifikan dalam efisiensi operasional dan kemudahan pengelolaan transaksi serta stok barang. Implementasi sistem ini berkontribusi pada peningkatan produktivitas, efisiensi, dan kepuasan pelanggan di Toko Kelontong Jali. Penelitian ini memberikan kontribusi penting dalam penerapan teknologi informasi pada UMKM, khususnya dalam menghadapi tantangan digitalisasi dan persaingan bisnis yang semakin kompetitif. Dengan hasil ini, sistem yang dikembangkan dapat dijadikan referensi bagi pengembangan sistem serupa di sektor UMKM lainnya."/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Identifier" content="448"/>
+<meta name="DC.Identifier.pageNumber" content="301-312"/>
+<meta name="DC.Identifier.DOI" content="10.52436/1.jpti.448"/>
+<meta name="DC.Identifier.URI" content="https://jpti.journals.id/index.php/jpti/article/view/448"/>
+<meta name="DC.Language" scheme="ISO639-1" content="id"/>
+<meta name="DC.Rights" content="Hak Cipta (c) 2024 "/>
+<meta name="DC.Rights" content="https://creativecommons.org/licenses/by/4.0"/>
+<meta name="DC.Source" content="Jurnal Pendidikan dan Teknologi Indonesia"/>
+<meta name="DC.Source.ISSN" content="2775-4219"/>
+<meta name="DC.Source.Issue" content="11"/>
+<meta name="DC.Source.Volume" content="4"/>
+<meta name="DC.Source.URI" content="https://jpti.journals.id/index.php/jpti"/>
+<meta name="DC.Subject" xml:lang="id" content="Sistem Informasi"/>
+<meta name="DC.Title" content="Rancang Bangun Website Store Management System Laravel dengan Metode Agile: Studi Kasus UMKM Toko Jali"/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type.articleType" content="Artikel"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="Jurnal Pendidikan dan Teknologi Indonesia"/>
+<meta name="citation_journal_abbrev" content="Jurnal Pendidikan dan Teknologi Indonesia"/>
+<meta name="citation_issn" content="2775-4219"/> 
+<meta name="citation_author" content="Moch Rezeki Setiawan"/>
+<meta name="citation_author_institution" content="Sistem Informasi, Universitas Pembangunan Nasional “Veteran” Jawa Timur, Indonesia"/>
+<meta name="citation_author" content="Tri Luhur Indayanti Sugata"/>
+<meta name="citation_author_institution" content="Sistem Informasi, Universitas Pembangunan Nasional “Veteran” Jawa Timur, Indonesia"/>
+<meta name="citation_author" content="Abdul Rezha Efrat Najaf "/>
+<meta name="citation_author_institution" content="Sistem Informasi, Universitas Pembangunan Nasional “Veteran” Jawa Timur, Indonesia"/>
+<meta name="citation_title" content="Rancang Bangun Website Store Management System Laravel dengan Metode Agile: Studi Kasus UMKM Toko Jali"/>
+<meta name="citation_language" content="id"/>
+<meta name="citation_date" content="2024/12/03"/>
+<meta name="citation_volume" content="4"/>
+<meta name="citation_issue" content="11"/>
+<meta name="citation_firstpage" content="301"/>
+<meta name="citation_lastpage" content="312"/>
+<meta name="citation_doi" content="10.52436/1.jpti.448"/>
+<meta name="citation_abstract_html_url" content="https://jpti.journals.id/index.php/jpti/article/view/448"/>
+<meta name="citation_keywords" xml:lang="id" content="Agile"/>
+<meta name="citation_keywords" xml:lang="id" content="Laravel"/>
+<meta name="citation_keywords" xml:lang="id" content="Manajemen Toko"/>
+<meta name="citation_keywords" xml:lang="id" content="Sistem Informasi"/>
+<meta name="citation_pdf_url" content="https://jpti.journals.id/index.php/jpti/article/download/448/257"/>
+<meta name="citation_reference" content="T. Santoso, “Perancangan Sistem Informasi Penjualan Frozen Food Berbasis Web Pada Toko Mentari Store Jakarta Timur,” Jurnal Riset Sistem Informasi Dan Teknik Informatika (JURASIK), vol. 8, no. 1, pp. 43–52, Feb. 2023, [Online]. Available: https://tunasbangsa.ac.id/ejurnal/index.php/jurasik"/>
+<meta name="citation_reference" content="B. Website, T. 1?, D. Marini, U. Atmaja, and N. Suwaryo, “Analisis dan Perancangan Sistem Elektronik Toko (E-Toko) Kelontong,” Journal Of Social Science Research, vol. 4, no. 2, pp. 775–789, 2024."/>
+<meta name="citation_reference" content="Y. Vio Euaggelion and R. Somya, “Analisis Dan Implementasi Aplikasi Penjualan Kosmetik Di BMC Berbasis Website Menggunakan Framework Laravel,” Jurnal Inovtek Polbeng - Seri Informatika, vol. 7, no. 1, pp. 37–49, 2022."/>
+<meta name="citation_reference" content="A. Lutfi Irawan, A. Triayudi, and A. Iskandar, “Implementasi Sistem Point of Sales Menggunakan Metode Agile Development,” KLIK: Kajian Ilmiah Informatika dan Komputer, vol. 3, no. 6, pp. 1326–1333, Jun. 2023, doi: 10.30865/klik.v3i6.940."/>
+<meta name="citation_reference" content="A. Fernando and T. Tri Naidi, “Rancang Bangun Sistem Rental Mobile Berbasis Website Menggunakan Framework Laravel,” JEKIN (Jurnal Teknik Informatika), vol. 3, no. 3, pp. 1–10, 2023."/>
+<meta name="citation_reference" content="L. Trisnawati and D. Setiawan, “Sistem Monitoring Kegiatan Kemahasiswaan Menggunakan Metode Agile Development,” JOISIE Journal Of Information System And Informatics Engineering, vol. 6, no. 1, pp. 49–57, Jun. 2022."/>
+<meta name="citation_reference" content="I. Made Widiarta, Y. Mulyanto, and A. Sutrianto, “Rancang Bangun Sistem Informasi Inventory Menggunakan Metode Agile Software Development (Studi Kasus Toko Nada),” Digital Transformation Technology (Digitech) | e, vol. 3, no. 1, pp. 133–143, Mar. 2023, doi: 10.47709/digitech.v3i1.2549."/>
+<meta name="citation_reference" content="D. Mardiati and Y. Saputra, “Rancang Bangun Inventory System Menggunakan Metode Reorder Point (ROP) Pada Toko Bangunan Irhas Padang,” Jurnal Sistem Informasi, vol. 5, no. 1, pp. 163–178, Jan. 2023."/>
+<meta name="citation_reference" content="R. A. Brahmantyo, J. Wibowo, and V. Nurcahyawati, “Manajemen Persediaan Menggunakan Metode Safety Stock dan Reorder Point,” Jurnal Sains dan Informatika, vol. 9, no. 1, pp. 89–99, Jun. 2023, doi: 10.34128/jsi.v9i1.431."/>
+<meta name="citation_reference" content="A. Maezar et al., “Sistem Informasi Penjualan Jersey Berbasis Web Dengan Menggunakan Agile Software Development,” Journal of Information System, Informatics and Computing, vol. 5, no. 2, pp. 409–421, Dec. 2021, doi: 10.52362/jisicom.v5i2.637."/>
+<meta name="citation_reference" content="Y. Christian, T. Wibowo, and P. Agung Winata, “Perancangan Sistem E-Commerce Berbasis Web dengan Metode System Development Life Cycle untuk Usaha Mikro Kecil dan Menengah Pakaian di Kota Batam,” KLIK: Kajian Ilmiah Informatika dan Komputer, vol. 4, no. 3, pp. 1271–1281, Dec. 2023, doi: 10.30865/klik.v4i3.1408."/>
+<meta name="citation_reference" content="D. Mahdalena, V. N. Sari, N. Qurniati, and P. Prahasti, “Perancangan Sistem Informasi Penjualan Pada Kedai Kopi Luwak Bengkulu Menggunakan Bahasa Pemrograman PHP dan Database MYSQL,” Digital Transformation Technology, vol. 3, no. 2, pp. 609–617, Nov. 2023, doi: 10.47709/digitech.v3i2.3094."/>
+<meta name="citation_reference" content="K. Nurul Musthofa et al., “Perancangan Sistem Informasi Absensi Dan Permohonan Cuti Karyawan Berbasis Web Menggunakan Metode System Development Life Cycle (SDLC) Pada SD Budi Mulia Dua Bintaro,” JORAPI?: Journal of Research and Publication Innovation, vol. 1, no. 3, pp. 951–958, Jul. 2023, [Online]. Available: https://jurnal.portalpublikasi.id/index.php/JORAPI/index"/>
+<meta name="citation_reference" content="Y. Fatman, N. Khoirun Nafisah, and P. Bendoro Jembar Pambudi, “Implementasi Payment Gateway dengan Menggunakan Midtrans pada Website UMKM Geberco,” Jurnal KomtekInfo, vol. 10, no. 2, pp. 64–72, Jun. 2023, doi: 10.35134/komtekinfo.v10i2.364."/>
+<meta name="citation_reference" content="S. Mulyati, R. Hapipah, A. Rahman, A. Bagus, A. Wahidar, and A. Saifudin, “Perancangan Sistem Informasi Penjualan Berbasis Web pada Toko Pakaian,” Jurnal Teknologi Sistem Informasi dan Aplikasi, vol. 6, no. 1, pp. 12–18, Jan. 2023, doi: 10.32493/jtsi.v6i1.22638."/>
+<meta name="citation_reference" content="A. Rifandi, “Analysis And Design Of Point Of Sale System In D’astore Shop,” Aptisi Transactions On Technopreneurship (ATT), vol. 2, no. 1, pp. 34–47, Feb. 2020, doi: 10.34306/att.v2i1.63."/>
+	<link rel="stylesheet" href="https://jpti.journals.id/index.php/jpti/$$$call$$$/page/page/css?name=stylesheet" type="text/css" /><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic" type="text/css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?v=3.2.1.0" type="text/css" /><link rel="stylesheet" href="https://jpti.journals.id/public/journals/1/styleSheet.css?v=3.2.1.0" type="text/css" />
+</head>
+<body class="pkp_page_article pkp_op_view has_site_logo" dir="ltr">
+
+	<div class="pkp_structure_page">
+
+				<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">
+						 <nav class="cmp_skip_to_content" aria-label="##navigation.skip.description##">
+	<a href="#pkp_content_main">Beralih ke bagian utama</a>
+	<a href="#siteNav">Beralih ke menu navigasi utama</a>
+		<a href="#pkp_content_footer">Beralih ke bagian footer website</a>
+</nav>
+
+			<div class="pkp_head_wrapper">
+
+				<div class="pkp_site_name_wrapper">
+					<button class="pkp_site_nav_toggle">
+						<span>Open Menu</span>
+					</button>
+										<div class="pkp_site_name">
+																<a href="						https://jpti.journals.id/index.php/jpti/index
+					" class="is_img">
+							<img src="https://jpti.journals.id/public/journals/1/pageHeaderLogoImage_id_ID.png" width="1316" height="396"  />
+						</a>
+										</div>
+				</div>
+
+				
+				<nav class="pkp_site_nav_menu" aria-label="Navigasi Website">
+					<a id="siteNav"></a>
+					<div class="pkp_navigation_primary_row">
+						<div class="pkp_navigation_primary_wrapper">
+																				<ul id="navigationPrimary" class="pkp_navigation_primary pkp_nav_list">
+								<li class="">
+				<a href="http://jpti.journals.id/index.php/jpti">
+					Beranda
+				</a>
+							</li>
+								<li class="">
+				<a href="https://jpti.journals.id/index.php/jpti/issue/current">
+					Terkini
+				</a>
+							</li>
+								<li class="">
+				<a href="https://jpti.journals.id/index.php/jpti/issue/archive">
+					Arsip
+				</a>
+							</li>
+								<li class="">
+				<a href="https://jpti.journals.id/index.php/jpti/announcement">
+					Pengumuman
+				</a>
+							</li>
+								<li class="">
+				<a href="https://jpti.journals.id/index.php/jpti/about">
+					Tentang Kami
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://jpti.journals.id/index.php/jpti/about">
+										Tentang Jurnal Ini
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jpti.journals.id/index.php/jpti/about/submissions">
+										Penyerahan Naskah
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jpti.journals.id/index.php/jpti/about/editorialTeam">
+										Dewan Editor
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jpti.journals.id/index.php/jpti/about/privacy">
+										Pernyataan Privasi
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jpti.journals.id/index.php/jpti/about/contact">
+										Kontak
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://jpti.journals.id/index.php/jpti/login">
+					Login
+				</a>
+							</li>
+			</ul>
+
+				
+
+																								
+	<form class="pkp_search pkp_search_desktop" action="https://jpti.journals.id/index.php/jpti/search/search" method="get" role="search" aria-label="Pencarian Artikel">
+		<input type="hidden" name="csrfToken" value="df5242d1e5bb5e69c8d34e7aa00873ec">
+				
+			<input name="query" value="" type="text" aria-label="Mencari">
+		
+
+		<button type="submit">
+			Cari
+		</button>
+		<div class="search_controls" aria-hidden="true">
+			<a href="https://jpti.journals.id/index.php/jpti/search/search" class="headerSearchPrompt search_prompt" aria-hidden="true">
+				Cari
+			</a>
+			<a href="#" class="search_cancel headerSearchCancel" aria-hidden="true"></a>
+			<span class="search_loading" aria-hidden="true"></span>
+		</div>
+	</form>
+													</div>
+					</div>
+					<div class="pkp_navigation_user_wrapper" id="navigationUserWrapper">
+							<ul id="navigationUser" class="pkp_navigation_user pkp_nav_list">
+								<li class="profile">
+				<a href="https://jpti.journals.id/index.php/jpti/user/register">
+					Daftar
+				</a>
+							</li>
+								<li class="profile">
+				<a href="https://jpti.journals.id/index.php/jpti/login">
+					Login
+				</a>
+							</li>
+										</ul>
+
+					</div>
+																		
+	<form class="pkp_search pkp_search_mobile" action="https://jpti.journals.id/index.php/jpti/search/search" method="get" role="search" aria-label="Pencarian Artikel">
+		<input type="hidden" name="csrfToken" value="df5242d1e5bb5e69c8d34e7aa00873ec">
+				
+			<input name="query" value="" type="text" aria-label="Mencari">
+		
+
+		<button type="submit">
+			Cari
+		</button>
+		<div class="search_controls" aria-hidden="true">
+			<a href="https://jpti.journals.id/index.php/jpti/search/search" class="headerSearchPrompt search_prompt" aria-hidden="true">
+				Cari
+			</a>
+			<a href="#" class="search_cancel headerSearchCancel" aria-hidden="true"></a>
+			<span class="search_loading" aria-hidden="true"></span>
+		</div>
+	</form>
+									</nav>
+			</div><!-- .pkp_head_wrapper -->
+		</header><!-- .pkp_structure_head -->
+
+						<div class="pkp_structure_content has_sidebar">
+			<div class="pkp_structure_main" role="main">
+				<a id="pkp_content_main"></a>
+
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="Anda berada di sini:">
+	<ol>
+		<li>
+			<a href="https://jpti.journals.id/index.php/jpti/index">
+				Beranda
+			</a>
+			<span class="separator">/</span>
+		</li>
+		<li>
+			<a href="https://jpti.journals.id/index.php/jpti/issue/archive">
+				Arsip
+			</a>
+			<span class="separator">/</span>
+		</li>
+					<li>
+				<a href="https://jpti.journals.id/index.php/jpti/issue/view/48">
+					Vol 4 No 11 (2024): JPTI - November 2024
+				</a>
+				<span class="separator">/</span>
+			</li>
+				<li class="current" aria-current="page">
+			<span aria-current="page">
+									Artikel
+							</span>
+		</li>
+	</ol>
+</nav>
+	
+		<article class="obj_article_details">
+
+		
+	<h1 class="page_title">
+		Rancang Bangun Website Store Management System Laravel dengan Metode Agile: Studi Kasus UMKM Toko Jali
+	</h1>
+
+	
+	<div class="row">
+		<div class="main_entry">
+
+							<section class="item authors">
+					<h2 class="pkp_screen_reader">Penulis</h2>
+					<ul class="authors">
+											<li>
+							<span class="name">
+								Moch Rezeki Setiawan
+							</span>
+															<span class="affiliation">
+									Sistem Informasi, Universitas Pembangunan Nasional “Veteran” Jawa Timur, Indonesia
+								</span>
+																				</li>
+											<li>
+							<span class="name">
+								Tri Luhur Indayanti Sugata
+							</span>
+															<span class="affiliation">
+									Sistem Informasi, Universitas Pembangunan Nasional “Veteran” Jawa Timur, Indonesia
+								</span>
+																				</li>
+											<li>
+							<span class="name">
+								Abdul Rezha Efrat Najaf 
+							</span>
+															<span class="affiliation">
+									Sistem Informasi, Universitas Pembangunan Nasional “Veteran” Jawa Timur, Indonesia
+								</span>
+																				</li>
+										</ul>
+				</section>
+			
+																																					<section class="item doi">
+						<h2 class="label">
+														DOI:
+						</h2>
+						<span class="value">
+							<a href="https://doi.org/10.52436/1.jpti.448">
+								https://doi.org/10.52436/1.jpti.448
+							</a>
+						</span>
+					</section>
+							
+									<section class="item keywords">
+				<h2 class="label">
+										Kata Kunci:
+				</h2>
+				<span class="value">
+											Agile, 											Laravel, 											Manajemen Toko, 											Sistem Informasi									</span>
+			</section>
+			
+										<section class="item abstract">
+					<h2 class="label">Abstrak</h2>
+					<p>Penelitian ini bertujuan untuk merancang dan mengembangkan sistem informasi berbasis website menggunakan Framework Laravel dengan pendekatan Agile, sebagai solusi atas permasalahan operasional di Toko Kelontong Jali, sebuah UMKM yang bergerak di sektor ritel. Proses bisnis manual yang diterapkan selama ini menimbulkan berbagai kendala, seperti inefisiensi operasional dan potensi kesalahan dalam pengelolaan stok serta transaksi. Sistem informasi yang dirancang diharapkan mampu mengotomatisasi dan mengintegrasikan manajemen stok, pencatatan transaksi, serta penyajian analisis data penjualan secara real-time.Metode Agile diterapkan dalam pengembangan sistem untuk memastikan fleksibilitas dan kemampuan adaptasi terhadap perubahan kebutuhan pengguna. Proses pengujian dilakukan menggunakan metode Blackbox Testing guna mengevaluasi kesesuaian fungsionalitas sistem terhadap spesifikasi yang telah ditentukan. Hasil pengujian menunjukkan bahwa seluruh fitur sistem berfungsi secara optimal, dengan peningkatan signifikan dalam efisiensi operasional dan kemudahan pengelolaan transaksi serta stok barang. Implementasi sistem ini berkontribusi pada peningkatan produktivitas, efisiensi, dan kepuasan pelanggan di Toko Kelontong Jali. Penelitian ini memberikan kontribusi penting dalam penerapan teknologi informasi pada UMKM, khususnya dalam menghadapi tantangan digitalisasi dan persaingan bisnis yang semakin kompetitif. Dengan hasil ini, sistem yang dikembangkan dapat dijadikan referensi bagi pengembangan sistem serupa di sektor UMKM lainnya.</p>
+				</section>
+			
+			<div class="item downloads_chart">
+	<h3 class="label">
+		Unduhan
+	</h3>
+	<div class="value">
+		<canvas class="usageStatsGraph" data-object-type="Submission" data-object-id="448"></canvas>
+		<div class="usageStatsUnavailable" data-object-type="Submission" data-object-id="448">
+			Data unduhan belum tersedia.
+		</div>
+	</div>
+</div>
+
+
+																																	
+										<section class="item references">
+					<h2 class="label">
+						Referensi
+					</h2>
+					<div class="value">
+																					<p>T. Santoso, “Perancangan Sistem Informasi Penjualan Frozen Food Berbasis Web Pada Toko Mentari Store Jakarta Timur,” Jurnal Riset Sistem Informasi Dan Teknik Informatika (JURASIK), vol. 8, no. 1, pp. 43–52, Feb. 2023, [Online]. Available: <a href="https://tunasbangsa.ac.id/ejurnal/index.php/jurasik">https://tunasbangsa.ac.id/ejurnal/index.php/jurasik</a> </p>
+															<p>B. Website, T. 1?, D. Marini, U. Atmaja, and N. Suwaryo, “Analisis dan Perancangan Sistem Elektronik Toko (E-Toko) Kelontong,” Journal Of Social Science Research, vol. 4, no. 2, pp. 775–789, 2024. </p>
+															<p>Y. Vio Euaggelion and R. Somya, “Analisis Dan Implementasi Aplikasi Penjualan Kosmetik Di BMC Berbasis Website Menggunakan Framework Laravel,” Jurnal Inovtek Polbeng - Seri Informatika, vol. 7, no. 1, pp. 37–49, 2022. </p>
+															<p>A. Lutfi Irawan, A. Triayudi, and A. Iskandar, “Implementasi Sistem Point of Sales Menggunakan Metode Agile Development,” KLIK: Kajian Ilmiah Informatika dan Komputer, vol. 3, no. 6, pp. 1326–1333, Jun. 2023, doi: 10.30865/klik.v3i6.940. </p>
+															<p>A. Fernando and T. Tri Naidi, “Rancang Bangun Sistem Rental Mobile Berbasis Website Menggunakan Framework Laravel,” JEKIN (Jurnal Teknik Informatika), vol. 3, no. 3, pp. 1–10, 2023. </p>
+															<p>L. Trisnawati and D. Setiawan, “Sistem Monitoring Kegiatan Kemahasiswaan Menggunakan Metode Agile Development,” JOISIE Journal Of Information System And Informatics Engineering, vol. 6, no. 1, pp. 49–57, Jun. 2022. </p>
+															<p>I. Made Widiarta, Y. Mulyanto, and A. Sutrianto, “Rancang Bangun Sistem Informasi Inventory Menggunakan Metode Agile Software Development (Studi Kasus Toko Nada),” Digital Transformation Technology (Digitech) | e, vol. 3, no. 1, pp. 133–143, Mar. 2023, doi: 10.47709/digitech.v3i1.2549. </p>
+															<p>D. Mardiati and Y. Saputra, “Rancang Bangun Inventory System Menggunakan Metode Reorder Point (ROP) Pada Toko Bangunan Irhas Padang,” Jurnal Sistem Informasi, vol. 5, no. 1, pp. 163–178, Jan. 2023. </p>
+															<p>R. A. Brahmantyo, J. Wibowo, and V. Nurcahyawati, “Manajemen Persediaan Menggunakan Metode Safety Stock dan Reorder Point,” Jurnal Sains dan Informatika, vol. 9, no. 1, pp. 89–99, Jun. 2023, doi: 10.34128/jsi.v9i1.431. </p>
+															<p>A. Maezar et al., “Sistem Informasi Penjualan Jersey Berbasis Web Dengan Menggunakan Agile Software Development,” Journal of Information System, Informatics and Computing, vol. 5, no. 2, pp. 409–421, Dec. 2021, doi: 10.52362/jisicom.v5i2.637. </p>
+															<p>Y. Christian, T. Wibowo, and P. Agung Winata, “Perancangan Sistem E-Commerce Berbasis Web dengan Metode System Development Life Cycle untuk Usaha Mikro Kecil dan Menengah Pakaian di Kota Batam,” KLIK: Kajian Ilmiah Informatika dan Komputer, vol. 4, no. 3, pp. 1271–1281, Dec. 2023, doi: 10.30865/klik.v4i3.1408. </p>
+															<p>D. Mahdalena, V. N. Sari, N. Qurniati, and P. Prahasti, “Perancangan Sistem Informasi Penjualan Pada Kedai Kopi Luwak Bengkulu Menggunakan Bahasa Pemrograman PHP dan Database MYSQL,” Digital Transformation Technology, vol. 3, no. 2, pp. 609–617, Nov. 2023, doi: 10.47709/digitech.v3i2.3094. </p>
+															<p>K. Nurul Musthofa et al., “Perancangan Sistem Informasi Absensi Dan Permohonan Cuti Karyawan Berbasis Web Menggunakan Metode System Development Life Cycle (SDLC) Pada SD Budi Mulia Dua Bintaro,” JORAPI?: Journal of Research and Publication Innovation, vol. 1, no. 3, pp. 951–958, Jul. 2023, [Online]. Available: <a href="https://jurnal.portalpublikasi.id/index.php/JORAPI/index">https://jurnal.portalpublikasi.id/index.php/JORAPI/index</a> </p>
+															<p>Y. Fatman, N. Khoirun Nafisah, and P. Bendoro Jembar Pambudi, “Implementasi Payment Gateway dengan Menggunakan Midtrans pada Website UMKM Geberco,” Jurnal KomtekInfo, vol. 10, no. 2, pp. 64–72, Jun. 2023, doi: 10.35134/komtekinfo.v10i2.364. </p>
+															<p>S. Mulyati, R. Hapipah, A. Rahman, A. Bagus, A. Wahidar, and A. Saifudin, “Perancangan Sistem Informasi Penjualan Berbasis Web pada Toko Pakaian,” Jurnal Teknologi Sistem Informasi dan Aplikasi, vol. 6, no. 1, pp. 12–18, Jan. 2023, doi: 10.32493/jtsi.v6i1.22638. </p>
+															<p>A. Rifandi, “Analysis And Design Of Point Of Sale System In D’astore Shop,” Aptisi Transactions On Technopreneurship (ATT), vol. 2, no. 1, pp. 34–47, Feb. 2020, doi: 10.34306/att.v2i1.63. </p>
+																		</div>
+				</section>
+			
+		</div><!-- .main_entry -->
+
+		<div class="entry_details">
+
+										<div class="item cover_image">
+					<div class="sub_item">
+													<a href="https://jpti.journals.id/index.php/jpti/issue/view/48">
+								<img src="https://jpti.journals.id/public/journals/1/cover_issue_48_id_ID.png" alt="">
+							</a>
+											</div>
+				</div>
+			
+										<div class="item galleys">
+					<h2 class="pkp_screen_reader">
+						##submission.downloads##
+					</h2>
+					<ul class="value galleys_links">
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link pdf" href="https://jpti.journals.id/index.php/jpti/article/view/448/257">
+
+		
+	Download PDF
+
+	</a>
+							</li>
+											</ul>
+				</div>
+						
+						<div class="item published">
+				<section class="sub_item">
+					<h2 class="label">
+						Diterbitkan
+					</h2>
+					<div class="value">
+																			<span>2024-12-03</span>
+																	</div>
+				</section>
+							</div>
+			
+										<div class="item citation">
+					<section class="sub_item citation_display">
+						<h2 class="label">
+							Cara Mengutip
+						</h2>
+						<div class="value">
+							<div id="citationOutput" role="region" aria-live="polite">
+								<div class="csl-bib-body">
+  <div class="csl-entry">Setiawan, M. R., Indayanti Sugata, T. L., &#38; Efrat Najaf , A. R. (2024). Rancang Bangun Website Store Management System Laravel dengan Metode Agile: Studi Kasus UMKM Toko Jali. <i>Jurnal Pendidikan Dan Teknologi Indonesia</i>, <i>4</i>(11), 301-312. https://doi.org/10.52436/1.jpti.448</div>
+</div>
+							</div>
+							<div class="citation_formats">
+								<button class="cmp_button citation_formats_button" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
+									Format Sitasi Lainnya
+								</button>
+								<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+									<ul class="citation_formats_styles">
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/acm-sig-proceedings?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/acm-sig-proceedings?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													ACM
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/acs-nano?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/acs-nano?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													ACS
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/apa?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/apa?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													APA
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													ABNT
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/chicago-author-date?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/chicago-author-date?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													Chicago
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/harvard-cite-them-right?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/harvard-cite-them-right?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													Harvard
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/ieee?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/ieee?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													IEEE40r
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/modern-language-association?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/modern-language-association?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													MLA
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													Turabian
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/vancouver?submissionId=448&amp;publicationId=460"
+													data-load-citation
+													data-json-href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/get/vancouver?submissionId=448&amp;publicationId=460&amp;return=json"
+												>
+													Vancouver
+												</a>
+											</li>
+																			</ul>
+																			<div class="label">
+											Unduh Sitasi
+										</div>
+										<ul class="citation_formats_styles">
+																							<li>
+													<a href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/download/ris?submissionId=448&amp;publicationId=460">
+														<span class="fa fa-download"></span>
+														Endnote/Zotero/Mendeley (RIS)
+													</a>
+												</li>
+																							<li>
+													<a href="https://jpti.journals.id/index.php/jpti/citationstylelanguage/download/bibtex?submissionId=448&amp;publicationId=460">
+														<span class="fa fa-download"></span>
+														BibTeX
+													</a>
+												</li>
+																					</ul>
+																	</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			
+										<div class="item issue">
+
+											<section class="sub_item">
+							<h2 class="label">
+								Terbitan
+							</h2>
+							<div class="value">
+								<a class="title" href="https://jpti.journals.id/index.php/jpti/issue/view/48">
+									Vol 4 No 11 (2024): JPTI - November 2024
+								</a>
+							</div>
+						</section>
+					
+											<section class="sub_item">
+							<h2 class="label">
+								Bagian
+							</h2>
+							<div class="value">
+								Artikel
+							</div>
+						</section>
+									</div>
+			
+																														
+										<div class="item copyright">
+					<h2 class="label">
+						Lisensi
+					</h2>
+																									<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="//i.creativecommons.org/l/by/4.0/88x31.png" /></a><p>Artikel ini berlisensi  <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+																
+				</div>
+			
+			
+
+		</div><!-- .entry_details -->
+	</div><!-- .row -->
+
+</article>
+
+	
+
+</div><!-- .page -->
+
+	</div><!-- pkp_structure_main -->
+
+									<div class="pkp_structure_sidebar left" role="complementary" aria-label="Sidebar">
+				<div class="pkp_block block_custom" id="customblock-Sidebar">
+	<div class="content">
+		<hr>
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<td>
+<table width="200" cellspacing="0" cellpadding="2" align="left">
+<tbody>
+<tr>
+<td style="height: 40px; width: 100%; vertical-align: middle; border-bottom: 1 px solid #ffffff; text-align: center; background-color: #9da0a3;"><span style="color: #fff;"><strong> &nbsp;&nbsp;..:: ISSN ::..&nbsp;&nbsp;</strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: black;"><strong>P-ISSN : <a href="http://issn.pdii.lipi.go.id/issn.cgi?daftar&amp;1612334869&amp;1&amp;&amp;" target="_blank" rel="noopener">2775-4227 </a><br>e-ISSN : <a href="http://issn.pdii.lipi.go.id/issn.cgi?daftar&amp;1612334629&amp;1&amp;&amp;" target="_blank" rel="noopener">2775-4219</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<hr><!--
+<p><a href="https://sinta.kemdiktisaintek.go.id/journals/profile/12376" target="_blank" rel="noopener"> <img src="https://journals.id/master/sinta3_footer.png" width="150" /> </a></p>
+<hr />/-->
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<td>
+<table width="200" cellspacing="0" cellpadding="2" align="left">
+<tbody>
+<tr>
+<td style="height: 40px; width: 100%; vertical-align: middle; border-bottom: 1 px solid #ffffff; text-align: center; background-color: #9da0a3;"><span style="color: #fff;"><strong><a href="http://jpti.journals.id/index.php/jpti/about/submissions"><img src="/public/site/images/submit.png"></a></strong></span></td>
+</tr>
+</tbody>
+</table>
+<br>&nbsp; &nbsp;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<td>
+<table width="200" cellspacing="0" cellpadding="2" align="left">
+<tbody>
+<tr>
+<td style="height: 40px; width: 100%; vertical-align: middle; border-bottom: 1 px solid #ffffff; text-align: center; background-color: #9da0a3;"><span style="color: #fff;"><strong> &nbsp;&nbsp;..:: ABOUT JPTI ::..&nbsp;&nbsp;</strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/about"> Fokus dan Ruang Lingkup</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/about/editorialTeam"> Tim Editor</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/reviewers"> Tim Reviewer</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/guidelines"> Petunjuk Penulisan</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/reviewprocess"> Proses Peer Review</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/openaccess">Kebijakan Open Access</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/licensing"> Lisensi dan Hak Cipta</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/archiving"> Pengarsipan</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/plagiarism"> Kebijakan Plagiarisme</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/frequency"> Frekuensi Publikasi</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/ethics"> Etika Publikasi</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/apc"> Biaya Penerbitan</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/search/authors">Indeks Author</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/indexing"> Indeksasi</a></strong></span></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; background-color: #dee1e3; width: 100%;"><span style="color: #edfe13;"><strong><a href="http://jpti.journals.id/index.php/jpti/about/contact"> Kontak</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<td>
+<table width="200" cellspacing="0" cellpadding="2" align="left">
+<tbody>
+<tr>
+<td style="height: 40px; vertical-align: middle; border-bottom: 1 px solid #ffffff; text-align: center; background-color: #425f70; width: 100%;"><span style="color: #fff;"><strong>&nbsp;<span style="text-decoration: underline;">Download</span> <span style="text-decoration: underline;">Template</span></strong></span>&nbsp;</td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; width: 100%;"><a href="https://journals.id/template/JPTI-Template.docx" target="_blank" rel="noopener"><img src="/public/site/images/template.png"></a></td>
+</tr>
+</tbody>
+</table>
+<br>&nbsp; &nbsp;</td>
+</tr>
+</tbody>
+</table>
+<hr><!--
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<td>
+<table width="200" cellspacing="0" cellpadding="2" align="left">
+<tbody>
+<tr>
+<td style="height: 40px; vertical-align: middle; border-bottom: 1 px solid #ffffff; text-align: center; background-color: #425f70; width: 100%;"><span style="color: #fff;"><strong> <span style="text-decoration: underline;">Tanya</span> <span style="text-decoration: underline;">Kami</span></strong></span> </td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center; width: 100%;"><a href="https://api.whatsapp.com/send?phone=6285157550006&amp;text=Saya%20Mau%20Bertanya%20Tentang%20JPTI" target="_blank" rel="noopener"><img src="/public/site/images/wa.png" /></a><br />Chat Saya!</td>
+</tr>
+</tbody>
+</table>
+<br />   </td>
+</tr>
+</tbody>
+</table>
+<hr />/-->
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<td>
+<table width="200" cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td style="height: 40px; vertical-align: middle; border-bottom: 1 px solid #ffffff; text-align: center; background-color: #425f70; width: 100%;"><span style="color: #fff;"><strong>&nbsp;<span style="text-decoration: underline;">Tools and Support</span></strong></span>&nbsp;</td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center;"><a href="https://www.mendeley.com/download-desktop-new/"><img src="/public/site/images/indexing/mendeley.png"></a></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center;"><a href="https://pkp.sfu.ca/ojs/"><img src="/public/site/images/indexing/ojs.png"></a></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center;"><a href="https://www.turnitin.com/"><img src="/public/site/images/indexing/turnitin.png"></a></td>
+</tr>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center;"><a href="https://relawanjurnal.id/"><img src="/public/site/images/indexing/rji.png"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table border="1" cellpadding="5">
+<tbody>
+<tr>
+<td>
+<table width="200" cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td style="height: 35px; vertical-align: middle; border-bottom: 1px solid #ffffff; text-align: center;">
+<p align="center">FlagCounter</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+	</div>
+</div>
+<div class="pkp_block block_language">
+	<h2 class="title">
+		Bahasa
+	</h2>
+
+	<div class="content">
+		<ul>
+							<li class="locale_en_US" lang="en-US">
+					<a href="https://jpti.journals.id/index.php/jpti/user/setLocale/en_US?source=%2Findex.php%2Fjpti%2Farticle%2Fview%2F448">
+						English
+					</a>
+				</li>
+							<li class="locale_id_ID current" lang="id-ID">
+					<a href="https://jpti.journals.id/index.php/jpti/user/setLocale/id_ID?source=%2Findex.php%2Fjpti%2Farticle%2Fview%2F448">
+						Bahasa Indonesia
+					</a>
+				</li>
+					</ul>
+	</div>
+</div><!-- .block_language -->
+<div class="pkp_block block_information">
+	<h2 class="title">Informasi</h2>
+	<div class="content">
+		<ul>
+							<li>
+					<a href="https://jpti.journals.id/index.php/jpti/information/readers">
+						Untuk Pembaca
+					</a>
+				</li>
+										<li>
+					<a href="https://jpti.journals.id/index.php/jpti/information/authors">
+						Untuk Penulis
+					</a>
+				</li>
+										<li>
+					<a href="https://jpti.journals.id/index.php/jpti/information/librarians">
+						Untuk Pustakawan
+					</a>
+				</li>
+					</ul>
+	</div>
+</div>
+
+			</div><!-- pkp_sidebar.left -->
+			</div><!-- pkp_structure_content -->
+
+<div class="pkp_structure_footer_wrapper" role="contentinfo">
+	<a id="pkp_content_footer"></a>
+
+	<div class="pkp_structure_footer">
+
+					<div class="pkp_footer_content">
+				<p align="center"><strong>Copyright © JPTI 2025<br /></strong> P-ISSN : <a href="https://issn.brin.go.id/terbit/detail/1612334629" target="_blank" rel="noopener">2775-4227</a> dan e-ISSN : <a href="https://issn.brin.go.id/terbit/detail/1612334869" target="_blank" rel="noopener">2775-4219</a></p>
+<p align="center"><strong>JPTI Terindeks Oleh :<br /></strong> <a href="https://sinta.kemdikbud.go.id/journals/profile/12376" target="_blank" rel="noopener"> <img src="https://journals.id/master/sinta3_footer.png" /> </a> <a href="https://garuda.kemdikbud.go.id/journal/view/20998" target="_blank" rel="noopener"> <img src="https://jpti.journals.id/public/site/images/indexing/garuda_footer.png" /> </a> <a href="https://scholar.google.com/citations?user=FhHJZ7cAAAAJ&amp;hl=id" target="_blank" rel="noopener"> <img src="https://jpti.journals.id/public/site/images/indexing/google_footer.png" /> </a> <a href="https://onesearch.id/Repositories/Repository?library_id=4440" target="_blank" rel="noopener"> <img src="https://jpti.journals.id/public/site/images/indexing/onesearch_footer.png" /> </a> <a href="https://search.crossref.org/?q=Jurnal+Pendidikan+dan+Teknologi+Indonesia&amp;from_ui=yes&amp;publisher-name=Infinite+Corporation" target="_blank" rel="noopener"> <img src="https://jpti.journals.id/public/site/images/indexing/crossref_footer.png" /> </a> <a href="https://index.pkp.sfu.ca/index.php/browse/index/" target="_blank" rel="noopener"> <img src="https://jpti.journals.id/public/site/images/indexing/pkp_footer.png" /> </a> <a href="https://portal.issn.org/resource/ISSN/2775-4227" target="_blank" rel="noopener"> <img src="https://jpti.journals.id/public/site/images/indexing/isjd_footer.png" /> </a> <a href="https://www.neliti.com/journals/jpti" target="_blank" rel="noopener"> <img src="https://jpti.journals.id/public/site/images/indexing/neliti_footer.png" /> </a> <a href="https://app.dimensions.ai/discover/publication?search_mode=content&amp;search_text=%22Jurnal%20Pendidikan%20dan%20Teknologi%20Indonesia%22&amp;search_type=kws&amp;search_field=full_search&amp;and_facet_source_title=jour.1408654" target="_blank" rel="noopener"><img src="https://jpti.journals.id/public/site/images/indexing/moraref_footer.png" /><img src="https://jpti.journals.id/public/site/images/jpti/dimensions-footer.png" alt="" width="153" height="52" /></a><a href="https://www.scilit.com/publications?qa=%5B%7B%22id%22%3A%22source_id%22%2C%22value%22%3A%2288247%22%7D%5D&amp;sort=newest&amp;facet=%7B%22no-filters%22%3A%5B%22true%22%5D%7D"><img src="https://jpti.journals.id/public/site/images/jpti/scilit-footer.png" alt="" width="153" height="52" /></a> <br /><strong>This work is licensed under a</strong></p>
+<center><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener"> <img src="https://jpti.journals.id/public/site/images/indexing/ccby.png" /> </a> <br /><a href="https://statcounter.com/p12466775/?guest=1" target="_blank" rel="noopener">JPTI Stats</a>  <a title="Jurnal Pendidikan dan Teknologi Indonesia Statistics" href="https://statcounter.com/p12466775/?guest=1" target="_blank" rel="noopener"> <img style="border: none;" src="https://c.statcounter.com/12466775/0/f0faff82/0/" alt="Hit counters" /> </a></center>
+<div style="display: none;">
+<ul>
+<ul>
+<li><a href="https://robinstore.id" rel="dofollow">topup games</a></li>
+</ul>
+</ul>
+</div>
+			</div>
+		
+		<div class="pkp_brand_footer" role="complementary">
+			<a href="https://jpti.journals.id/index.php/jpti/about/aboutThisPublishingSystem">
+				<img alt="Informasi lengkap tentang sistem publikasi, Platform dan Alur Kerja oleh OJS/PKP." src="https://jpti.journals.id/templates/images/ojs_brand.png">
+			</a>
+		</div>
+	</div>
+</div><!-- pkp_structure_footer_wrapper -->
+
+</div><!-- pkp_structure_page -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js?v=3.2.1.0" type="text/javascript"></script><script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js?v=3.2.1.0" type="text/javascript"></script><script src="https://jpti.journals.id/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js?v=3.2.1.0" type="text/javascript"></script><script src="https://jpti.journals.id/plugins/themes/default/js/lib/popper/popper.js?v=3.2.1.0" type="text/javascript"></script><script src="https://jpti.journals.id/plugins/themes/default/js/lib/bootstrap/util.js?v=3.2.1.0" type="text/javascript"></script><script src="https://jpti.journals.id/plugins/themes/default/js/lib/bootstrap/dropdown.js?v=3.2.1.0" type="text/javascript"></script><script src="https://jpti.journals.id/plugins/themes/default/js/main.js?v=3.2.1.0" type="text/javascript"></script><script src="https://jpti.journals.id/plugins/generic/citationStyleLanguage/js/articleCitation.js?v=3.2.1.0" type="text/javascript"></script><script type="text/javascript">var pkpUsageStats = pkpUsageStats || {};pkpUsageStats.data = pkpUsageStats.data || {};pkpUsageStats.data.Submission = pkpUsageStats.data.Submission || {};pkpUsageStats.data.Submission[448] = {"data":{"2024":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":117},"2025":{"1":61,"2":28,"3":26,"4":26,"5":45,"6":90,"7":47,"8":75,"9":56,"10":76,"11":84,"12":80},"2026":{"1":68,"2":26,"3":43,"4":86,"5":101,"6":55,"7":30,"8":52,"9":0,"10":0,"11":0,"12":0}},"label":"Semua Unduhan","color":"79,181,217","total":1272};</script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js?v=3.2.1.0" type="text/javascript"></script><script type="text/javascript">var pkpUsageStats = pkpUsageStats || {};pkpUsageStats.locale = pkpUsageStats.locale || {};pkpUsageStats.locale.months = ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agus","Sep","Okt","Nov","Des"];pkpUsageStats.config = pkpUsageStats.config || {};pkpUsageStats.config.chartType = "bar";</script><script src="https://jpti.journals.id/plugins/generic/usageStats/js/UsageStatsFrontendHandler.js?v=3.2.1.0" type="text/javascript"></script>
+
+
+</body>
+</html>

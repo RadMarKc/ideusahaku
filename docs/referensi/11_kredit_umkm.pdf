@@ -1,0 +1,696 @@
+	<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Rancang Bangun Sistem Informasi UMKM Berbasis Web untuk Promosi Digital Menggunakan Metode Rapid Application Development (RAD) 
+							| MALCOM: Indonesian Journal of Machine Learning and Computer Science
+			</title>
+
+	
+<link rel="icon" href="https://journal.irpi.or.id/public/journals/1/favicon_en_US.png">
+<meta name="generator" content="Open Journal Systems 3.2.1.0">
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="MALCOM: Indonesian Journal of Machine Learning and Computer Science"/>
+<meta name="citation_journal_abbrev" content="MALCOM"/>
+<meta name="citation_issn" content="2775-8575"/> 
+<meta name="citation_author" content="Rahma Hanum"/>
+<meta name="citation_author_institution" content="Universitas Logistik dan Bisnis International Bandung"/>
+<meta name="citation_author" content="Dudi Hendra Fachrudin"/>
+<meta name="citation_author_institution" content="Universitas Logistik dan Bisnis International Bandung"/>
+<meta name="citation_author" content="Cahyat Rohyana"/>
+<meta name="citation_author_institution" content="Universitas Logistik dan Bisnis International Bandung"/>
+<meta name="citation_title" content="Rancang Bangun Sistem Informasi UMKM Berbasis Web untuk Promosi Digital Menggunakan Metode Rapid Application Development (RAD) : Design and Development of a Web-Based Information System for MSME Digital Promotion Using the Rapid Application Development (RAD) Method"/>
+<meta name="citation_language" content="en"/>
+<meta name="citation_date" content="2026/02/01"/>
+<meta name="citation_volume" content="6"/>
+<meta name="citation_issue" content="1"/>
+<meta name="citation_firstpage" content="314"/>
+<meta name="citation_lastpage" content="323"/>
+<meta name="citation_doi" content="10.57152/malcom.v6i1.2421"/>
+<meta name="citation_abstract_html_url" content="https://journal.irpi.or.id/index.php/malcom/article/view/2421"/>
+<meta name="citation_keywords" xml:lang="en" content="Rapid Application Development"/>
+<meta name="citation_keywords" xml:lang="en" content="Promosi Digital"/>
+<meta name="citation_keywords" xml:lang="en" content="Sistem Informasi Web"/>
+<meta name="citation_keywords" xml:lang="en" content="UMKM"/>
+<meta name="citation_pdf_url" content="https://journal.irpi.or.id/index.php/malcom/article/download/2421/1198"/>
+<meta name="citation_reference" content="D. Fakultas, M. Dan, I. P. A. Berbasis, A. Putra, U. Darusalam, and R. T. Komalasari, “Implementasi Metode Rapid Application Development ( RAD ) Dan Metode Alphabetical Filling Pada E-Arsip,” vol. 8, no. 4, pp. 1665–1679, 2021."/>
+<meta name="citation_reference" content="J. Teknologi and D. A. N. Open, “Web-Based E-Commerce System Design Using RAD Method?: A Case Study of PT Muda Jaya Export,” vol. 8, no. 1, pp. 295–306, 2025, doi: 10.36378/jtos.v8i1.4420."/>
+<meta name="citation_reference" content="J. Manajemen, P. Di, and M. Pandemi, “JurnalEkonomi dan Manajemen e-ISSN?: 2656-775X,” pp. 1–14."/>
+<meta name="citation_reference" content="C. Mandang, D. C. J. Wuisan, J. G. L. Mandagi, and A. A. Web, “Penerapan Metode RAD dalam Merancang Aplikasi Web Proyek PLN UIP Sulbagut,” vol. 01, no. 02, pp. 49–53, 2020."/>
+<meta name="citation_reference" content="U. Saprudin and M. R. Pratama, “Jurnal JTIK ( Jurnal Teknologi Informasi dan Komunikasi ) Studi Kasus Penerapan Metode RAD dalam Pengembangan,” vol. 9, no. March, pp. 314–326, 2025."/>
+<meta name="citation_reference" content="R. P. Ardhiyani and H. Mulyono, “Analisis dan Perancangan Sistem Informasi Pariwisata Berbasis Web sebagai Media Promosi pada Kabupaten Tebo,” J. Manaj. Sist. Inf., vol. 3, no. 1, pp. 953–972, 2018."/>
+<meta name="citation_reference" content="B. Di, S. M. K. Marga, and I. Kamil, “Unified Modelling Language ( UML ) Untuk Perancangan Sistem Informasi Penerimaan Siswa,” vol. 04, pp. 17–23, 2022."/>
+<meta name="citation_reference" content="S. Narulita, A. Nugroho, and M. Z. Abdillah, “Diagram Unified Modelling Language ( UML ) untuk Perancangan Sistem Informasi Manajemen Penelitian dan Pengabdian Masyarakat ( SIMLITABMAS ) Universitas Nasional Karangturi Semarang , Indonesia ( deskripsi ) dan perancangan sistem , khususnya pada pemrograman berorientasi objek ( Nistrina,” no. 3, pp. 244–256, 2024."/>
+<meta name="citation_reference" content="H. Y. Ardhi, A. Muhidin, and T. N. Wiyatno, “Implementation of an Integrated Database System in the Bank Tabungan Negara Replication Monitoring Dashboard Application Using the Prototype Method Implementasi Sistem Basis Data Terintegrasi pada Aplikasi Dashboard Monitoring Replikasi Bank Tabungan Negara Metode Prototype,” vol. 5, no. July, pp. 942–952, 2025."/>
+<meta name="citation_reference" content="A. F. Bahari and A. Pramudwiatmoko, “Implementation of Rapid Application Development ( RAD ) Method for Mobile-Based Ice Cream Ordering Application,” vol. 5, no. January, pp. 283–291, 2025."/>
+<meta name="citation_reference" content="I. Pendahuluan, “Penerapan Metode RAD Dalam Pengembangan Sistem Informasi Pemesanan Jasa Percetakan Berbasis Web pada Percetakan Karya Sehati Jaya,” vol. 8, pp. 871–881, 2024."/>
+<meta name="citation_reference" content="I. F. Lawalata et al., “Perancangan Dan Pembuatan Website Pada Komunitas Discerning”."/>
+<meta name="citation_reference" content="Y. Trimarsiah and M. Arafat, “Analisis dan Perancangan Website sebagai Sarana Informasi Pada Lembaga Bahasa Kewirausahaan dan Komputer AKMI Baturaja,” J. Ilm. MATRIK, vol. 19, pp. 1–10, 2017."/>
+<meta name="citation_reference" content="M. Syafrizal, “Web-Based SME Online Marketing System ( E- Commerce ),” vol. 1, no. August, pp. 75–79, 2021."/>
+<meta name="citation_reference" content="P. H. Shabrina, S. Zharfa, A. S. Pratama, and E. Arribe, “Rancang Bangun Sistem Informasi Inventory Menggunakan Metode Rapid Application Development ( RAD ) Pada Toko Abadi Jaya,” 2024."/>
+<meta name="citation_reference" content="E. Nurlailah and K. R. Nova Wardani, “Perancangan Website Sebagai Media Informasi Dan Promosi Oleh-Oleh Khas Kota Pagaralam,” JIPI (Jurnal Ilm. Penelit. dan Pembelajaran Inform., vol. 8, no. 4, pp. 1175–1185, 2023, doi: 10.29100/jipi.v8i4.4006."/>
+<meta name="citation_reference" content="P. Sistem, J. Beli, B. Pokok, P. Berbasis, and A. Mobile, “Jurnal Informatika Terpadu,” vol. 5, no. 2, pp. 49–55, 2019."/>
+<meta name="citation_reference" content="J. Teknologi, S. Informasi, K. Tgd, S. D. Pratama, and M. N. Dadaprawira, “Pengujian Black Box Testing Pada Aplikasi Edu Digital Berbasis Website Menggunakan Metode Equivalence Dan Boundary Value Jurnal Teknologi Sistem Informasi dan Sistem Komputer TGD,” vol. 6, pp. 560–569, 2023."/>
+<meta name="citation_reference" content="H. Hasugian, S. Informasi, F. T. Informasi, U. B. Luhur, P. Utara, and K. Sistem, “User Acceptance Testing ( UAT ) Pada Electronic Data,” vol. 4, no. 1, 2023."/>
+<meta name="citation_reference" content="N. Hartono and A. A. Muin, “Penggunaan User Acceptance Testing ( UAT ) Pada Pengujian Sistem Informasi Pengelolaan Keuangan Dan Inventaris Barang,” 2025."/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.Creator.PersonalName" content="Rahma Hanum"/>
+<meta name="DC.Creator.PersonalName" content="Dudi Hendra Fachrudin"/>
+<meta name="DC.Creator.PersonalName" content="Cahyat Rohyana"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2026-02-01"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2025-12-06"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2025-12-26"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2026-02-05"/>
+<meta name="DC.Description" xml:lang="en" content="Penelitian ini dilakukan untuk merancang sistem informasi manajemen berbasis web  yang ditujukan bagi pelaku UMKM di Wilayah Bandung timur, selain itu juga sebagai media promosi untuk menjangkau pasar yang lebih luas. Sistem ini dirancang dengan fitur-fitur yang memungkinkan UMKM untuk  mengelola data barang, pengelolaan pelanggan, laporan keuangan, hingga tampilan katalog produk. Sistem yang dikembangkan memiliki fitur pengelolaan data produk, data pelanggan, laporan keuangan, serta katalog produk. Metode Rapid Application Development (RAD) digunakan karena memungkinkan proses pengembangan yang cepat dan melibatkan pengguna secara langsung. Hasil pengujian Black Box menunjukkan seluruh fungsi sistem berjalan sesuai kebutuhan. Selain itu, hasil User Acceptance Test (UAT) menunjukkan tingkat penerimaan pengguna dengan kategori sangat baik. Sistem ini diharapkan mampu meningkatkan efisiensi pengelolaan usaha dan mendukung promosi digital UMKM."/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Identifier" content="2421"/>
+<meta name="DC.Identifier.pageNumber" content="314-323"/>
+<meta name="DC.Identifier.DOI" content="10.57152/malcom.v6i1.2421"/>
+<meta name="DC.Identifier.URI" content="https://journal.irpi.or.id/index.php/malcom/article/view/2421"/>
+<meta name="DC.Language" scheme="ISO639-1" content="en"/>
+<meta name="DC.Rights" content="Copyright (c) 2025 Rahma Hanum, Dudi Hendra Fachrudin, Cahyat Rohyana"/>
+<meta name="DC.Rights" content="https://creativecommons.org/licenses/by-sa/4.0"/>
+<meta name="DC.Source" content="MALCOM: Indonesian Journal of Machine Learning and Computer Science"/>
+<meta name="DC.Source.ISSN" content="2775-8575"/>
+<meta name="DC.Source.Issue" content="1"/>
+<meta name="DC.Source.Volume" content="6"/>
+<meta name="DC.Source.URI" content="https://journal.irpi.or.id/index.php/malcom"/>
+<meta name="DC.Subject" xml:lang="en" content="UMKM"/>
+<meta name="DC.Title" content="Rancang Bangun Sistem Informasi UMKM Berbasis Web untuk Promosi Digital Menggunakan Metode Rapid Application Development (RAD) "/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type.articleType" content="Articles"/>
+	<link rel="stylesheet" href="https://journal.irpi.or.id/index.php/malcom/$$$call$$$/page/page/css?name=stylesheet" type="text/css" /><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic" type="text/css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?v=3.2.1.0" type="text/css" /><link rel="stylesheet" href="https://journal.irpi.or.id/public/journals/1/styleSheet.css?v=3.2.1.0" type="text/css" /><link rel="stylesheet" href="https://journal.irpi.or.id/public/site/styleSheet.css?v=3.2.1.0" type="text/css" />
+</head>
+<body class="pkp_page_article pkp_op_view has_site_logo" dir="ltr">
+
+	<div class="pkp_structure_page">
+
+				<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">
+						 <nav class="cmp_skip_to_content" aria-label="Jump to content links">
+	<a href="#pkp_content_main">Skip to main content</a>
+	<a href="#siteNav">Skip to main navigation menu</a>
+		<a href="#pkp_content_footer">Skip to site footer</a>
+</nav>
+
+			<div class="pkp_head_wrapper">
+
+				<div class="pkp_site_name_wrapper">
+					<button class="pkp_site_nav_toggle">
+						<span>Open Menu</span>
+					</button>
+										<div class="pkp_site_name">
+																<a href="						https://journal.irpi.or.id/index.php/malcom/index
+					" class="is_img">
+							<img src="https://journal.irpi.or.id/public/journals/1/pageHeaderLogoImage_en_US.png" width="6000" height="908"  />
+						</a>
+										</div>
+				</div>
+
+				
+				<nav class="pkp_site_nav_menu" aria-label="Site Navigation">
+					<a id="siteNav"></a>
+					<div class="pkp_navigation_primary_row">
+						<div class="pkp_navigation_primary_wrapper">
+																				<ul id="navigationPrimary" class="pkp_navigation_primary pkp_nav_list">
+								<li class="">
+				<a href="https://journal.irpi.or.id/index.php/malcom/index">
+					Home
+				</a>
+							</li>
+								<li class="">
+				<a href="https://journal.irpi.or.id/index.php/malcom/about">
+					About
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://journal.irpi.or.id/index.php/malcom/about">
+										About the Journal
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://journal.irpi.or.id/index.php/malcom/about/submissions">
+										Submissions
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://journal.irpi.or.id/index.php/malcom/about/contact">
+										Contact
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://journal.irpi.or.id/index.php/malcom/about/privacy">
+										Privacy Statement
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://journal.irpi.or.id/index.php/malcom/issue/archive">
+					Archives
+				</a>
+							</li>
+								<li class="">
+				<a href="https://journal.irpi.or.id/index.php/malcom/issue/current">
+					Current
+				</a>
+							</li>
+								<li class="">
+				<a href="https://journal.irpi.or.id/index.php/malcom/indexing">
+					Journal Indexing
+				</a>
+							</li>
+								<li class="">
+				<a href="https://journal.irpi.or.id/index.php/malcom/announcement">
+					Announcements
+				</a>
+							</li>
+								<li class="">
+				<a href="https://journal.irpi.or.id/index.php/malcom/login">
+					Login
+				</a>
+							</li>
+								<li class="">
+				<a href="https://journal.irpi.or.id/index.php/malcom/user/register">
+					Register
+				</a>
+							</li>
+			</ul>
+
+				
+
+																								
+	<form class="pkp_search pkp_search_desktop" action="https://journal.irpi.or.id/index.php/malcom/search/search" method="get" role="search" aria-label="Article Search">
+		<input type="hidden" name="csrfToken" value="fd54fd30d89e026c01170c10fcb5db11">
+				
+			<input name="query" value="" type="text" aria-label="Search Query">
+		
+
+		<button type="submit">
+			Search
+		</button>
+		<div class="search_controls" aria-hidden="true">
+			<a href="https://journal.irpi.or.id/index.php/malcom/search/search" class="headerSearchPrompt search_prompt" aria-hidden="true">
+				Search
+			</a>
+			<a href="#" class="search_cancel headerSearchCancel" aria-hidden="true"></a>
+			<span class="search_loading" aria-hidden="true"></span>
+		</div>
+	</form>
+													</div>
+					</div>
+					<div class="pkp_navigation_user_wrapper" id="navigationUserWrapper">
+							<ul id="navigationUser" class="pkp_navigation_user pkp_nav_list">
+								<li class="profile">
+				<a href="https://journal.irpi.or.id/index.php/malcom/user/register">
+					Register
+				</a>
+							</li>
+								<li class="profile">
+				<a href="https://journal.irpi.or.id/index.php/malcom/login">
+					Login
+				</a>
+							</li>
+										</ul>
+
+					</div>
+																		
+	<form class="pkp_search pkp_search_mobile" action="https://journal.irpi.or.id/index.php/malcom/search/search" method="get" role="search" aria-label="Article Search">
+		<input type="hidden" name="csrfToken" value="fd54fd30d89e026c01170c10fcb5db11">
+				
+			<input name="query" value="" type="text" aria-label="Search Query">
+		
+
+		<button type="submit">
+			Search
+		</button>
+		<div class="search_controls" aria-hidden="true">
+			<a href="https://journal.irpi.or.id/index.php/malcom/search/search" class="headerSearchPrompt search_prompt" aria-hidden="true">
+				Search
+			</a>
+			<a href="#" class="search_cancel headerSearchCancel" aria-hidden="true"></a>
+			<span class="search_loading" aria-hidden="true"></span>
+		</div>
+	</form>
+									</nav>
+			</div><!-- .pkp_head_wrapper -->
+		</header><!-- .pkp_structure_head -->
+
+						<div class="pkp_structure_content has_sidebar">
+			<div class="pkp_structure_main" role="main">
+				<a id="pkp_content_main"></a>
+
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="You are here:">
+	<ol>
+		<li>
+			<a href="https://journal.irpi.or.id/index.php/malcom/index">
+				Home
+			</a>
+			<span class="separator">/</span>
+		</li>
+		<li>
+			<a href="https://journal.irpi.or.id/index.php/malcom/issue/archive">
+				Archives
+			</a>
+			<span class="separator">/</span>
+		</li>
+					<li>
+				<a href="https://journal.irpi.or.id/index.php/malcom/issue/view/71">
+					Vol. 6 No. 1 (2026): MALCOM January 2026
+				</a>
+				<span class="separator">/</span>
+			</li>
+				<li class="current" aria-current="page">
+			<span aria-current="page">
+									Articles
+							</span>
+		</li>
+	</ol>
+</nav>
+	
+		<article class="obj_article_details">
+
+		
+	<h1 class="page_title">
+		Rancang Bangun Sistem Informasi UMKM Berbasis Web untuk Promosi Digital Menggunakan Metode Rapid Application Development (RAD) 
+	</h1>
+
+			<h2 class="subtitle">
+			Design and Development of a Web-Based Information System for MSME Digital Promotion Using the Rapid Application Development (RAD) Method
+		</h2>
+	
+	<div class="row">
+		<div class="main_entry">
+
+							<section class="item authors">
+					<h2 class="pkp_screen_reader">Authors</h2>
+					<ul class="authors">
+											<li>
+							<span class="name">
+								Rahma Hanum
+							</span>
+															<span class="affiliation">
+									Universitas Logistik dan Bisnis International Bandung
+								</span>
+																				</li>
+											<li>
+							<span class="name">
+								Dudi Hendra Fachrudin
+							</span>
+															<span class="affiliation">
+									Universitas Logistik dan Bisnis International Bandung
+								</span>
+																				</li>
+											<li>
+							<span class="name">
+								Cahyat Rohyana
+							</span>
+															<span class="affiliation">
+									Universitas Logistik dan Bisnis International Bandung
+								</span>
+																				</li>
+										</ul>
+				</section>
+			
+																												<section class="item doi">
+						<h2 class="label">
+														DOI:
+						</h2>
+						<span class="value">
+							<a href="https://doi.org/10.57152/malcom.v6i1.2421">
+								https://doi.org/10.57152/malcom.v6i1.2421
+							</a>
+						</span>
+					</section>
+							
+									<section class="item keywords">
+				<h2 class="label">
+										Keywords:
+				</h2>
+				<span class="value">
+											Rapid Application Development, 											Promosi Digital, 											Sistem Informasi Web, 											UMKM									</span>
+			</section>
+			
+										<section class="item abstract">
+					<h2 class="label">Abstract</h2>
+					<p>Penelitian ini dilakukan untuk merancang sistem informasi manajemen berbasis web  yang ditujukan bagi pelaku UMKM di Wilayah Bandung timur, selain itu juga sebagai media promosi untuk menjangkau pasar yang lebih luas. Sistem ini dirancang dengan fitur-fitur yang memungkinkan UMKM untuk  mengelola data barang, pengelolaan pelanggan, laporan keuangan, hingga tampilan katalog produk. Sistem yang dikembangkan memiliki fitur pengelolaan data produk, data pelanggan, laporan keuangan, serta katalog produk. Metode <em>Rapid Application Development</em> (RAD) digunakan karena memungkinkan proses pengembangan yang cepat dan melibatkan pengguna secara langsung. Hasil pengujian <em>Black Box</em> menunjukkan seluruh fungsi sistem berjalan sesuai kebutuhan. Selain itu, hasil <em>User Acceptance Test</em> (UAT) menunjukkan tingkat penerimaan pengguna dengan kategori sangat baik. Sistem ini diharapkan mampu meningkatkan efisiensi pengelolaan usaha dan mendukung promosi digital UMKM.</p>
+				</section>
+			
+			<div class="item downloads_chart">
+	<h3 class="label">
+		Downloads
+	</h3>
+	<div class="value">
+		<canvas class="usageStatsGraph" data-object-type="Submission" data-object-id="2421"></canvas>
+		<div class="usageStatsUnavailable" data-object-type="Submission" data-object-id="2421">
+			Download data is not yet available.
+		</div>
+	</div>
+</div>
+
+
+																																	
+										<section class="item references">
+					<h2 class="label">
+						References
+					</h2>
+					<div class="value">
+																					<p>D. Fakultas, M. Dan, I. P. A. Berbasis, A. Putra, U. Darusalam, and R. T. Komalasari, “Implementasi Metode Rapid Application Development ( RAD ) Dan Metode Alphabetical Filling Pada E-Arsip,” vol. 8, no. 4, pp. 1665–1679, 2021. </p>
+															<p>J. Teknologi and D. A. N. Open, “Web-Based E-Commerce System Design Using RAD Method?: A Case Study of PT Muda Jaya Export,” vol. 8, no. 1, pp. 295–306, 2025, doi: 10.36378/jtos.v8i1.4420. </p>
+															<p>J. Manajemen, P. Di, and M. Pandemi, “JurnalEkonomi dan Manajemen e-ISSN?: 2656-775X,” pp. 1–14. </p>
+															<p>C. Mandang, D. C. J. Wuisan, J. G. L. Mandagi, and A. A. Web, “Penerapan Metode RAD dalam Merancang Aplikasi Web Proyek PLN UIP Sulbagut,” vol. 01, no. 02, pp. 49–53, 2020. </p>
+															<p>U. Saprudin and M. R. Pratama, “Jurnal JTIK ( Jurnal Teknologi Informasi dan Komunikasi ) Studi Kasus Penerapan Metode RAD dalam Pengembangan,” vol. 9, no. March, pp. 314–326, 2025. </p>
+															<p>R. P. Ardhiyani and H. Mulyono, “Analisis dan Perancangan Sistem Informasi Pariwisata Berbasis Web sebagai Media Promosi pada Kabupaten Tebo,” J. Manaj. Sist. Inf., vol. 3, no. 1, pp. 953–972, 2018. </p>
+															<p>B. Di, S. M. K. Marga, and I. Kamil, “Unified Modelling Language ( UML ) Untuk Perancangan Sistem Informasi Penerimaan Siswa,” vol. 04, pp. 17–23, 2022. </p>
+															<p>S. Narulita, A. Nugroho, and M. Z. Abdillah, “Diagram Unified Modelling Language ( UML ) untuk Perancangan Sistem Informasi Manajemen Penelitian dan Pengabdian Masyarakat ( SIMLITABMAS ) Universitas Nasional Karangturi Semarang , Indonesia ( deskripsi ) dan perancangan sistem , khususnya pada pemrograman berorientasi objek ( Nistrina,” no. 3, pp. 244–256, 2024. </p>
+															<p>H. Y. Ardhi, A. Muhidin, and T. N. Wiyatno, “Implementation of an Integrated Database System in the Bank Tabungan Negara Replication Monitoring Dashboard Application Using the Prototype Method Implementasi Sistem Basis Data Terintegrasi pada Aplikasi Dashboard Monitoring Replikasi Bank Tabungan Negara Metode Prototype,” vol. 5, no. July, pp. 942–952, 2025. </p>
+															<p>A. F. Bahari and A. Pramudwiatmoko, “Implementation of Rapid Application Development ( RAD ) Method for Mobile-Based Ice Cream Ordering Application,” vol. 5, no. January, pp. 283–291, 2025. </p>
+															<p>I. Pendahuluan, “Penerapan Metode RAD Dalam Pengembangan Sistem Informasi Pemesanan Jasa Percetakan Berbasis Web pada Percetakan Karya Sehati Jaya,” vol. 8, pp. 871–881, 2024. </p>
+															<p>I. F. Lawalata et al., “Perancangan Dan Pembuatan Website Pada Komunitas Discerning”. </p>
+															<p>Y. Trimarsiah and M. Arafat, “Analisis dan Perancangan Website sebagai Sarana Informasi Pada Lembaga Bahasa Kewirausahaan dan Komputer AKMI Baturaja,” J. Ilm. MATRIK, vol. 19, pp. 1–10, 2017. </p>
+															<p>M. Syafrizal, “Web-Based SME Online Marketing System ( E- Commerce ),” vol. 1, no. August, pp. 75–79, 2021. </p>
+															<p>P. H. Shabrina, S. Zharfa, A. S. Pratama, and E. Arribe, “Rancang Bangun Sistem Informasi Inventory Menggunakan Metode Rapid Application Development ( RAD ) Pada Toko Abadi Jaya,” 2024. </p>
+															<p>E. Nurlailah and K. R. Nova Wardani, “Perancangan Website Sebagai Media Informasi Dan Promosi Oleh-Oleh Khas Kota Pagaralam,” JIPI (Jurnal Ilm. Penelit. dan Pembelajaran Inform., vol. 8, no. 4, pp. 1175–1185, 2023, doi: 10.29100/jipi.v8i4.4006. </p>
+															<p>P. Sistem, J. Beli, B. Pokok, P. Berbasis, and A. Mobile, “Jurnal Informatika Terpadu,” vol. 5, no. 2, pp. 49–55, 2019. </p>
+															<p>J. Teknologi, S. Informasi, K. Tgd, S. D. Pratama, and M. N. Dadaprawira, “Pengujian Black Box Testing Pada Aplikasi Edu Digital Berbasis Website Menggunakan Metode Equivalence Dan Boundary Value Jurnal Teknologi Sistem Informasi dan Sistem Komputer TGD,” vol. 6, pp. 560–569, 2023. </p>
+															<p>H. Hasugian, S. Informasi, F. T. Informasi, U. B. Luhur, P. Utara, and K. Sistem, “User Acceptance Testing ( UAT ) Pada Electronic Data,” vol. 4, no. 1, 2023. </p>
+															<p>N. Hartono and A. A. Muin, “Penggunaan User Acceptance Testing ( UAT ) Pada Pengujian Sistem Informasi Pengelolaan Keuangan Dan Inventaris Barang,” 2025. </p>
+																		</div>
+				</section>
+			
+		</div><!-- .main_entry -->
+
+		<div class="entry_details">
+
+										<div class="item cover_image">
+					<div class="sub_item">
+													<a href="https://journal.irpi.or.id/index.php/malcom/issue/view/71">
+								<img src="https://journal.irpi.or.id/public/journals/1/cover_issue_71_en_US.jpg" alt="">
+							</a>
+											</div>
+				</div>
+			
+										<div class="item galleys">
+					<h2 class="pkp_screen_reader">
+						Downloads
+					</h2>
+					<ul class="value galleys_links">
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link pdf" href="https://journal.irpi.or.id/index.php/malcom/article/view/2421/1198">
+
+		
+	PDF
+
+	</a>
+							</li>
+											</ul>
+				</div>
+						
+						<div class="item published">
+				<section class="sub_item">
+					<h2 class="label">
+						Published
+					</h2>
+					<div class="value">
+																			<span>2026-02-01</span>
+																	</div>
+				</section>
+							</div>
+			
+										<div class="item citation">
+					<section class="sub_item citation_display">
+						<h2 class="label">
+							How to Cite
+						</h2>
+						<div class="value">
+							<div id="citationOutput" role="region" aria-live="polite">
+								<div class="csl-bib-body">
+  <div class="csl-entry">Hanum, R., Fachrudin, D. H., &#38; Rohyana, C. (2026). Rancang Bangun Sistem Informasi UMKM Berbasis Web untuk Promosi Digital Menggunakan Metode Rapid Application Development (RAD) : Design and Development of a Web-Based Information System for MSME Digital Promotion Using the Rapid Application Development (RAD) Method. <i>MALCOM: Indonesian Journal of Machine Learning and Computer Science</i>, <i>6</i>(1), 314-323. https://doi.org/10.57152/malcom.v6i1.2421</div>
+</div>
+							</div>
+							<div class="citation_formats">
+								<button class="cmp_button citation_formats_button" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
+									More Citation Formats
+								</button>
+								<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+									<ul class="citation_formats_styles">
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/acm-sig-proceedings?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/acm-sig-proceedings?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													ACM
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/acs-nano?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/acs-nano?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													ACS
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/apa?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/apa?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													APA
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													ABNT
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/chicago-author-date?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/chicago-author-date?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													Chicago
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/harvard-cite-them-right?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/harvard-cite-them-right?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													Harvard
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/ieee?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/ieee?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													IEEE
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/modern-language-association?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/modern-language-association?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													MLA
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													Turabian
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/vancouver?submissionId=2421&amp;publicationId=2431"
+													data-load-citation
+													data-json-href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/get/vancouver?submissionId=2421&amp;publicationId=2431&amp;return=json"
+												>
+													Vancouver
+												</a>
+											</li>
+																			</ul>
+																			<div class="label">
+											Download Citation
+										</div>
+										<ul class="citation_formats_styles">
+																							<li>
+													<a href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/download/ris?submissionId=2421&amp;publicationId=2431">
+														<span class="fa fa-download"></span>
+														Endnote/Zotero/Mendeley (RIS)
+													</a>
+												</li>
+																							<li>
+													<a href="https://journal.irpi.or.id/index.php/malcom/citationstylelanguage/download/bibtex?submissionId=2421&amp;publicationId=2431">
+														<span class="fa fa-download"></span>
+														BibTeX
+													</a>
+												</li>
+																					</ul>
+																	</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			
+										<div class="item issue">
+
+											<section class="sub_item">
+							<h2 class="label">
+								Issue
+							</h2>
+							<div class="value">
+								<a class="title" href="https://journal.irpi.or.id/index.php/malcom/issue/view/71">
+									Vol. 6 No. 1 (2026): MALCOM January 2026
+								</a>
+							</div>
+						</section>
+					
+											<section class="sub_item">
+							<h2 class="label">
+								Section
+							</h2>
+							<div class="value">
+								Articles
+							</div>
+						</section>
+									</div>
+			
+															
+										<div class="item copyright">
+					<h2 class="label">
+						License
+					</h2>
+																										<p>Copyright (c) 2025 Rahma Hanum, Dudi Hendra Fachrudin, Cahyat Rohyana</p>
+														<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" src="//i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><p>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+																<p><strong><em>Copyright © by Author; Published by Institut Riset dan Publikasi Indonesia (IRPI)</em></strong></p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License" /></a></p>
+<p>This <a href="https://journal.irpi.or.id/index.php/malcom/index" rel="cc:attributionURL">Indonesian Journal of Machine Learning and Computer Science</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+				</div>
+			
+			
+
+		</div><!-- .entry_details -->
+	</div><!-- .row -->
+
+</article>
+
+	<div id="articlesBySimilarityList">
+	</div>
+
+
+</div><!-- .page -->
+
+	</div><!-- pkp_structure_main -->
+
+									<div class="pkp_structure_sidebar left" role="complementary" aria-label="Sidebar">
+				<div class="pkp_block block_custom" id="customblock-Journal">
+	<div class="content">
+		<p><a href="https://sinta.kemdiktisaintek.go.id/journals/profile/11292" target="_blank" rel="noopener"><img src="https://journal.irpi.or.id/public/site/images/novita-dewi/malcom-kecil-sertifikat.jpg" alt="" width="700" height="464"></a></p>
+<p align="center"><a href="https://drive.google.com/file/d/1iLiuf83YeYuG9Evzj9jRRgV0gZa_ScFK/view?usp=sharing" target="_blank" rel="noopener">Accreditation (2025-2030)</a></p>
+<p style="border: solid 1px #eceff5; background: #670001; padding: 9px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><strong>Journals Info</strong></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: #white; font-size: 14px;"><a href="https://journal.irpi.or.id/" target="_blank" rel="noopener">IRPI Journals</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/focus">Focus and Scope</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/guideline-author">Guideline for Authors</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/guideline-reviewer">Guideline for Reviewer</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/publication-ethics">Publication Ethics</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/about/editorialTeam">Editorial Team</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/reviewer">Reviewers</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/review-process">Review Process</a></p>
+<!--
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/reviewers-guidelines">Reviewers Guidelines</a></p>
+-->
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/oas">Open Access Statement</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/about/submissions">Paper Submission</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/plagiarism-check">Plagiarism Check</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/archiving">Archiving</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/important-dates">Important Dates</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/copyright-notice">Copyright Notice</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/editorial-process">IRPI Editorial Process</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/fees">Publication Fees</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/ai-policy">Artificial Intelligence Policy</a></p>
+<p style="border: solid 1px #eceff5; background: #100e6c; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a href="https://journal.irpi.or.id/index.php/malcom/manuscript-cancellation">Manuscript Cancellation</a></p>
+<p align="center"><a href="https://journal.irpi.or.id/index.php/malcom/user/register"><img src="https://journal.irpi.or.id/public/site/images/novita-dewi/register-275.png" alt="" width="275" height="139"></a></p>
+<p align="center"><a href="https://api.whatsapp.com/send?phone=6285275359942" target="_blank" rel="noopener"><img src="https://journal.irpi.or.id/public/site/images/novita-dewi/information-275.png" alt="" width="275" height="140"></a></p>
+<p align="center"><a href="https://journal.irpi.or.id/index.php/malcom/citedness-scopus"><img src="https://journal.irpi.or.id/public/site/images/novita-dewi/citedness-275.png" alt="" width="275" height="140"></a></p>
+<p style="border: solid 1px #eceff5; background: #670001; padding: 9px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><strong>ISSN</strong></p>
+<p align="center"><a title="ISSN Online" href="https://issn.perpusnas.go.id/terbit/detail/1615088206" target="_blank" rel="noopener"><img src="https://journal.irpi.or.id/public/site/images/mustakim/barcode-issn-online.png" alt="" width="151" height="102"></a></p>
+<p align="center"><a title="ISSN Cetak" href="https://issn.perpusnas.go.id/terbit/detail/20210528410989325" target="_blank" rel="noopener"><img src="https://journal.irpi.or.id/public/site/images/mustakim/barcode-issn-cetak.png" alt="" width="206" height="90"></a></p>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-Template">
+	<div class="content">
+		<p style="border: solid 1px #eceff5; background: #670001; padding: 9px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><strong>Journals Template</strong></p>
+<p style="border: solid 1px #eceff5; background: #ffffff; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;" align="center"><a href="https://drive.google.com/drive/folders/1sxBAb_JH2TfWyqDtWJdplc_2tYsBxPg-?usp=sharing" target="_blank" rel="noopener"><img src="https://journal.irpi.or.id/public/site/images/novita-dewi/template-275.png" alt="" width="275" height="140"></a> <a href="#" target="_blank" rel="noopener"><br></a>&nbsp;</p>
+<!-- BATAS -->
+<p style="border: solid 1px #eceff5; background: #670001; padding: 9px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><strong>Partner of Research Organization</strong></p>
+<p style="border: solid 1px #eceff5; background: #ffffff; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;" align="center"><a href="https://predatech.uin-suska.ac.id/" target="_blank" rel="noopener"><img src="https://journal.irpi.or.id/public/site/images/mustakim/puzzle-research-data-technology.png" alt="Predatech" width="176" height="151"></a><a href="#" target="_blank" rel="noopener"><br></a></p>
+<p>&nbsp;</p>
+<p style="border: solid 1px #eceff5; background: #670001; padding: 9px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><strong>Tools and Support</strong></p>
+<p style="border: solid 1px #eceff5; background: #ffffff; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;" align="center"><img src="https://journal.irpi.or.id/public/site/images/novita-dewi/turnitin-cek-ok.png" alt=""> <br><img src="https://journal.irpi.or.id/public/site/images/novita-dewi/ai-cek.png" alt=""> <br><img src="https://journal.irpi.or.id/public/site/images/novita-dewi/mendeley.png" alt=""></p>
+<p>&nbsp;</p>
+<p style="border: solid 1px #eceff5; background: #670001; padding: 9px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><strong>Accreditation Institution</strong></p>
+<p style="border: solid 1px #eceff5; background: #ffffff; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><img src="https://journal.irpi.or.id/public/site/images/novita-dewi/sinta-info.png" alt=""></p>
+<p style="border: solid 1px #eceff5; background: #670001; padding: 9px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><strong>Statistic</strong></p>
+<p style="border: solid 1px #eceff5; background: #ffffff; padding: 6px; margin: 0; text-align: center; line-height: 23px; color: white; font-size: 14px;"><a title="web statistics" href="http://statcounter.com/" target="_blank" rel="noopener"><img style="border: none;" src="http://c.statcounter.com/12448608/0/0b961daa/0/"></a> <br><a href="http://statcounter.com/p12448608/?guest=1" target="_blank" rel="noopener">MALCOM STAT</a><br><a href="https://info.flagcounter.com/INiL"><img src="https://s11.flagcounter.com/count2/INiL/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
+	</div>
+</div>
+
+			</div><!-- pkp_sidebar.left -->
+			</div><!-- pkp_structure_content -->
+
+<div class="pkp_structure_footer_wrapper" role="contentinfo">
+	<a id="pkp_content_footer"></a>
+
+	<div class="pkp_structure_footer">
+
+					<div class="pkp_footer_content">
+				<p>E-Journal Portal Manage by<br /><strong>Institut Riset dan Publikasi Indonesia (IRPI)</strong><br /><strong>Jl. Tuah Karya Ujung C7. Kel. Tuah Madani Kec. Tampan, Kota Pekanbaru - Riau</strong><br /><a href="https://journal.irpi.or.id/index.php/malcom/index" rel="cc:attributionURL">Indonesian Journal of Machine Learning and Computer Science</a> is licensed under <a style="display: inline-block;" href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0<img style="height: 22px!important; margin-left: 3px; vertical-align: text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="" /><img style="height: 22px!important; margin-left: 3px; vertical-align: text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="" /><img style="height: 22px!important; margin-left: 3px; vertical-align: text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="" /></a></p>
+			</div>
+		
+		<div class="pkp_brand_footer" role="complementary">
+			<a href="https://journal.irpi.or.id/index.php/malcom/about/aboutThisPublishingSystem">
+				<img alt="More information about the publishing system, Platform and Workflow by OJS/PKP." src="https://journal.irpi.or.id/templates/images/ojs_brand.png">
+			</a>
+		</div>
+	</div>
+</div><!-- pkp_structure_footer_wrapper -->
+
+</div><!-- pkp_structure_page -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js?v=3.2.1.0" type="text/javascript"></script><script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js?v=3.2.1.0" type="text/javascript"></script><script src="https://journal.irpi.or.id/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js?v=3.2.1.0" type="text/javascript"></script><script src="https://journal.irpi.or.id/plugins/themes/default/js/lib/popper/popper.js?v=3.2.1.0" type="text/javascript"></script><script src="https://journal.irpi.or.id/plugins/themes/default/js/lib/bootstrap/util.js?v=3.2.1.0" type="text/javascript"></script><script src="https://journal.irpi.or.id/plugins/themes/default/js/lib/bootstrap/dropdown.js?v=3.2.1.0" type="text/javascript"></script><script src="https://journal.irpi.or.id/plugins/themes/default/js/main.js?v=3.2.1.0" type="text/javascript"></script><script src="https://journal.irpi.or.id/plugins/generic/citationStyleLanguage/js/articleCitation.js?v=3.2.1.0" type="text/javascript"></script><script type="text/javascript">var pkpUsageStats = pkpUsageStats || {};pkpUsageStats.data = pkpUsageStats.data || {};pkpUsageStats.data.Submission = pkpUsageStats.data.Submission || {};pkpUsageStats.data.Submission[2421] = {"data":{"2026":{"1":0,"2":51,"3":55,"4":177,"5":181,"6":155,"7":154,"8":58,"9":0,"10":0,"11":0,"12":0}},"label":"All Downloads","color":"79,181,217","total":831};</script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js?v=3.2.1.0" type="text/javascript"></script><script type="text/javascript">var pkpUsageStats = pkpUsageStats || {};pkpUsageStats.locale = pkpUsageStats.locale || {};pkpUsageStats.locale.months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];pkpUsageStats.config = pkpUsageStats.config || {};pkpUsageStats.config.chartType = "bar";</script><script src="https://journal.irpi.or.id/plugins/generic/usageStats/js/UsageStatsFrontendHandler.js?v=3.2.1.0" type="text/javascript"></script>
+
+
+</body>
+</html>

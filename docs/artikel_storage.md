@@ -337,34 +337,34 @@ Berdasarkan temuan penelitian, beberapa saran dapat dikemukakan. Pertama, bagi p
 
 ## 5. DAFTAR PUSTAKA
 
+Alfred, A.J. (2023) 'Sistem Pendukung Keputusan Pemberian Izin Usaha pada Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kota Samarinda Menggunakan Metode SMARTER Berbasis Web', Skripsi, STMIK Widya Cipta Dharma. Tersedia pada: https://repository.wicida.ac.id/4927/.
+
 Angel, R., Agustina, W., Nurhasanah, N., Mauluddin, A.C. and Handayani, R.N. (2025) 'Pengembangan Platform E-Commerce UMKM Berbasis Laravel dengan Blackbox Testing dan Metode Waterfall', *Jurnal Pendidikan dan Teknologi Indonesia*, 5(2), pp. 521–546. doi: 10.52436/1.jpti.684.
 
-Atlantika, Y.N., Manggu, B. and Magdalena, Y. (2023) 'Analisis Tingkat Pengetahuan Lingkungan, Persepsi, dan Perilaku UMKM di Daerah Perbatasan dalam Upaya Mengimplementasikan Green Economy', *Sebatik*, 27(1). doi: 10.46984/sebatik.v27i1.1973.
+Darmanto, Aziz, M.R., Abdussyukur, M.A., Sinaga, M.T.J. and Anshor, A.H. (2025) 'Pemeringkatan UMKM di Universitas Pelita Bangsa Menggunakan Metode WPM (Weighted Product Model) pada Sistem Pendukung Keputusan', *JATI (Jurnal Mahasiswa Teknik Informatika)*, 9(2). doi: 10.36040/jati.v9i2.13109.
 
-Baharuddin, S.H.B. and Faisal, M. (2023) 'Aplikasi Penentuan UMKM Terbaik Sekabupaten Kepulauan Selayar Sulawesi Selatan Menggunakan Metode Weighted Product', *Journal of Practical Computer Science*, 3(1), pp. 9–12.
+Irawan, R. (2018) 'Sistem Pendukung Keputusan Penentuan Dosen Berprestasi Menggunakan Metode Weighted Product (WP) pada Program Studi Sistem Informasi STMIK Widya Cipta Dharma Samarinda', Skripsi, STMIK Widya Cipta Dharma. Tersedia pada: https://repository.wicida.ac.id/1076/.
 
-Darmanto, Aziz, M.R., Abdussyukur, M.A., Sinaga, M.T.J. and Anshor, A.H. (2025) 'Pemeringkatan UMKM di Universitas Pelita Bangsa Menggunakan Metode WPM (Weighted Product Model) pada Sistem Pendukung Keputusan', *JATI (Jurnal Mahasiswa Teknik Informatika)*, 9(2).
+Kurniawan, S.D. (2021) 'Metode Weighted Product dalam Perancangan Sistem Pendukung Keputusan Penentuan Produk Unggulan pada Industri Kecil Menengah', *Smart Comp: Jurnal Teknologi Informasi dan Manajemen*, 10(2). Tersedia pada: https://ejournal.poltekharber.ac.id/index.php/smartcomp/article/download/3068/pdf_82.
 
-Doduk, T.A.B., Supriyanto, H., Al Hafidz, M., Prasetya, M.S. and Karyawan, M.A. (2024) 'Analysis the Application of the Weighted Product Method in Decision Support Systems for Assistance Programmes for MSMEs', *Jurnal Sisfokom (Sistem Informasi dan Komputer)*, 13(1), pp. 1–6. doi: 10.32736/sisfokom.v13i1.1777.
-
-Hamidah and Darmansyah, A. (2023) 'Digitalisasi Bisnis Industri Batik Trusmi Kabupaten Cirebon', *Sebatik*, 27(1). doi: 10.46984/sebatik.v27i1.2282.
-
-Hanum, R., Fachrudin, D.H. and Rohyana, C. (2026) 'Rancang Bangun Sistem Informasi UMKM Berbasis Web untuk Promosi Digital Menggunakan Metode Rapid Application Development (RAD)', *MALCOM: Indonesian Journal of Machine Learning and Computer Science*, 6(1), pp. 314–323. doi: 10.57152/malcom.v6i1.2421.
-
-Imawan, M.A., Cahyanti, M., Sardjono, M.W. and Swedia, E.R. (2018) 'Aplikasi Perekrutan Karyawan Menggunakan Metode TOPSIS Berbasiskan Web pada PT. SMESCO Indonesia', *SEBATIK*, 12(2), pp. 343–350.
-
-Kosidin, Nugraha, G. and Affandi, A. (2026) 'Implementasi Metode Rapid Application Development (RAD) dalam Pengembangan Aplikasi Sistem Manajemen Keuangan Digital UMKM Menggunakan Framework Laravel', *Syntax Literate: Jurnal Ilmiah Indonesia*, 11(4), pp. 3265–3278.
-
-Nenabu, C.C., Almet, R.D., Ledoh, S.Y.I., Gega, M.A.J., Dida, E.J., Timo, F. and Weking, P.R. (2025) 'Digitalisasi UMKM Melalui Pengembangan Sistem Informasi Berbasis Web Menggunakan Laravel', *Jurnal Pengembangan dan Adopsi Teknologi Informasi*, 2(2), pp. 97–104.
+Nenabu, C.C., Almet, R.D., Ledoh, S.Y.I., Gega, M.A.J., Dida, E.J., Timo, F. and Weking, P.R. (2025) 'Digitalisasi UMKM Melalui Pengembangan Sistem Informasi Berbasis Web Menggunakan Laravel', *Jurnal Pengembangan dan Adopsi Teknologi Informasi*, 2(2), pp. 97–104. Tersedia pada: https://jurnal.jalaberkat.com/index.php/jpati/article/view/124.
 
 Pratama, A.G., Wibowo, A.H., Ardiansyah, A. and Rizky, R. (2025) 'Implementasi Metode Weighted Product Untuk Pemilihan Pemberdayaan Industri Kecil Menengah pada Dinas Perindustrian Perdagangan Kabupaten Pandeglang', *Jurnal Teknik Informatika UNIS*, 8(2), pp. 135–145. doi: 10.33592/jutis.v8i2.1104.
 
-Qumairo, E.L., Nurhalizah, S., Maharani, A., Syavitri, R. and Damayanti, F. (2025) 'Analisis Aspek Pemasaran, Aspek Teknik dan Teknologi, dan Aspek Pasar pada UMKM di Kota Samarinda', *Jurnal Bisnis Digital*, 3(1), pp. 236–249. doi: 10.52060/j-bisdig.v3i1.3068.
+Putra, A.F.S. and Purnomo, A.H. (2025) 'Sistem Pendukung Keputusan Penentuan Kelayakan Pemberian Kredit UMKM Menggunakan Metode AHP dan Weighted Product', *Bulletin of Computer Science Research*, 5(5). doi: 10.47065/bulletincsr.v5i5.646.
+
+Rahayu, N.M.Y.D. and Yanti, N.P.D.E. (2025) 'Sistem Pendukung Keputusan Penilaian Kinerja Karyawan Bagi Usaha Mikro Kecil Menengah (UMKM) dengan Metode Weighted Product (WP)', *Jurnal Teknologi Informasi dan Komputer*, 10(4). doi: 10.36002/jutik.v10i4.3711.
 
 Rahman, F., Samsudin, A.R., Islam, R. and Sunardi (2024) 'Pengembangan Website UMKM Desa Teniga dengan Laravel dan Vue.js', *Jurnal Pendidikan dan Teknologi Indonesia*, 4(12), pp. 597–602. doi: 10.52436/1.jpti.510.
 
 Riswandha, M.N. and Devie, N.N.F. (2026) 'Sistem Retail UMKM Desa Tambakan Menggunakan Framework Laravel untuk Meningkatkan Manajemen Usaha', *SPIRIT: Sarana Penunjang Informasi Terkini*, 18(1), pp. 76–98. doi: 10.53567/spirit.v18i1.399.
 
-Saputra, K.B.G. and Witanti, A. (2024) 'Penerapan Sistem Pendukung Keputusan Untuk Rekomendasi Pemilihan VGA Terbaik 2024 Menggunakan Metode Weighted Product', *RESOLUSI: Rekayasa Teknik Informatika dan Informasi*, 4(6), pp. 543–552.
+Saputra, D.A. (2019) 'Sistem Pendukung Keputusan Pemilihan Media Promosi Penerimaan Mahasiswa Baru Menggunakan Metode Analytical Hierarchy Process (Studi Kasus STMIK Widya Cipta Dharma Samarinda)', Skripsi, STMIK Widya Cipta Dharma. Tersedia pada: https://repository.wicida.ac.id/2101/.
 
 Setiawan, M.R., Sugata, T.L.I. and Najaf, A.R.E. (2024) 'Rancang Bangun Website Store Management System Laravel dengan Metode Agile: Studi Kasus UMKM Toko Jali', *Jurnal Pendidikan dan Teknologi Indonesia*, 4(11), pp. 301–312. doi: 10.52436/1.jpti.448.
+
+Sulaeman, I.F.P.P., Valdiansyah, M.M. and Eriana, E.S. (2025) 'Sistem Pendukung Keputusan Menentukan Peluang Usaha Makanan yang Tepat Menggunakan Weighted Product Berbasis Web', *TEKNOBIS: Jurnal Teknologi, Bisnis dan Pendidikan*, 3(4), pp. 778–786. Tersedia pada: https://jurnalmahasiswa.com/index.php/teknobis/article/view/3491.
+
+Sulistyono, M.Y.T. (2023) 'Sistem Pengambilan Keputusan Penggunaan Teknologi Informasi Transformasi Digital Untuk Pemilihan Pemasaran Produk Melalui Media Sosial Dengan Menggunakan Metode Weighted Product', *Prosiding Sains Nasional dan Teknologi*, 13(1). doi: 10.36499/psnst.v13i1.9129.
+
+Triayudi, A., Faizal, M. and Aldisa, R. (2023) 'Implementasi Metode Weighted Product dan SMART Dalam Menentukan Lokasi Usaha Strategis Bagi Pelaku UMKM', *Journal of Information System Research (JOSH)*, 4(2), pp. 569–578. Tersedia pada: https://ejurnal.seminar-id.com/index.php/josh/article/view/2947.

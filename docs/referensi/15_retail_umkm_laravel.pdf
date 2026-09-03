@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+	<title>SISTEM RETAIL UMKM DESA TAMBAKAN MENGGUNAKAN FRAMEWORK LARAVEL UNTUK MENINGKATKAN MANAJEMEN USAHA | Riswandha | SPIRIT</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="SISTEM RETAIL UMKM DESA TAMBAKAN MENGGUNAKAN FRAMEWORK LARAVEL UNTUK MENINGKATKAN MANAJEMEN USAHA" />
+			<meta name="keywords" content="UMKM, sistem ritel, Laravel, manajemen bisnis" />
+	
+	
+	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+
+	<meta name="DC.Contributor.Sponsor" xml:lang="id" content=""/>
+	<meta name="DC.Creator.PersonalName" content="Muhammad Noval Riswandha"/>
+	<meta name="DC.Creator.PersonalName" content="Nicky Nastiti Fatkha Devie"/>
+	<meta name="DC.Date.created" scheme="ISO8601" content="2026-05-31"/>
+	<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2025-11-05"/>
+	<meta name="DC.Date.issued" scheme="ISO8601" content="2026-05-31"/>
+	<meta name="DC.Date.modified" scheme="ISO8601" content="2026-05-31"/>
+	<meta name="DC.Description" xml:lang="id" content="UMKM memainkan peran penting dalam mendukung perekonomian lokal, terutama di tingkat desa. Namun, banyak UMKM masih menghadapi tantangan dalam mengelola bisnis mereka. Desa Tambakan merupakan daerah dengan potensi UMKM yang signifikan, tetapi belum sepenuhnya memanfaatkan teknologi digital untuk mendukung kegiatan bisnisnya. Penelitian ini bertujuan untuk merancang dan membangun sistem ritel berbasis situs web menggunakan framework Laravel. Sistem ini dirancang untuk memfasilitasi manajemen produk, pemantauan transaksi penjualan, manajemen inventaris, dan pelaporan keuangan otomatis. Metode pengembangan yang digunakan adalah model waterfall, dimulai dengan analisis kebutuhan, perancangan sistem, implementasi, dan pengujian. Hasil dari penelitian ini adalah aplikasi ritel online yang dapat digunakan oleh UMKM di Desa Tambakan untuk mengelola bisnis mereka dengan lebih efisien. Sistem ini membuat proses bisnis lebih terstruktur, transparan, dan adaptif terhadap perkembangan teknologi digital."/>
+	<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+	<meta name="DC.Identifier" content="399"/>
+							<meta name="DC.Identifier.DOI" content="10.53567/spirit.v18i1.399"/>
+		<meta name="DC.Identifier.URI" content="https://jurnal.stmik-yadika.ac.id/index.php/spirit/article/view/399"/>
+	<meta name="DC.Language" scheme="ISO639-1" content="id"/>
+	<meta name="DC.Rights" content="Copyright (c) 2026 Muhammad Noval Riswandha" />
+	<meta name="DC.Rights" content="http://creativecommons.org/licenses/by/4.0"/>
+	<meta name="DC.Source" content="SPIRIT"/>
+	<meta name="DC.Source.ISSN" content="2721-057X"/>
+	<meta name="DC.Source.Issue" content="1"/>	<meta name="DC.Source.URI" content="https://jurnal.stmik-yadika.ac.id/index.php/spirit"/>
+	<meta name="DC.Source.Volume" content="18"/>						<meta name="DC.Subject" xml:lang="id" content="UMKM, sistem ritel, Laravel, manajemen bisnis"/>
+				<meta name="DC.Title" content="SISTEM RETAIL UMKM DESA TAMBAKAN MENGGUNAKAN FRAMEWORK LARAVEL UNTUK MENINGKATKAN MANAJEMEN USAHA"/>
+		<meta name="DC.Type" content="Text.Serial.Journal"/>
+	<meta name="DC.Type.articleType" content=""/>
+		<meta name="gs_meta_revision" content="1.1" />
+	<meta name="citation_journal_title" content="SPIRIT"/>
+	<meta name="citation_issn" content="2721-057X"/>
+        <meta name="citation_author" content="Muhammad Noval Riswandha"/>
+        <meta name="citation_author" content="Nicky Nastiti Fatkha Devie"/>
+        <meta name="citation_author_institution" content="Sistem dan Teknologi Informasi, ITB Yadika Pasuruan, Pasuruan,Indonesia"/>
+<meta name="citation_title" content="SISTEM RETAIL UMKM DESA TAMBAKAN MENGGUNAKAN FRAMEWORK LARAVEL UNTUK MENINGKATKAN MANAJEMEN USAHA"/>
+
+	<meta name="citation_date" content="2026/05/31"/>
+
+	<meta name="citation_volume" content="18"/>
+	<meta name="citation_issue" content="1"/>
+
+							<meta name="citation_doi" content="10.53567/spirit.v18i1.399"/>
+		<meta name="citation_abstract_html_url" content="https://jurnal.stmik-yadika.ac.id/index.php/spirit/article/view/399"/>
+	<meta name="citation_language" content="id"/>
+						<meta name="citation_keywords" xml:lang="id" content="UMKM, sistem ritel, Laravel, manajemen bisnis"/>
+									<meta name="citation_pdf_url" content="https://jurnal.stmik-yadika.ac.id/index.php/spirit/article/download/399/365"/>
+				
+
+	<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/lib/pkp/styles/pkp.css" type="text/css" />
+	<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/lib/pkp/styles/common.css" type="text/css" />
+	<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/styles/common.css" type="text/css" />
+	<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/styles/compiled.css" type="text/css" />
+	<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/styles/articleView.css" type="text/css" />
+			<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/lib/pkp/styles/rtEmbedded.css" type="text/css" />
+	
+	
+	
+	<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/styles/sidebar.css" type="text/css" />	<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/styles/leftSidebar.css" type="text/css" />	<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/styles/rightSidebar.css" type="text/css" />	<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/styles/bothSidebars.css" type="text/css" />
+			<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/public/journals/1/journalStyleSheet.css" type="text/css" />
+			<link rel="stylesheet" href="https://jurnal.stmik-yadika.ac.id/plugins/blocks/languageToggle/styles/languageToggle.css" type="text/css" />
+	
+	<!-- Base Jquery -->
+	<script type="text/javascript" src="//www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		// Provide a local fallback if the CDN cannot be reached
+		if (typeof google == 'undefined') {
+			document.write(unescape("%3Cscript src='https://jurnal.stmik-yadika.ac.id/lib/pkp/js/lib/jquery/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+			document.write(unescape("%3Cscript src='https://jurnal.stmik-yadika.ac.id/lib/pkp/js/lib/jquery/plugins/jqueryUi.min.js' type='text/javascript'%3E%3C/script%3E"));
+		} else {
+			google.load("jquery", "1.4.4");
+			google.load("jqueryui", "1.8.6");
+		}
+	</script>
+	
+	<!-- Compiled scripts -->
+			
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/lib/jquery/plugins/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/functions/fontController.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/functions/general.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/functions/jqueryValidatorI18n.js"></script>
+
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/classes/Helper.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/classes/ObjectProxy.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/classes/Handler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/classes/linkAction/LinkActionRequest.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/classes/features/Feature.js"></script>
+
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/controllers/SiteHandler.js"></script><!-- Included only for namespace definition -->
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/controllers/UrlInDivHandler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/controllers/AutocompleteHandler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/controllers/ExtrasOnDemandHandler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/controllers/form/FormHandler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/controllers/form/AjaxFormHandler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/controllers/form/ClientFormHandler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/controllers/grid/GridHandler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/controllers/linkAction/LinkActionHandler.js"></script>
+
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/js/pages/search/SearchFormHandler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/js/statistics/ReportGeneratorFormHandler.js"></script>
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/plugins/generic/lucene/js/LuceneAutocompleteHandler.js"></script>
+
+<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/lib/pkp/js/lib/jquery/plugins/jquery.pkp.js"></script>	
+	
+	<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/js/relatedItems.js"></script>
+	<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/js/inlinePdf.js"></script>
+	<script type="text/javascript" src="https://jurnal.stmik-yadika.ac.id/js/pdfobject.js"></script>
+
+</head>
+<body id="pkp-common-openJournalSystems">
+
+<div id="container">
+
+<div id="header">
+<div id="headerTitle">
+<h1>
+	<img src="https://jurnal.stmik-yadika.ac.id/public/journals/1/pageHeaderTitleImage_en_US.png" width="1017" height="255" alt="Page Header" />
+</h1>
+</div>
+</div>
+
+<div id="body">
+
+	<div id="sidebar">
+					<div id="leftSidebar">
+				<div class="block custom" id="customblock-TERAKREDITASI-SINTA-5">
+	<p style="color: white; background: #00008B; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><strong>TERAKREDITASI SINTA 5</strong></p>
+<p style="background: #FFFFFF; padding: 15px; margin: 0px; line-height: 35px; color: white; font-size: 45px;"><a href="https://drive.google.com/file/d/1VVC0QGTjI8LyHi4_kfvxiu7pAlb3gSiF/view?usp=sharing"><img style="display: block; margin-left: auto; margin-right: auto;" src="/public/site/images/adminnya/Sertifiat_Akrditasi_Sinta5.jpg" alt="" /></a></p>
+<p style="background: #FFFFFF; padding: 15px; margin: 0px; line-height: 35px; color: white; font-size: 45px;">&nbsp;</p>
+</div>	<div class="block" id="sidebarNavigation">
+	<span class="blockTitle">Journal Content</span>
+
+	<form id="simpleSearchForm" action="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search/search">
+		<table id="simpleSearchInput">
+			<tr>
+				<td>
+													<label for="simpleQuery">Search <br />
+					<input type="text" id="simpleQuery" name="simpleQuery" size="15" maxlength="255" value="" class="textField" /></label>
+								</td>
+			</tr>
+			<tr>
+				<td><label for="searchField">
+				Search Scope
+				<br />
+				<select id="searchField" name="searchField" size="1" class="selectMenu">
+					<option label="All" value="query">All</option>
+<option label="Authors" value="authors">Authors</option>
+<option label="Title" value="title">Title</option>
+<option label="Abstract" value="abstract">Abstract</option>
+<option label="Index terms" value="indexTerms">Index terms</option>
+<option label="Full Text" value="galleyFullText">Full Text</option>
+
+				</select></label>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Search" class="button" /></td>
+			</tr>
+		</table>
+	</form>
+
+	<br />
+
+		<span class="blockSubtitle">Browse</span>
+	<ul>
+		<li><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/issue/archive">By Issue</a></li>
+		<li><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search/authors">By Author</a></li>
+		<li><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search/titles">By Title</a></li>
+		
+					<li><a href="https://jurnal.stmik-yadika.ac.id/index.php/index">Other Journals</a></li>
+						</ul>
+	</div>
+<div class="block" id="sidebarUser">
+			<span class="blockTitle">User</span>
+	
+						<form method="post" action="https://jurnal.stmik-yadika.ac.id/index.php/spirit/login/signIn">
+				<table>
+					<tr>
+						<td><label for="sidebar-username">Username</label></td>
+						<td><input type="text" id="sidebar-username" name="username" value="" size="12" maxlength="32" class="textField" /></td>
+					</tr>
+					<tr>
+						<td><label for="sidebar-password">Password</label></td>
+						<td><input type="password" id="sidebar-password" name="password" value="" size="12" class="textField" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="checkbox" id="remember" name="remember" value="1" /> <label for="remember">Remember me</label></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Login" class="button" /></td>
+					</tr>
+				</table>
+			</form>
+			</div> <div class="block" id="notification">
+	<span class="blockTitle">Notifications</span>
+	<ul>
+					<li><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/notification">View</a></li>
+			<li><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/notification/subscribeMailList">Subscribe</a></li>
+			</ul>
+</div>
+
+			</div>
+							<div id="rightSidebar">
+				<div class="block custom" id="customblock-Menu">
+	<p style="color: white; background: #00008B; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><strong>EDITORIAL BOARD</strong></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Fokus%20And%20Scope"><strong>Focus and Scope</strong></a></p>
+<p style="color: white; background: #F0FFFF; ; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Editorial%20Team"><strong>Editorial Team</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Riviewer"><strong>Reviewer</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Peer%20Review%20Process"><strong>Peer Review Process</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Publication%20Frequency"><strong>Publication Frequency</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Publication%20Ethics"><strong>Publication Ethics</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Author%20Fees"><strong>Author Fees</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/about/editorialPolicies#openAccessPolicy"><strong>Open Access Policy</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Indexing%20Journal"><strong>Indexing Journal</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="http://jurnal.stmik-yadika.ac.id/index.php/spirit/about/editorialPolicies#archiving"><strong>Archiving</strong></a></p>
+<p style="color: white; background: #00008B; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><strong>SUBMISSONS</strong></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/login"><strong>Online Submissions</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Author%20Guidelines"><strong>Author Guidelines</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Copyright%20and%20License%20Statement"><strong>Copyright and License Statement</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Privacy%20Statement"><strong>Privacy Statement</strong></a></p>
+<p style="color: white; background: #F0FFFF; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><a href="/index.php/spirit/pages/view/Plagiarism"><strong>Plagiarism</strong></a></p>
+<p>&nbsp;</p>
+</div>	<div class="block custom" id="customblock-INFORMATION">
+	<p style="color: white; background: #00008B; padding: 10px; margin: 0px; font-family: arial; line-height: 23px; text-align: center;"><strong>CONTACT SPIRIT</strong></p>
+<p><a href="https://wa.me/089629927242"><img style="display: block; margin-left: auto; margin-right: auto;" src="/public/site/images/adminnya/tambol-button-whatsapp21.jpg" alt="" /></a></p>
+</div>	<div class="block custom" id="customblock-REFFERENCES">
+	<p style="color: white; background: #00008B; padding: 10px; margin: 0px; font-family: arial; line-height: 23px; text-align: center;"><strong>REFFERENCES</strong></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/public/site/images/adminnya/Mendeley4.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;<img src="/public/site/images/adminnya/References_MS11.png" alt="" /></p>
+<p style="text-align: center;"><img src="/public/site/images/adminnya/Zetero222.png" alt="" /></p>
+<p style="text-align: center;"><img src="/public/site/images/adminnya/images_(1)1.png" alt="" /></p>
+<p style="color: white; background: #00008B; padding: 10px; margin: 0px; font-family: arial; line-height: 23px; text-align: center;"><strong>TOOL</strong></p>
+<p style="text-align: center;"><a href="https://www.grammarly.com/"><img src="/public/site/images/adminnya/Plagiarms_Checker_X3.png" alt="" /></a></p>
+<p style="color: white; background: #00008B; padding: 10px; margin: 0px; font-family: arial; line-height: 23px; text-align: center;"><strong>SUPERVISED BY</strong></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/public/site/images/adminnya/images.png" alt="" /></p>
+</div>	<div class="block custom" id="customblock-VISITORS">
+	<p style="color: white; background: #00008B; padding: 10px; margin: 0px; text-align: center; font-family: arial; line-height: 23px;"><strong>VISITORS</strong></p>
+<p style="text-align: center;">VIew My Status :</p>
+<p><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://c.statcounter.com/12917610/0/27a722cc/0/" alt="Web Analytics" /></a></p>
+<p><a href="https://info.flagcounter.com/nWn0"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://s04.flagcounter.com/count2/nWn0/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" /></a></p>
+<p>&nbsp;</p>
+</div>	
+<div class="block" id="sidebarLanguageToggle">
+	<script type="text/javascript">
+		<!--
+		function changeLanguage() {
+			var e = document.getElementById('languageSelect');
+			var new_locale = e.options[e.selectedIndex].value;
+
+			var redirect_url = 'https://jurnal.stmik-yadika.ac.id/index.php/spirit/user/setLocale/NEW_LOCALE?source=%2Findex.php%2Fspirit%2Farticle%2Fview%2F399';
+			redirect_url = redirect_url.replace("NEW_LOCALE", new_locale);
+
+			window.location.href = redirect_url;
+		}
+		//-->
+	</script>
+	<span class="blockTitle">Language</span>
+	<form action="#">
+		<label for="languageSelect">Select Language</label>
+		<select id="languageSelect" size="1" name="locale" class="selectMenu"><option label="English" value="en_US" selected="selected">English</option>
+<option label="Bahasa Indonesia" value="id_ID">Bahasa Indonesia</option>
+</select>
+		<input type="submit" class="button" value="Submit" onclick="changeLanguage(); return false;" />
+	</form>
+</div>
+<div class="block" id="sidebarKeywordCloud">
+	<span class="blockTitle">Keywords</span>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=%3A%20Aplikasi%2C%20Website%2C%20Automatic%20Tank%2C%20Gauge%20SS160%2C%20Naive%20Bayes"><span style="font-size: 75%;">: Aplikasi, Website, Automatic Tank, Gauge SS160, Naive Bayes</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Absensi"><span style="font-size: 75%;">Absensi</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Blynk"><span style="font-size: 125%;">Blynk</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Cryptocurrency%2C%20Websocket%2C%20Metode%20Extreme%20Programming%2C%20Real-time%2C%20Arbitrase"><span style="font-size: 75%;">Cryptocurrency, Websocket, Metode Extreme Programming, Real-time, Arbitrase</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Data%20Mining"><span style="font-size: 75%;">Data Mining</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=ESP32"><span style="font-size: 125%;">ESP32</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=IoT"><span style="font-size: 125%;">IoT</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=K-Fold%20Cross-validation"><span style="font-size: 75%;">K-Fold Cross-validation</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Keuangan"><span style="font-size: 75%;">Keuangan</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Laravel"><span style="font-size: 75%;">Laravel</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Pengujian%20Perangkat%20Lunak%2C%20Black%20Box%20Testing%2C%20Equivalence%20Partitioning%2C%20Boundary%20Value%20Analysis%2C%20Sistem%20Informasi%20Inventory"><span style="font-size: 75%;">Pengujian Perangkat Lunak, Black Box Testing, Equivalence Partitioning, Boundary Value Analysis, Sistem Informasi Inventory</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Plagiasi%2C%20N-Gram%2C%20pengolahan%20teks%2C%20aplikasi%2C%20Preprosessing"><span style="font-size: 75%;">Plagiasi, N-Gram, pengolahan teks, aplikasi, Preprosessing</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=SMS%20phishing%2C%20deteksi%20ancaman%2C%20sistem%20keamanan%2C%20SMS%20public%20gateway"><span style="font-size: 75%;">SMS phishing, deteksi ancaman, sistem keamanan, SMS public gateway</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Sistem%20Informasi"><span style="font-size: 125%;">Sistem Informasi</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Sistem%20informasi%2C%20pemetaan%2C%20Tagging%2C%20GIS%2C%20inventaris%2C%20Aset%2C%20RAD%2C%20Website"><span style="font-size: 75%;">Sistem informasi, pemetaan, Tagging, GIS, inventaris, Aset, RAD, Website</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=Waterfall"><span style="font-size: 75%;">Waterfall</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=kereta%20api"><span style="font-size: 125%;">kereta api</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=overload"><span style="font-size: 75%;">overload</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=pemantauan%20tegangan"><span style="font-size: 75%;">pemantauan tegangan</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=pemutus%20otomatis"><span style="font-size: 75%;">pemutus otomatis</span></a>
+			<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search?subject=tiga%20fase"><span style="font-size: 75%;">tiga fase</span></a>
+	</div>
+			</div>
+			</div>
+
+<div id="main">
+
+<div id="navbar">
+	<ul class="menu">
+		<li id="home"><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/index">Home</a></li>
+		<li id="about"><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/about">About</a></li>
+
+					<li id="login"><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/login">Login</a></li>
+							<li id="register"><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/user/register">Register</a></li>
+												<li id="search"><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/search">Search</a></li>
+		
+					<li id="current"><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/issue/current">Current</a></li>
+		
+					<li id="announcements"><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/announcement">Announcements</a></li>
+				
+
+									<li class="navItem" id="navItem-0"><a href="http://jurnal.stmik-yadika.ac.id/index.php/spirit/pages/view/Editorial%20Team">Editorial Board</a></li>
+										
+					<li id="archives"><a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/issue/archive">Archives</a></li>
+			</ul>
+</div>
+<div id="breadcrumb">
+	<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/index" target="_parent">Home</a> &gt;
+	<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/issue/view/33" target="_parent">Vol 18, No 1 (2026)</a> &gt;	<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/article/view/399/0" class="current" target="_parent">Riswandha</a>
+</div>
+
+<div id="content">
+
+
+	<div id="topBar">
+					</div>
+		
+	<div id="articleTitle"><h3>SISTEM RETAIL UMKM DESA TAMBAKAN MENGGUNAKAN FRAMEWORK LARAVEL UNTUK MENINGKATKAN MANAJEMEN USAHA</h3></div>
+	<div id="authorString"><em>Muhammad Noval Riswandha, Nicky Nastiti Fatkha Devie</em></div>
+	<br />
+			<div id="articleAbstract">
+		<h4>Abstract</h4>
+		<br />
+		<div>UMKM memainkan peran penting dalam mendukung perekonomian lokal, terutama di tingkat desa. Namun, banyak UMKM masih menghadapi tantangan dalam mengelola bisnis mereka. Desa Tambakan merupakan daerah dengan potensi UMKM yang signifikan, tetapi belum sepenuhnya memanfaatkan teknologi digital untuk mendukung kegiatan bisnisnya. Penelitian ini bertujuan untuk merancang dan membangun sistem ritel berbasis situs web menggunakan framework Laravel. Sistem ini dirancang untuk memfasilitasi manajemen produk, pemantauan transaksi penjualan, manajemen inventaris, dan pelaporan keuangan otomatis. Metode pengembangan yang digunakan adalah model waterfall, dimulai dengan analisis kebutuhan, perancangan sistem, implementasi, dan pengujian. Hasil dari penelitian ini adalah aplikasi ritel online yang dapat digunakan oleh UMKM di Desa Tambakan untuk mengelola bisnis mereka dengan lebih efisien. Sistem ini membuat proses bisnis lebih terstruktur, transparan, dan adaptif terhadap perkembangan teknologi digital.</div>
+		<br />
+		</div>
+	
+			<div id="articleSubject">
+		<h4>Keywords</h4>
+		<br />
+		<div>UMKM, sistem ritel, Laravel, manajemen bisnis</div>
+		<br />
+		</div>
+	
+				
+			<div id="articleFullText">
+		<h4>Full Text:</h4>
+									<a href="https://jurnal.stmik-yadika.ac.id/index.php/spirit/article/view/399/365" class="file" target="_parent">PDF HLM 76 - 98</a>
+														</div>
+	
+			<div id="articleCitations">
+		<h4>References</h4>
+		<br />
+		<div>
+							<p>N. S. Kadeni, “Peran UMKM (Usaha Mikro Kecil Menengah) dalam Meningkatkan Kesejahteraan Masyarakat,” Equilibrium: Jurnal Ilmiah Ekonomi dan Pembelajarannya, vol. 8, no. 2, pp. 191–200, 2020.</p>
+							<p>D. H.Dewi, I. Setyawati, S. Karyatun, A. R. Setiawan, M. N. Hardianto, dan A. Zulfikar, “Strategi Pengembangan dan Pengelolaan UMKM Desa Kalikidang Banyumas Jawa Tengah,” Jurnal Pengabdian Masyarakat Darul Ulum, vol. 2, no. 1, pp. 1–9, 2023.</p>
+							<p>I. Faizal, I. Nanda, D. Ariestiandy, dan T. Ernawati, “Pengembangan Sistem Informasi Pengelolaan Keuangan bagi Usaha Mikro Kecil dan Menengah (UMKM),” Jurnal Sistem Komputer dan Informatika (JSON), vol. 3, no. 2, pp. 81–86, 2021.</p>
+							<p>S. D. Dewi, L. Laudeciska, A. Figa, A. Auliani, D. V. Marbun, dan W. Dwiyanti, “Perancangan Sistem Informasi Berbasis Website pada UMKM Jaya Punggur,” National Conference for Community Service Project (NaCosPro), vol. 3, no. 1, pp. 841–848, 2021.</p>
+							<p>R. Y. Vianus, N. N. K. Sari, dan S. Geges, “Sistem Informasi Penjualan Usaha Mikro Kecil Menengah di Kota Palangka Raya Berbasis Website,” JOINTECOMS (Journal of Information Technology and Computer Science), vol. 4, no. 1, pp. 13–21, 2024.</p>
+							<p>F. Oktaviani dan D. Rustandi, “Implementasi Digital Marketing dalam Membangun Brand Awareness,” PRofesi Humas, vol. 3, no. 1, pp. 1–20, 2018.</p>
+							<p>R. J. Naimah, M. W. Wardhana, R. Haryanto, dan A. Pebrianto, “Penerapan Digital Marketing sebagai Strategi Pemasaran UMKM,” Jurnal IMPACT: Implementation and Action, vol. 2, no. 2, pp. 119–130, 2020.</p>
+							<p>Y. Cahyana, “Perancangan Sistem Informasi Usaha Mikro Kecil dan Menengah (UMKM) Berbasis Web di Desa Bojongsari,” IKRA-ITH Informatika: Jurnal Komputer dan Informatika, vol. 6, no. 2, pp. 47–52, 2022.</p>
+							<p>M. N. Panjaitan, R. Maulidya, dan R. D. Sianturi, “Merintis Peluang Baru Mengembangkan UMKM Pedesaan Melalui Manajemen Retail,” Jurnal Akuntansi, Manajemen dan Ilmu Ekonomi (JASMIEN), vol. 4, no. 3, pp. 42–53, 2024.</p>
+							<p>T. Triase, R. Al Ikhsan, dan P. I. J. Hasibuan, “E-Commerce untuk Meningkatkan Penjualan pada UMKM Solo Fried Chicken Berbasis Website PHP Native,” JUTECH: Journal Education and Technology, vol. 5, no. 1, pp. 20–34, 2024.</p>
+							<p>H. Istiqomah, “Perancangan Sistem Informasi Manajemen Stok pada Toko Camilan DePe Menggunakan Laravel dan Metode Scrum,” Jurnal Multidisiplin Bhatara, vol. 2, no. 1, pp. 41–50, 2025.</p>
+							<p>F. Sinlae, E. Irwanda, Z. Maulana, dan V. E. Syahputra, “Penggunaan Framework Laravel dalam Membangun Aplikasi Website Berbasis PHP,” Jurnal Siber Multi Disiplin, vol. 2, no. 2, pp. 119–132, 2024.</p>
+							<p>Y. Siyamto, J. Triyanto, dan M. R. Alwatoni, “Implementasi Framework Laravel dalam Perancangan Sistem Informasi Penjualan UKM Kota Surakarta,” Prosiding Seminar Nasional Ilmu Sosial dan Teknologi (SNISTEK), vol. 5, pp. 464–466, 2023.</p>
+							<p>M. Z. Tamam, Y. Fitrianto, dan D. Rudjiono, “Perancangan Sistem Informasi Penjualan Berbasis Web pada UMKM Nata Nugros Singkong,” JUISI (Jurnal Informatika dan Sistem Informasi), vol. 2, no. 1, pp. 1–9, 2024.</p>
+							<p>R. Astuti, “Perancangan Sistem Informasi Penjualan Berbasis Web pada UMKM Cheese Stick Alfan,” Innotech: Jurnal Ilmu Komputer, Sistem Informasi dan Teknologi Informasi, vol. 1, no. 1, pp. 54–63, 2024.</p>
+							<p>R. S. Pressman and B. R. Maxim, Software Engineering: A Practitioner's Approach, 9th ed. New York, NY, USA: McGraw-Hill Education, 2020.</p>
+							<p>A. S. Rosa and M. Shalahuddin, Rekayasa Perangkat Lunak Terstruktur dan Berorientasi Objek, Bandung, Indonesia: Informatika, 2020.</p>
+							<p>A. Fauzi, A. Rahman, dan D. Setiawan, “Penerapan Metode Waterfall dalam Pengembangan Sistem Informasi Berbasis Web,” Jurnal Teknologi Informasi dan Komunikasi, vol. 11, no. 2, pp. 85–93, 2022.</p>
+					</div>
+		<br />
+		</div>
+	
+							<br />
+		<br />
+		DOI: <a id="pub-id::doi" href="http://dx.doi.org/10.53567/spirit.v18i1.399">http://dx.doi.org/10.53567/spirit.v18i1.399</a>																				
+
+<div class="separator"></div>
+
+<h3>Refbacks</h3>
+
+<ul>
+				<li>There are currently no refbacks.</li>
+	</ul>
+
+
+			<br/><br/>
+		Copyright (c) 2026 Muhammad Noval Riswandha
+				<br /><br />
+					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+			
+
+<br /><br />
+<hr /><p> </p><p align="center"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Diindeks Oleh:</span></span></p><p><a href="https://sinta.kemdikbud.go.id/journals/profile/10611"><img src="/public/site/images/adminnya/logo_sinta1.png" alt="" /></a><a href="https://garuda.kemdikbud.go.id/journal/view/15170"><img src="/public/site/images/adminnya/logo_garuda1.png" alt="" /></a><a href="https://scholar.google.co.id/citations?user=46Zzl1MAAAAJ"><img src="/public/site/images/adminnya/logo_scholar1.png" alt="" /></a><a href="https://search.crossref.org/?q=SPIRIT+STMIK+YADIKA&amp;from_ui=yes"><img src="/public/site/images/adminnya/logo_crossref3.png" alt="" /></a><a href="https://app.dimensions.ai/discover/publication?search_mode=content&amp;search_text=spirit%20yadika&amp;search_type=kws&amp;search_field=full_search&amp;and_facet_source_title=jour.1422089"><img src="/public/site/images/adminnya/logo_dimensions1.png" alt="" /></a><a href="https://orcid.org/0009-0004-4212-3946"><img src="/public/site/images/adminnya/ORCID-1200x800-1.png" alt="" /></a></p><hr /><hr /><p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">SPIRIT : </span></span><strong><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Sarana Penunjang Informasi Terkini</span></span></strong></p><p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Diterbitkan oleh Teknologi Informasi Institut Teknologi dan Bisnis Yadika Pasuruan </span></span><br /><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Alamat Redaksi: Jl. Bader No.9, Kwangsan, Kalirejo, Kec. Bangil, Pasuruan, Jawa Timur 67153 </span></span><br /><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Telp/Fax: </span></span><a href="https://www.google.com/search?q=stmik+yadika&amp;source=lmns&amp;bih=744&amp;biw=958&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwihlKznoZb3AhVTkdgFHRW5B24Q_AUoAHoECAEQAA"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(0343) 742070</span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> , Email : lppm@stmik-yadika.ac.id </span></span><br /><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Google Maps :  </span></span><a href="https://goo.gl/maps/Gk2g87npabWsdo8r7" target="_blank"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Klik Disini</span></span></a></p><hr /><p> <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="Creative Commons License" /></a><br /><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Karya ini dilisensikan di bawah  </span></span><a href="http://creativecommons.org/licenses/by/4.0/" rel="license"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Lisensi Internasional Creative Commons Atribusi 4.0</span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> .</span></span></p>
+</div><!-- content -->
+</div><!-- main -->
+</div><!-- body -->
+
+
+
+</div> <!-- container -->
+</body>
+</html>
